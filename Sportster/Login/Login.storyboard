@@ -165,9 +165,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="k1z-E3-dpn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Registrer"/>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="f4r-fz-Pgp" eventType="touchUpInside" id="XSo-1R-5mP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BgV-R9-b9X"/>
@@ -179,10 +182,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="O3q-Mb-Rz7"/>
+                    <connections>
+                        <outlet property="registerButton" destination="YEW-HQ-XI4" id="7y6-eT-LUW"/>
+                        <segue destination="eIg-PJ-7W9" kind="show" identifier="goToIntroStoryboard" id="OdY-c9-2Vz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uya-dj-bKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="568" y="173"/>
+        </scene>
+        <!--Intro-->
+        <scene sceneID="13O-N6-mgA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Intro" id="eIg-PJ-7W9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="e3L-Bm-fFL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IzN-WB-nhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1259" y="173"/>
         </scene>
     </scenes>
     <resources>

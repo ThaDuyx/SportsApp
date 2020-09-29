@@ -11,8 +11,10 @@ import UIKit
 class IntroViewController: UIViewController {
     
     @IBOutlet weak var interestsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
     }
      func viewDidAppear(){
