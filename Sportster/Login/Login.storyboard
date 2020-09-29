@@ -43,23 +43,70 @@
                                     <constraint firstItem="zHU-cb-cCR" firstAttribute="firstBaseline" secondItem="mRU-pY-NmP" secondAttribute="baseline" constant="29" symbolType="layoutAnchor" id="lXd-gk-JUI"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRg-Nt-3Ks">
+                                <rect key="frame" x="50" y="627" width="314" height="45"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.27058823529411763" blue="0.23529411764705882" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="H7v-yo-Gek"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
+                                <state key="normal" title="Forsæt med Gmail" image="Google Icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yP4-3V-Eym">
+                                <rect key="frame" x="50" y="557" width="314" height="45"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.40392156862745099" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="BZv-9x-0ca"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="33" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="33" maxY="0.0"/>
+                                <state key="normal" title="Forsæt med Facebook" image="Facebook Icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaX-Rp-nbk">
+                                <rect key="frame" x="50" y="697" width="314" height="45"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.75294117647058822" blue="0.75294117647058822" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4xk-eV-3iP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
+                                <state key="normal" title="Forsæt med E-mail" image="Email Icon"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zzm-CY-FT3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Zzm-CY-FT3" firstAttribute="trailing" secondItem="xaX-Rp-nbk" secondAttribute="trailing" constant="50" id="097-fl-X6J"/>
                             <constraint firstItem="RA4-j2-MBU" firstAttribute="baseline" secondItem="OMe-2G-39J" secondAttribute="firstBaseline" constant="60" id="4CE-HB-HlM"/>
+                            <constraint firstItem="xaX-Rp-nbk" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" constant="50" id="7Kd-QL-Gb6"/>
                             <constraint firstItem="Zzm-CY-FT3" firstAttribute="leading" secondItem="RA4-j2-MBU" secondAttribute="leading" constant="200" id="CLJ-pB-PX4"/>
+                            <constraint firstItem="KRg-Nt-3Ks" firstAttribute="firstBaseline" secondItem="yP4-3V-Eym" secondAttribute="baseline" constant="70" id="Fgj-ho-bEA"/>
                             <constraint firstItem="OMe-2G-39J" firstAttribute="bottom" secondItem="Zzm-CY-FT3" secondAttribute="bottom" id="I34-Oc-UhA"/>
                             <constraint firstItem="OMe-2G-39J" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" id="Mjx-x0-Dhk"/>
                             <constraint firstItem="Zzm-CY-FT3" firstAttribute="top" secondItem="RA4-j2-MBU" secondAttribute="top" constant="329" id="Pmu-a8-ACf"/>
+                            <constraint firstItem="KRg-Nt-3Ks" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" constant="50" id="XUI-5b-q2o"/>
+                            <constraint firstItem="yP4-3V-Eym" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" constant="50" id="YHG-MR-J0c"/>
+                            <constraint firstItem="Zzm-CY-FT3" firstAttribute="trailing" secondItem="yP4-3V-Eym" secondAttribute="trailing" constant="50" id="aSM-cf-hKp"/>
                             <constraint firstItem="RA4-j2-MBU" firstAttribute="trailing" secondItem="Zzm-CY-FT3" secondAttribute="trailing" constant="196" id="eWW-Ag-wrB"/>
+                            <constraint firstItem="Zzm-CY-FT3" firstAttribute="bottom" secondItem="xaX-Rp-nbk" secondAttribute="bottom" constant="120" id="i4g-sr-R3Z"/>
                             <constraint firstItem="OMe-2G-39J" firstAttribute="top" secondItem="Zzm-CY-FT3" secondAttribute="top" constant="190" id="jEE-RK-wfF"/>
+                            <constraint firstItem="Zzm-CY-FT3" firstAttribute="trailing" secondItem="KRg-Nt-3Ks" secondAttribute="trailing" constant="50" id="rmZ-H7-PrM"/>
+                            <constraint firstItem="xaX-Rp-nbk" firstAttribute="firstBaseline" secondItem="KRg-Nt-3Ks" secondAttribute="baseline" constant="70" id="tgN-qp-kY1"/>
                             <constraint firstItem="OMe-2G-39J" firstAttribute="trailing" secondItem="Zzm-CY-FT3" secondAttribute="trailing" constant="250" id="wXs-nw-uOf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mainView" destination="oIy-uE-yJy" id="4Ur-Ad-mya"/>
-                        <outlet property="topBoxView" destination="RA4-j2-MBU" id="M64-s4-jpk"/>
+                        <outlet property="eLoginButton" destination="xaX-Rp-nbk" id="E87-Oe-jYl"/>
+                        <outlet property="fLoginButton" destination="yP4-3V-Eym" id="TmN-Ny-tXP"/>
+                        <outlet property="gLoginButton" destination="KRg-Nt-3Ks" id="krW-bO-Dfm"/>
+                        <outlet property="topBoxView" destination="RA4-j2-MBU" id="gVc-Fc-cmR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNU-6K-O9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -69,6 +116,9 @@
     </scenes>
     <resources>
         <image name="Background" width="4608" height="3072"/>
+        <image name="Email Icon" width="14" height="13"/>
+        <image name="Facebook Icon" width="19" height="19"/>
+        <image name="Google Icon" width="12" height="13"/>
         <image name="Logo" width="52" height="52"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
