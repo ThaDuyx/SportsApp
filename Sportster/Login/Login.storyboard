@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V5J-W7-47a">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bBZ-DG-4OC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="E4n-7O-Xft">
+            <objects>
+                <navigationController id="bBZ-DG-4OC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mut-E9-GEG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="V5J-W7-47a" kind="relationship" relationship="rootViewController" id="7O5-NZ-uwI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kzF-nz-NTJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1290" y="173"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="i7L-X6-KuP">
             <objects>
@@ -17,11 +33,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="OMe-2G-39J">
-                                <rect key="frame" x="0.0" y="234" width="664" height="628"/>
+                                <rect key="frame" x="0.0" y="278" width="664" height="584"/>
                                 <color key="tintColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-j2-MBU">
-                                <rect key="frame" x="-200" y="-285" width="810" height="579"/>
+                                <rect key="frame" x="-200" y="-241" width="810" height="579"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="zHU-cb-cCR">
                                         <rect key="frame" x="379" y="450" width="52" height="52"/>
@@ -43,6 +59,21 @@
                                     <constraint firstItem="zHU-cb-cCR" firstAttribute="firstBaseline" secondItem="mRU-pY-NmP" secondAttribute="baseline" constant="29" symbolType="layoutAnchor" id="lXd-gk-JUI"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaX-Rp-nbk">
+                                <rect key="frame" x="50" y="697" width="314" height="45"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.75294117647058822" blue="0.75294117647058822" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4xk-eV-3iP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
+                                <state key="normal" title="Forsæt med E-mail" image="Email Icon"/>
+                                <connections>
+                                    <segue destination="f4r-fz-Pgp" kind="show" id="490-yt-VDD"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRg-Nt-3Ks">
                                 <rect key="frame" x="50" y="627" width="314" height="45"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.27058823529411763" blue="0.23529411764705882" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
@@ -67,18 +98,18 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="33" maxY="0.0"/>
                                 <state key="normal" title="Forsæt med Facebook" image="Facebook Icon"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaX-Rp-nbk">
-                                <rect key="frame" x="50" y="697" width="314" height="45"/>
-                                <color key="backgroundColor" red="0.16470588235294117" green="0.75294117647058822" blue="0.75294117647058822" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="4xk-eV-3iP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
-                                <state key="normal" title="Forsæt med E-mail" image="Email Icon"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOY-R9-u09">
+                                <rect key="frame" x="0.0" y="424" width="414" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log ind for at forsætte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJT-c7-Pfu">
+                                <rect key="frame" x="0.0" y="456" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" systemColor="labelColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zzm-CY-FT3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,14 +117,20 @@
                             <constraint firstItem="Zzm-CY-FT3" firstAttribute="trailing" secondItem="xaX-Rp-nbk" secondAttribute="trailing" constant="50" id="097-fl-X6J"/>
                             <constraint firstItem="RA4-j2-MBU" firstAttribute="baseline" secondItem="OMe-2G-39J" secondAttribute="firstBaseline" constant="60" id="4CE-HB-HlM"/>
                             <constraint firstItem="xaX-Rp-nbk" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" constant="50" id="7Kd-QL-Gb6"/>
+                            <constraint firstItem="jJT-c7-Pfu" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" id="A6H-Lo-gdO"/>
+                            <constraint firstItem="Zzm-CY-FT3" firstAttribute="trailing" secondItem="jJT-c7-Pfu" secondAttribute="trailing" id="AX4-0W-hIn"/>
                             <constraint firstItem="Zzm-CY-FT3" firstAttribute="leading" secondItem="RA4-j2-MBU" secondAttribute="leading" constant="200" id="CLJ-pB-PX4"/>
+                            <constraint firstItem="jJT-c7-Pfu" firstAttribute="firstBaseline" secondItem="JOY-R9-u09" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="FcY-Ja-3hf"/>
                             <constraint firstItem="KRg-Nt-3Ks" firstAttribute="firstBaseline" secondItem="yP4-3V-Eym" secondAttribute="baseline" constant="70" id="Fgj-ho-bEA"/>
+                            <constraint firstItem="Zzm-CY-FT3" firstAttribute="trailing" secondItem="JOY-R9-u09" secondAttribute="trailing" id="HGi-oi-lcj"/>
                             <constraint firstItem="OMe-2G-39J" firstAttribute="bottom" secondItem="Zzm-CY-FT3" secondAttribute="bottom" id="I34-Oc-UhA"/>
                             <constraint firstItem="OMe-2G-39J" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" id="Mjx-x0-Dhk"/>
                             <constraint firstItem="Zzm-CY-FT3" firstAttribute="top" secondItem="RA4-j2-MBU" secondAttribute="top" constant="329" id="Pmu-a8-ACf"/>
+                            <constraint firstItem="JOY-R9-u09" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" id="VXe-kc-t5w"/>
                             <constraint firstItem="KRg-Nt-3Ks" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" constant="50" id="XUI-5b-q2o"/>
                             <constraint firstItem="yP4-3V-Eym" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" constant="50" id="YHG-MR-J0c"/>
                             <constraint firstItem="Zzm-CY-FT3" firstAttribute="trailing" secondItem="yP4-3V-Eym" secondAttribute="trailing" constant="50" id="aSM-cf-hKp"/>
+                            <constraint firstItem="JOY-R9-u09" firstAttribute="firstBaseline" secondItem="RA4-j2-MBU" secondAttribute="baseline" constant="110" id="cMp-hQ-RxK"/>
                             <constraint firstItem="RA4-j2-MBU" firstAttribute="trailing" secondItem="Zzm-CY-FT3" secondAttribute="trailing" constant="196" id="eWW-Ag-wrB"/>
                             <constraint firstItem="Zzm-CY-FT3" firstAttribute="bottom" secondItem="xaX-Rp-nbk" secondAttribute="bottom" constant="120" id="i4g-sr-R3Z"/>
                             <constraint firstItem="OMe-2G-39J" firstAttribute="top" secondItem="Zzm-CY-FT3" secondAttribute="top" constant="190" id="jEE-RK-wfF"/>
@@ -102,6 +139,7 @@
                             <constraint firstItem="OMe-2G-39J" firstAttribute="trailing" secondItem="Zzm-CY-FT3" secondAttribute="trailing" constant="250" id="wXs-nw-uOf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Xze-P1-nR1"/>
                     <connections>
                         <outlet property="eLoginButton" destination="xaX-Rp-nbk" id="E87-Oe-jYl"/>
                         <outlet property="fLoginButton" destination="yP4-3V-Eym" id="TmN-Ny-tXP"/>
@@ -113,6 +151,39 @@
             </objects>
             <point key="canvasLocation" x="-365.21739130434787" y="173.4375"/>
         </scene>
+        <!--Registrer View Controller-->
+        <scene sceneID="m2E-5h-oeV">
+            <objects>
+                <viewController id="f4r-fz-Pgp" customClass="RegistrerViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c3e-VP-Eoc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEW-HQ-XI4">
+                                <rect key="frame" x="50" y="712" width="314" height="45"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="k1z-E3-dpn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Registrer"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BgV-R9-b9X"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BgV-R9-b9X" firstAttribute="bottom" secondItem="YEW-HQ-XI4" secondAttribute="bottom" constant="105" id="NCi-TV-U8E"/>
+                            <constraint firstItem="YEW-HQ-XI4" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" constant="50" id="YrV-qr-S2T"/>
+                            <constraint firstItem="BgV-R9-b9X" firstAttribute="trailing" secondItem="YEW-HQ-XI4" secondAttribute="trailing" constant="50" id="gvk-bR-0Af"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="O3q-Mb-Rz7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uya-dj-bKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="568" y="173"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="4608" height="3072"/>
@@ -120,6 +191,9 @@
         <image name="Facebook Icon" width="19" height="19"/>
         <image name="Google Icon" width="12" height="13"/>
         <image name="Logo" width="52" height="52"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
