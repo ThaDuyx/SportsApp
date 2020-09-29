@@ -15,6 +15,10 @@
 		6A26A88B252337110060351B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A26A889252337110060351B /* LaunchScreen.storyboard */; };
 		6A26A896252337110060351B /* SportsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A895252337110060351B /* SportsterTests.swift */; };
 		6A26A8A1252337110060351B /* SportsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A8A0252337110060351B /* SportsterUITests.swift */; };
+		8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8380C95F25233F0C0028FEA4 /* Intro.storyboard */; };
+		8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8380C96425233F1B0028FEA4 /* Login.storyboard */; };
+		8380C96A25233F2C0028FEA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C96925233F2C0028FEA4 /* LoginViewController.swift */; };
+		8380C96F25233F3B0028FEA4 /* IntroViewContrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C96E25233F3B0028FEA4 /* IntroViewContrtoller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		6A26A89C252337110060351B /* SportsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A26A8A0252337110060351B /* SportsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsterUITests.swift; sourceTree = "<group>"; };
 		6A26A8A2252337110060351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8380C95F25233F0C0028FEA4 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		8380C96425233F1B0028FEA4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		8380C96925233F2C0028FEA4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8380C96E25233F3B0028FEA4 /* IntroViewContrtoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewContrtoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,11 @@
 		6A26A87D252337100060351B /* Sportster */ = {
 			isa = PBXGroup;
 			children = (
+				8380C95E25233EF60028FEA4 /* Main */,
+				8380C95D25233EE50028FEA4 /* Login */,
+				8380C95925233EDD0028FEA4 /* Intro */,
 				6A26A87E252337100060351B /* AppDelegate.swift */,
 				6A26A880252337100060351B /* SceneDelegate.swift */,
-				6A26A882252337100060351B /* ViewController.swift */,
-				6A26A884252337100060351B /* Main.storyboard */,
 				6A26A887252337110060351B /* Assets.xcassets */,
 				6A26A889252337110060351B /* LaunchScreen.storyboard */,
 				6A26A88C252337110060351B /* Info.plist */,
@@ -126,6 +135,33 @@
 				6A26A8A2252337110060351B /* Info.plist */,
 			);
 			path = SportsterUITests;
+			sourceTree = "<group>";
+		};
+		8380C95925233EDD0028FEA4 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				8380C95F25233F0C0028FEA4 /* Intro.storyboard */,
+				8380C96E25233F3B0028FEA4 /* IntroViewContrtoller.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		8380C95D25233EE50028FEA4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8380C96425233F1B0028FEA4 /* Login.storyboard */,
+				8380C96925233F2C0028FEA4 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8380C95E25233EF60028FEA4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6A26A882252337100060351B /* ViewController.swift */,
+				6A26A884252337100060351B /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +270,8 @@
 				6A26A88B252337110060351B /* LaunchScreen.storyboard in Resources */,
 				6A26A888252337110060351B /* Assets.xcassets in Resources */,
 				6A26A886252337100060351B /* Main.storyboard in Resources */,
+				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
+				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8380C96F25233F3B0028FEA4 /* IntroViewContrtoller.swift in Sources */,
+				8380C96A25233F2C0028FEA4 /* LoginViewController.swift in Sources */,
 				6A26A883252337100060351B /* ViewController.swift in Sources */,
 				6A26A87F252337100060351B /* AppDelegate.swift in Sources */,
 				6A26A881252337100060351B /* SceneDelegate.swift in Sources */,
