@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p45-2O-REE">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V5J-W7-47a">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,30 +8,68 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="IFq-3P-eYt">
+        <!--Login View Controller-->
+        <scene sceneID="i7L-X6-KuP">
             <objects>
-                <viewController id="p45-2O-REE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZIu-yp-QKE">
+                <viewController id="V5J-W7-47a" customClass="LoginViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oIy-uE-yJy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBJ-0L-pE4">
-                                <rect key="frame" x="195" y="363" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="OMe-2G-39J">
+                                <rect key="frame" x="0.0" y="234" width="664" height="628"/>
+                                <color key="tintColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-j2-MBU">
+                                <rect key="frame" x="-200" y="-285" width="810" height="579"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="zHU-cb-cCR">
+                                        <rect key="frame" x="379" y="450" width="52" height="52"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sportster" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRU-pY-NmP">
+                                        <rect key="frame" x="0.0" y="381" width="810" height="50.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.16470588235294117" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="zHU-cb-cCR" secondAttribute="bottom" constant="77" id="L9P-99-OzI"/>
+                                    <constraint firstItem="mRU-pY-NmP" firstAttribute="leading" secondItem="RA4-j2-MBU" secondAttribute="leading" id="OVJ-02-7yw"/>
+                                    <constraint firstItem="zHU-cb-cCR" firstAttribute="leading" secondItem="mRU-pY-NmP" secondAttribute="trailing" constant="-431" id="SPj-Es-ZIu"/>
+                                    <constraint firstAttribute="trailing" secondItem="mRU-pY-NmP" secondAttribute="trailing" id="kb7-J6-nQD"/>
+                                    <constraint firstItem="zHU-cb-cCR" firstAttribute="firstBaseline" secondItem="mRU-pY-NmP" secondAttribute="baseline" constant="29" symbolType="layoutAnchor" id="lXd-gk-JUI"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Jh6-fe-fSV"/>
+                        <viewLayoutGuide key="safeArea" id="Zzm-CY-FT3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RA4-j2-MBU" firstAttribute="baseline" secondItem="OMe-2G-39J" secondAttribute="firstBaseline" constant="60" id="4CE-HB-HlM"/>
+                            <constraint firstItem="Zzm-CY-FT3" firstAttribute="leading" secondItem="RA4-j2-MBU" secondAttribute="leading" constant="200" id="CLJ-pB-PX4"/>
+                            <constraint firstItem="OMe-2G-39J" firstAttribute="bottom" secondItem="Zzm-CY-FT3" secondAttribute="bottom" id="I34-Oc-UhA"/>
+                            <constraint firstItem="OMe-2G-39J" firstAttribute="leading" secondItem="Zzm-CY-FT3" secondAttribute="leading" id="Mjx-x0-Dhk"/>
+                            <constraint firstItem="Zzm-CY-FT3" firstAttribute="top" secondItem="RA4-j2-MBU" secondAttribute="top" constant="329" id="Pmu-a8-ACf"/>
+                            <constraint firstItem="RA4-j2-MBU" firstAttribute="trailing" secondItem="Zzm-CY-FT3" secondAttribute="trailing" constant="196" id="eWW-Ag-wrB"/>
+                            <constraint firstItem="OMe-2G-39J" firstAttribute="top" secondItem="Zzm-CY-FT3" secondAttribute="top" constant="190" id="jEE-RK-wfF"/>
+                            <constraint firstItem="OMe-2G-39J" firstAttribute="trailing" secondItem="Zzm-CY-FT3" secondAttribute="trailing" constant="250" id="wXs-nw-uOf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainView" destination="oIy-uE-yJy" id="4Ur-Ad-mya"/>
+                        <outlet property="topBoxView" destination="RA4-j2-MBU" id="M64-s4-jpk"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gp3-nn-Ieh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNU-6K-O9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="119"/>
+            <point key="canvasLocation" x="-365.21739130434787" y="173.4375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="4608" height="3072"/>
+        <image name="Logo" width="52" height="52"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
