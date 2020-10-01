@@ -29,9 +29,11 @@ extension UIColor {
 class RegistrerViewController: UIViewController {
 
     @IBOutlet weak var registerButton: UIButton!
-    @IBAction func registerButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "goToIntroStoryboard", sender: self)
+    @IBAction func registerButtonTapped(_ sender: Any) {
+
+
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = UIColor.init(rgb: 0x2AC0C0)
@@ -41,12 +43,6 @@ class RegistrerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToIntroStoryboard"{
-            guard segue.destination is IntroViewController else{return}
-    
-        }
-    }
-    
+
 }
+

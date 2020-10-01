@@ -11,7 +11,7 @@
         <!--Navigation Controller-->
         <scene sceneID="E4n-7O-Xft">
             <objects>
-                <navigationController id="bBZ-DG-4OC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginVC" modalPresentationStyle="fullScreen" id="bBZ-DG-4OC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mut-E9-GEG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -169,9 +169,22 @@
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Registrer"/>
                                 <connections>
-                                    <action selector="registerButtonPressed:" destination="f4r-fz-Pgp" eventType="touchUpInside" id="XSo-1R-5mP"/>
+                                    <action selector="registerButtonTapped:" destination="f4r-fz-Pgp" eventType="touchUpInside" id="Du6-xr-8Jd"/>
+                                    <segue destination="65E-Rk-NBk" kind="presentation" id="Ome-jO-8FR"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkh-Ho-bcT">
+                                <rect key="frame" x="159" y="286" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-Ep-ous">
+                                <rect key="frame" x="159" y="362" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BgV-R9-b9X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -183,23 +196,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="O3q-Mb-Rz7"/>
                     <connections>
-                        <outlet property="registerButton" destination="YEW-HQ-XI4" id="7y6-eT-LUW"/>
-                        <segue destination="eIg-PJ-7W9" kind="show" identifier="goToIntroStoryboard" id="OdY-c9-2Vz"/>
+                        <outlet property="registerButton" destination="YEW-HQ-XI4" id="QhT-pH-2Mg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uya-dj-bKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="568" y="173"/>
         </scene>
-        <!--Intro-->
-        <scene sceneID="13O-N6-mgA">
+        <!--IntroVC-->
+        <scene sceneID="8J9-e2-GbZ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Intro" id="eIg-PJ-7W9" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="e3L-Bm-fFL"/>
+                <viewControllerPlaceholder storyboardName="Intro" referencedIdentifier="IntroVC" id="65E-Rk-NBk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Rar-Qh-hRs"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IzN-WB-nhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bvV-Kk-0Yf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1259" y="173"/>
+            <point key="canvasLocation" x="1328" y="173"/>
         </scene>
     </scenes>
     <resources>
