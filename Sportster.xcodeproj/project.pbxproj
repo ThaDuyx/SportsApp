@@ -19,7 +19,7 @@
 		8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8380C95F25233F0C0028FEA4 /* Intro.storyboard */; };
 		8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8380C96425233F1B0028FEA4 /* Login.storyboard */; };
 		8380C96A25233F2C0028FEA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C96925233F2C0028FEA4 /* LoginViewController.swift */; };
-		8380C96F25233F3B0028FEA4 /* IntroViewContrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C96E25233F3B0028FEA4 /* IntroViewContrtoller.swift */; };
+		8380C96F25233F3B0028FEA4 /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C96E25233F3B0028FEA4 /* InterestsViewController.swift */; };
 		8380C98B252368180028FEA4 /* RegistrerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C98A252368180028FEA4 /* RegistrerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 		8380C95F25233F0C0028FEA4 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		8380C96425233F1B0028FEA4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8380C96925233F2C0028FEA4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8380C96E25233F3B0028FEA4 /* IntroViewContrtoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewContrtoller.swift; sourceTree = "<group>"; };
+		8380C96E25233F3B0028FEA4 /* InterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
 		8380C98A252368180028FEA4 /* RegistrerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				8380C95F25233F0C0028FEA4 /* Intro.storyboard */,
-				8380C96E25233F3B0028FEA4 /* IntroViewContrtoller.swift */,
+				8380C96E25233F3B0028FEA4 /* InterestsViewController.swift */,
 				6A1D31BB252630E100D2F8DE /* NotiViewController.swift */,
 			);
 			path = Intro;
@@ -302,7 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8380C96F25233F3B0028FEA4 /* IntroViewContrtoller.swift in Sources */,
+				8380C96F25233F3B0028FEA4 /* InterestsViewController.swift in Sources */,
 				8380C96A25233F2C0028FEA4 /* LoginViewController.swift in Sources */,
 				8380C98B252368180028FEA4 /* RegistrerViewController.swift in Sources */,
 				6A1D31BC252630E100D2F8DE /* NotiViewController.swift in Sources */,

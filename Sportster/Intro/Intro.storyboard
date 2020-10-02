@@ -41,10 +41,12 @@
                                 <color key="textColor" red="0.10980392156862745" green="0.55686274509803924" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXe-66-Vxn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXe-66-Vxn">
                                 <rect key="frame" x="50" y="697" width="314" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1003868207" green="0.79341745379999995" blue="0.80414146180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="UO3-X8-R1C"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Fortsæt">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,7 +64,10 @@
                         <viewLayoutGuide key="safeArea" id="aAs-Nk-QFB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aAs-Nk-QFB" firstAttribute="trailing" secondItem="AXe-66-Vxn" secondAttribute="trailing" constant="50" id="0yx-PP-hne"/>
+                            <constraint firstItem="aAs-Nk-QFB" firstAttribute="bottom" secondItem="AXe-66-Vxn" secondAttribute="bottom" constant="120" id="4hM-Lb-61K"/>
                             <constraint firstItem="l3t-iG-Q4f" firstAttribute="leading" secondItem="aAs-Nk-QFB" secondAttribute="leading" constant="42" id="Px3-w2-055"/>
+                            <constraint firstItem="AXe-66-Vxn" firstAttribute="leading" secondItem="aAs-Nk-QFB" secondAttribute="leading" constant="50" id="Rkj-Ex-w3w"/>
                             <constraint firstItem="aAs-Nk-QFB" firstAttribute="trailing" secondItem="l3t-iG-Q4f" secondAttribute="trailing" constant="252" id="Rvd-et-Mk2"/>
                             <constraint firstItem="l3t-iG-Q4f" firstAttribute="top" secondItem="aAs-Nk-QFB" secondAttribute="top" constant="57" id="Zty-qH-fvB"/>
                         </constraints>
@@ -84,22 +89,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do8-nk-eN2">
-                                <rect key="frame" x="42" y="101" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do8-nk-eN2">
+                                <rect key="frame" x="42" y="145" width="150" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.10980392160000001" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKY-QH-Y8o">
+                                <rect key="frame" x="50" y="697" width="314" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1003868207" green="0.79341745379999995" blue="0.80414146180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Kom Igang">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="endIntroTapped:" destination="8jP-lk-zIf" eventType="touchUpInside" id="Gfo-dt-cKR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NEP-Or-u50"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="do8-nk-eN2" firstAttribute="top" secondItem="NEP-Or-u50" secondAttribute="top" constant="57" id="bLf-zv-FIJ"/>
+                            <constraint firstAttribute="trailing" secondItem="do8-nk-eN2" secondAttribute="trailing" constant="222" id="fBB-Pm-doZ"/>
+                            <constraint firstItem="do8-nk-eN2" firstAttribute="leading" secondItem="uKh-oe-oC4" secondAttribute="leading" constant="42" id="kNa-ZD-SYG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jh2-Xa-7L0"/>
+                    <connections>
+                        <outlet property="notificationLabel" destination="do8-nk-eN2" id="e3t-vn-kA9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Goh-W4-AfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="192"/>
+            <point key="canvasLocation" x="155.07246376811597" y="191.51785714285714"/>
         </scene>
     </scenes>
     <resources>

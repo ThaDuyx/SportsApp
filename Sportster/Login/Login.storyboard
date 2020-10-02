@@ -160,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEW-HQ-XI4">
-                                <rect key="frame" x="50" y="712" width="314" height="45"/>
+                                <rect key="frame" x="50" y="697" width="314" height="45"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="k1z-E3-dpn"/>
@@ -170,7 +170,6 @@
                                 <state key="normal" title="Registrer"/>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="f4r-fz-Pgp" eventType="touchUpInside" id="Du6-xr-8Jd"/>
-                                    <segue destination="65E-Rk-NBk" kind="presentation" id="Ome-jO-8FR"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkh-Ho-bcT">
@@ -189,9 +188,9 @@
                         <viewLayoutGuide key="safeArea" id="BgV-R9-b9X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BgV-R9-b9X" firstAttribute="bottom" secondItem="YEW-HQ-XI4" secondAttribute="bottom" constant="105" id="NCi-TV-U8E"/>
                             <constraint firstItem="YEW-HQ-XI4" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" constant="50" id="YrV-qr-S2T"/>
                             <constraint firstItem="BgV-R9-b9X" firstAttribute="trailing" secondItem="YEW-HQ-XI4" secondAttribute="trailing" constant="50" id="gvk-bR-0Af"/>
+                            <constraint firstItem="BgV-R9-b9X" firstAttribute="bottom" secondItem="YEW-HQ-XI4" secondAttribute="bottom" constant="120" id="rI2-Fd-fvk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="O3q-Mb-Rz7"/>
@@ -202,16 +201,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uya-dj-bKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="568" y="173"/>
-        </scene>
-        <!--IntroVC-->
-        <scene sceneID="8J9-e2-GbZ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Intro" referencedIdentifier="IntroVC" id="65E-Rk-NBk" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Rar-Qh-hRs"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bvV-Kk-0Yf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1328" y="173"/>
         </scene>
     </scenes>
     <resources>

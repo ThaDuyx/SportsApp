@@ -31,6 +31,11 @@ class RegistrerViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBAction func registerButtonTapped(_ sender: Any) {
 
+        let storyboard = UIStoryboard(name: "Intro", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "IntroVC")
+        
+        self.view.window?.rootViewController = vc
+        self.view.window?.makeKeyAndVisible()
 
     }
     
