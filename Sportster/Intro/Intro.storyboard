@@ -98,9 +98,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKY-QH-Y8o">
                                 <rect key="frame" x="50" y="697" width="314" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1003868207" green="0.79341745379999995" blue="0.80414146180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Kom Igang">
+                                <state key="normal" title="Giv mig notifikationer">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -112,10 +112,20 @@
                                     <action selector="endIntroTapped:" destination="8jP-lk-zIf" eventType="touchUpInside" id="Gfo-dt-cKR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8t8-SB-tVo">
+                                <rect key="frame" x="179" y="763" width="57" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Ikke nu">
+                                    <color key="titleColor" red="0.1003868207" green="0.79341745379999995" blue="0.80414146180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NEP-Or-u50"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="NEP-Or-u50" firstAttribute="bottom" secondItem="8t8-SB-tVo" secondAttribute="bottom" constant="65" id="4ey-4t-GaH"/>
+                            <constraint firstItem="8t8-SB-tVo" firstAttribute="leading" secondItem="NEP-Or-u50" secondAttribute="leading" constant="179" id="UEF-zs-UPD"/>
+                            <constraint firstItem="NEP-Or-u50" firstAttribute="trailing" secondItem="8t8-SB-tVo" secondAttribute="trailing" constant="178" id="WlW-23-18l"/>
                             <constraint firstItem="do8-nk-eN2" firstAttribute="top" secondItem="NEP-Or-u50" secondAttribute="top" constant="57" id="bLf-zv-FIJ"/>
                             <constraint firstAttribute="trailing" secondItem="do8-nk-eN2" secondAttribute="trailing" constant="222" id="fBB-Pm-doZ"/>
                             <constraint firstItem="do8-nk-eN2" firstAttribute="leading" secondItem="uKh-oe-oC4" secondAttribute="leading" constant="42" id="kNa-ZD-SYG"/>
