@@ -96,7 +96,7 @@
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="33" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="33" maxY="0.0"/>
-                                <state key="normal" title="Forsæt med Facebook" image="Facebook Icon"/>
+                                <state key="normal" title="Forsæt med Facebook" image="White Facebook Icon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOY-R9-u09">
                                 <rect key="frame" x="0.0" y="424" width="414" height="30"/>
@@ -159,9 +159,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jkh-Ho-bcT" customClass="TextField" customModule="Sportster" customModuleProvider="target">
+                                <rect key="frame" x="50" y="577" width="314" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dgN-Oo-ycM"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEW-HQ-XI4">
                                 <rect key="frame" x="50" y="697" width="314" height="45"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="k1z-E3-dpn"/>
                                 </constraints>
@@ -172,29 +181,53 @@
                                     <action selector="registerButtonTapped:" destination="f4r-fz-Pgp" eventType="touchUpInside" id="Du6-xr-8Jd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkh-Ho-bcT">
-                                <rect key="frame" x="159" y="286" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Kodeord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-Ep-ous" customClass="TextField" customModule="Sportster" customModuleProvider="target">
+                                <rect key="frame" x="50" y="637" width="314" height="45"/>
+                                <color key="tintColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="iLX-r4-9Mq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-Ep-ous">
-                                <rect key="frame" x="159" y="362" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indtast log ind information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQy-gj-58a">
+                                <rect key="frame" x="0.0" y="437" width="414" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.10980392156862745" green="0.55686274509803924" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj0-Wb-68R">
+                                <rect key="frame" x="42" y="145" width="137" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BgV-R9-b9X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="BgV-R9-b9X" firstAttribute="trailing" secondItem="QiK-Ep-ous" secondAttribute="trailing" constant="50" id="8Q6-1x-YGa"/>
+                            <constraint firstItem="QiK-Ep-ous" firstAttribute="firstBaseline" secondItem="jkh-Ho-bcT" secondAttribute="baseline" constant="60" id="DYr-aK-t0F"/>
+                            <constraint firstItem="jkh-Ho-bcT" firstAttribute="firstBaseline" secondItem="OQy-gj-58a" secondAttribute="baseline" constant="150" id="I7k-C0-wC4"/>
+                            <constraint firstItem="BgV-R9-b9X" firstAttribute="trailing" secondItem="OQy-gj-58a" secondAttribute="trailing" id="Llz-BD-shr"/>
+                            <constraint firstItem="BgV-R9-b9X" firstAttribute="trailing" secondItem="fj0-Wb-68R" secondAttribute="trailing" constant="235" id="MSd-5a-zcG"/>
+                            <constraint firstItem="OQy-gj-58a" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" id="RUa-5E-ajZ"/>
                             <constraint firstItem="YEW-HQ-XI4" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" constant="50" id="YrV-qr-S2T"/>
+                            <constraint firstItem="QiK-Ep-ous" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" constant="50" id="cY9-3R-bt6"/>
                             <constraint firstItem="BgV-R9-b9X" firstAttribute="trailing" secondItem="YEW-HQ-XI4" secondAttribute="trailing" constant="50" id="gvk-bR-0Af"/>
+                            <constraint firstItem="YEW-HQ-XI4" firstAttribute="firstBaseline" secondItem="QiK-Ep-ous" secondAttribute="baseline" constant="60" id="i1m-KP-dmk"/>
+                            <constraint firstItem="BgV-R9-b9X" firstAttribute="trailing" secondItem="jkh-Ho-bcT" secondAttribute="trailing" constant="50" id="iBR-Zz-X18"/>
+                            <constraint firstItem="jkh-Ho-bcT" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" constant="50" id="jSe-oH-iZe"/>
+                            <constraint firstItem="fj0-Wb-68R" firstAttribute="top" secondItem="BgV-R9-b9X" secondAttribute="top" constant="57" id="oAD-aG-OFk"/>
+                            <constraint firstItem="fj0-Wb-68R" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" constant="42" id="qOX-Dd-S32"/>
                             <constraint firstItem="BgV-R9-b9X" firstAttribute="bottom" secondItem="YEW-HQ-XI4" secondAttribute="bottom" constant="120" id="rI2-Fd-fvk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="O3q-Mb-Rz7"/>
                     <connections>
+                        <outlet property="emailLoginLabel" destination="fj0-Wb-68R" id="wuz-f4-fv4"/>
+                        <outlet property="emailTextField" destination="jkh-Ho-bcT" id="bQ9-lQ-zlU"/>
+                        <outlet property="passwordTextField" destination="QiK-Ep-ous" id="d7M-Bd-XQa"/>
                         <outlet property="registerButton" destination="YEW-HQ-XI4" id="QhT-pH-2Mg"/>
                     </connections>
                 </viewController>
@@ -203,12 +236,13 @@
             <point key="canvasLocation" x="568" y="173"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Background" width="4608" height="3072"/>
         <image name="Email Icon" width="14" height="13"/>
-        <image name="Facebook Icon" width="19" height="19"/>
         <image name="Google Icon" width="12" height="13"/>
         <image name="Logo" width="52" height="52"/>
+        <image name="White Facebook Icon" width="7" height="13"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
