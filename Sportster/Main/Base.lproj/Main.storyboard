@@ -27,30 +27,104 @@
         <!--View Controller-->
         <scene sceneID="MOE-X0-oUy">
             <objects>
-                <viewController id="21N-At-E5k" sceneMemberID="viewController">
+                <viewController id="21N-At-E5k" customClass="ViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ezw-o4-oWl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cheeeees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbA-E0-EW9">
-                                <rect key="frame" x="169" y="438" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeV-Ga-K2c" userLabel="EventPost">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snowboarding" translatesAutoresizingMaskIntoConstraints="NO" id="UWR-fL-MUR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simon Andersen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFO-0s-GV5">
+                                        <rect key="frame" x="88" y="25" width="169.5" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placering: Farum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcF-JX-IAF">
+                                        <rect key="frame" x="88" y="53" width="107" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPy-xv-Kr1">
+                                        <rect key="frame" x="50" y="597" width="314" height="45"/>
+                                        <color key="backgroundColor" red="0.16470588235294117" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Szw-gl-E0D"/>
+                                        </constraints>
+                                        <state key="normal" title="Mangler 4 til fodbold">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1L-IS-AzN">
+                                        <rect key="frame" x="25" y="25" width="55" height="55"/>
+                                        <state key="normal" image="Profile"/>
+                                        <connections>
+                                            <segue destination="f0U-ir-Gc7" kind="show" id="SqW-5g-gNN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="tcF-JX-IAF" firstAttribute="leading" secondItem="J1L-IS-AzN" secondAttribute="trailing" constant="8" symbolic="YES" id="3PK-6i-rFS"/>
+                                    <constraint firstItem="XPy-xv-Kr1" firstAttribute="leading" secondItem="XeV-Ga-K2c" secondAttribute="leading" constant="50" id="AVK-dP-va3"/>
+                                    <constraint firstAttribute="bottom" secondItem="UWR-fL-MUR" secondAttribute="bottom" id="CSR-em-cje"/>
+                                    <constraint firstItem="UWR-fL-MUR" firstAttribute="leading" secondItem="XeV-Ga-K2c" secondAttribute="leading" id="Che-3D-g3f"/>
+                                    <constraint firstItem="UWR-fL-MUR" firstAttribute="top" secondItem="XeV-Ga-K2c" secondAttribute="top" id="I1o-Dv-pPu"/>
+                                    <constraint firstAttribute="bottom" secondItem="XPy-xv-Kr1" secondAttribute="bottom" constant="132" id="JBX-qd-odC"/>
+                                    <constraint firstItem="J1L-IS-AzN" firstAttribute="leading" secondItem="XeV-Ga-K2c" secondAttribute="leading" constant="25" id="MwM-Js-5Rp"/>
+                                    <constraint firstItem="J1L-IS-AzN" firstAttribute="top" secondItem="XeV-Ga-K2c" secondAttribute="top" constant="25" id="YUJ-re-haq"/>
+                                    <constraint firstAttribute="trailing" secondItem="XPy-xv-Kr1" secondAttribute="trailing" constant="50" id="ZAW-QO-Nch"/>
+                                    <constraint firstItem="kFO-0s-GV5" firstAttribute="leading" secondItem="J1L-IS-AzN" secondAttribute="trailing" constant="8" symbolic="YES" id="aWc-U2-Sbx"/>
+                                    <constraint firstAttribute="trailing" secondItem="UWR-fL-MUR" secondAttribute="trailing" id="isK-wG-fRe"/>
+                                    <constraint firstItem="kFO-0s-GV5" firstAttribute="top" secondItem="XeV-Ga-K2c" secondAttribute="top" constant="25" id="n5t-5V-paa"/>
+                                    <constraint firstItem="UWR-fL-MUR" firstAttribute="top" secondItem="kFO-0s-GV5" secondAttribute="bottom" constant="-52" id="vum-fG-8O4"/>
+                                    <constraint firstItem="tcF-JX-IAF" firstAttribute="firstBaseline" secondItem="kFO-0s-GV5" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="xcK-NR-gzV"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="clK-cG-fIe" appends="YES" id="v75-my-H56"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9sB-d0-s45"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="XeV-Ga-K2c" firstAttribute="top" secondItem="9sB-d0-s45" secondAttribute="top" id="0Tt-Sm-hUB"/>
+                            <constraint firstItem="9sB-d0-s45" firstAttribute="bottom" secondItem="XeV-Ga-K2c" secondAttribute="bottom" id="bgl-Qd-u7b"/>
+                            <constraint firstItem="XeV-Ga-K2c" firstAttribute="leading" secondItem="9sB-d0-s45" secondAttribute="leading" id="f6b-Wf-FbK"/>
+                            <constraint firstItem="9sB-d0-s45" firstAttribute="trailing" secondItem="XeV-Ga-K2c" secondAttribute="trailing" id="w0G-6s-tKc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ude-Pf-8aE"/>
+                    <connections>
+                        <outlet property="informationButton" destination="XPy-xv-Kr1" id="pgO-Bq-f30"/>
+                        <outlet property="profileButton" destination="J1L-IS-AzN" id="Co4-dw-BHo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIH-4f-oL5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="clK-cG-fIe"/>
             </objects>
-            <point key="canvasLocation" x="-281" y="-534"/>
+            <point key="canvasLocation" x="-281.15942028985512" y="-534.375"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="FgU-Ac-gub">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="f0U-ir-Gc7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ozc-uC-ocN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="47X-gH-jps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="-1159"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Profile" width="55" height="55"/>
+        <image name="Snowboarding" width="375" height="667"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
