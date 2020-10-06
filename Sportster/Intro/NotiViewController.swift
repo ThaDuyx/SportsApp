@@ -10,6 +10,8 @@ import UIKit
 
 class NotiViewController: UIViewController{
     @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet weak var notiViewImage: UIView!
+    @IBOutlet weak var notiViewImageTwo: UIView!
     @IBAction func endIntroTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "MainVC")
@@ -21,6 +23,9 @@ class NotiViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        notiViewImage.layer.cornerRadius = 20
+        notiViewImageTwo.layer.cornerRadius = 20
         
         //https://stackoverflow.com/a/59463814
         //----------------------------------------
