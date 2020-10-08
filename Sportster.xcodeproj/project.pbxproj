@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10A9418130CB86E9C2BFF659 /* Pods_Sportster_SportsterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F98A75D81ACD7D04FC9E29 /* Pods_Sportster_SportsterUITests.framework */; };
 		6A1D31BC252630E100D2F8DE /* NotiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D31BB252630E100D2F8DE /* NotiViewController.swift */; };
 		6A26A87F252337100060351B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A87E252337100060351B /* AppDelegate.swift */; };
 		6A26A881252337100060351B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A880252337100060351B /* SceneDelegate.swift */; };
@@ -16,7 +17,11 @@
 		6A26A88B252337110060351B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A26A889252337110060351B /* LaunchScreen.storyboard */; };
 		6A26A896252337110060351B /* SportsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A895252337110060351B /* SportsterTests.swift */; };
 		6A26A8A1252337110060351B /* SportsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A8A0252337110060351B /* SportsterUITests.swift */; };
+		6A89093F252F7E9100650B5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A89093E252F7E9100650B5E /* GoogleService-Info.plist */; };
+		6A890940252F7E9100650B5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A89093E252F7E9100650B5E /* GoogleService-Info.plist */; };
+		6A890941252F7E9100650B5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A89093E252F7E9100650B5E /* GoogleService-Info.plist */; };
 		6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB44135252C61F400BB8AD6 /* InterestsCell.swift */; };
+		7979C56C274E141DC4F6A8C4 /* Pods_Sportster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53E86061076374187D36D41 /* Pods_Sportster.framework */; };
 		8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8380C95F25233F0C0028FEA4 /* Intro.storyboard */; };
 		8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8380C96425233F1B0028FEA4 /* Login.storyboard */; };
 		8380C96A25233F2C0028FEA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C96925233F2C0028FEA4 /* LoginViewController.swift */; };
@@ -27,6 +32,7 @@
 		83A18142252C8EC10095FE9E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A18141252C8EC10095FE9E /* Profile.storyboard */; };
 		83A1814A252C97B50095FE9E /* DataCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18149252C97B50095FE9E /* DataCollectionCell.swift */; };
 		83A1814F252CA2A50095FE9E /* BackgroundGradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1814E252CA2A50095FE9E /* BackgroundGradientColor.swift */; };
+		A15CA9E84BD3A1C950C90A9D /* Pods_SportsterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D8DA65A329285EAE3FC5B74 /* Pods-SportsterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsterTests.debug.xcconfig"; path = "Target Support Files/Pods-SportsterTests/Pods-SportsterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		58F98A75D81ACD7D04FC9E29 /* Pods_Sportster_SportsterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportster_SportsterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68B94EBA2EC7E16F2BA369BC /* Pods-Sportster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster.debug.xcconfig"; path = "Target Support Files/Pods-Sportster/Pods-Sportster.debug.xcconfig"; sourceTree = "<group>"; };
 		6A1D31BB252630E100D2F8DE /* NotiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiViewController.swift; sourceTree = "<group>"; };
 		6A26A87B252337100060351B /* Sportster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A26A87E252337100060351B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +71,7 @@
 		6A26A89C252337110060351B /* SportsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A26A8A0252337110060351B /* SportsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsterUITests.swift; sourceTree = "<group>"; };
 		6A26A8A2252337110060351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A89093E252F7E9100650B5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6AB44135252C61F400BB8AD6 /* InterestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
 		8380C95F25233F0C0028FEA4 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		8380C96425233F1B0028FEA4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -73,6 +83,12 @@
 		83A18141252C8EC10095FE9E /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		83A18149252C97B50095FE9E /* DataCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionCell.swift; sourceTree = "<group>"; };
 		83A1814E252CA2A50095FE9E /* BackgroundGradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientColor.swift; sourceTree = "<group>"; };
+		8F0996CDB5B50F669276A2EA /* Pods-Sportster-SportsterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster-SportsterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C53E86061076374187D36D41 /* Pods_Sportster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C1F195275A7191463B56E0 /* Pods-Sportster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster.release.xcconfig"; path = "Target Support Files/Pods-Sportster/Pods-Sportster.release.xcconfig"; sourceTree = "<group>"; };
+		D6D3A2A047A5F4D81DBFC319 /* Pods-Sportster-SportsterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster-SportsterUITests.release.xcconfig"; path = "Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D938CEC90CF557C8D291EC6C /* Pods-SportsterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsterTests.release.xcconfig"; path = "Target Support Files/Pods-SportsterTests/Pods-SportsterTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7979C56C274E141DC4F6A8C4 /* Pods_Sportster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15CA9E84BD3A1C950C90A9D /* Pods_SportsterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,12 +112,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A9418130CB86E9C2BFF659 /* Pods_Sportster_SportsterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60B21C4EA68BB80A56E732BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68B94EBA2EC7E16F2BA369BC /* Pods-Sportster.debug.xcconfig */,
+				D5C1F195275A7191463B56E0 /* Pods-Sportster.release.xcconfig */,
+				8F0996CDB5B50F669276A2EA /* Pods-Sportster-SportsterUITests.debug.xcconfig */,
+				D6D3A2A047A5F4D81DBFC319 /* Pods-Sportster-SportsterUITests.release.xcconfig */,
+				2D8DA65A329285EAE3FC5B74 /* Pods-SportsterTests.debug.xcconfig */,
+				D938CEC90CF557C8D291EC6C /* Pods-SportsterTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6A26A872252337100060351B = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +139,8 @@
 				6A26A894252337110060351B /* SportsterTests */,
 				6A26A89F252337110060351B /* SportsterUITests */,
 				6A26A87C252337100060351B /* Products */,
+				60B21C4EA68BB80A56E732BF /* Pods */,
+				C29FFD738B5BBBFFAB1FC7C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +166,7 @@
 				6A26A887252337110060351B /* Assets.xcassets */,
 				6A26A889252337110060351B /* LaunchScreen.storyboard */,
 				6A26A88C252337110060351B /* Info.plist */,
+				6A89093E252F7E9100650B5E /* GoogleService-Info.plist */,
 			);
 			path = Sportster;
 			sourceTree = "<group>";
@@ -196,6 +231,16 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		C29FFD738B5BBBFFAB1FC7C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C53E86061076374187D36D41 /* Pods_Sportster.framework */,
+				58F98A75D81ACD7D04FC9E29 /* Pods_Sportster_SportsterUITests.framework */,
+				A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A26A8A5252337110060351B /* Build configuration list for PBXNativeTarget "Sportster" */;
 			buildPhases = (
+				BB99BE67A1181BE71D6DE984 /* [CP] Check Pods Manifest.lock */,
 				6A26A877252337100060351B /* Sources */,
 				6A26A878252337100060351B /* Frameworks */,
 				6A26A879252337100060351B /* Resources */,
+				B4DDD5B2D8F68D542DBB6413 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A26A8A8252337110060351B /* Build configuration list for PBXNativeTarget "SportsterTests" */;
 			buildPhases = (
+				3E493320A3824B498B3A72A2 /* [CP] Check Pods Manifest.lock */,
 				6A26A88D252337110060351B /* Sources */,
 				6A26A88E252337110060351B /* Frameworks */,
 				6A26A88F252337110060351B /* Resources */,
@@ -238,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A26A8AB252337110060351B /* Build configuration list for PBXNativeTarget "SportsterUITests" */;
 			buildPhases = (
+				C3032F7A4B96D8195EF3354A /* [CP] Check Pods Manifest.lock */,
 				6A26A898252337110060351B /* Sources */,
 				6A26A899252337110060351B /* Frameworks */,
 				6A26A89A252337110060351B /* Resources */,
+				8AEC25985139E675CC0F67A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,6 +355,7 @@
 				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
 				83A18142252C8EC10095FE9E /* Profile.storyboard in Resources */,
 				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
+				6A89093F252F7E9100650B5E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A890940252F7E9100650B5E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,10 +371,114 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A890941252F7E9100650B5E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E493320A3824B498B3A72A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportsterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AEC25985139E675CC0F67A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4DDD5B2D8F68D542DBB6413 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportster/Pods-Sportster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportster/Pods-Sportster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sportster/Pods-Sportster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB99BE67A1181BE71D6DE984 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sportster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3032F7A4B96D8195EF3354A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sportster-SportsterUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6A26A877252337100060351B /* Sources */ = {
@@ -513,12 +669,14 @@
 		};
 		6A26A8A6252337110060351B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68B94EBA2EC7E16F2BA369BC /* Pods-Sportster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
 				INFOPLIST_FILE = Sportster/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,12 +690,14 @@
 		};
 		6A26A8A7252337110060351B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5C1F195275A7191463B56E0 /* Pods-Sportster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
 				INFOPLIST_FILE = Sportster/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -551,6 +711,7 @@
 		};
 		6A26A8A9252337110060351B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D8DA65A329285EAE3FC5B74 /* Pods-SportsterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -573,6 +734,7 @@
 		};
 		6A26A8AA252337110060351B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D938CEC90CF557C8D291EC6C /* Pods-SportsterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -595,6 +757,7 @@
 		};
 		6A26A8AC252337110060351B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F0996CDB5B50F669276A2EA /* Pods-Sportster-SportsterUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -615,6 +778,7 @@
 		};
 		6A26A8AD252337110060351B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6D3A2A047A5F4D81DBFC319 /* Pods-Sportster-SportsterUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
