@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		10A9418130CB86E9C2BFF659 /* Pods_Sportster_SportsterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F98A75D81ACD7D04FC9E29 /* Pods_Sportster_SportsterUITests.framework */; };
+		6A006DCE252FA24D006585E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A006DCD252FA24D006585E4 /* GoogleService-Info.plist */; };
+		6A006DCF252FA24D006585E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A006DCD252FA24D006585E4 /* GoogleService-Info.plist */; };
+		6A006DD0252FA24D006585E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A006DCD252FA24D006585E4 /* GoogleService-Info.plist */; };
 		6A1D31BC252630E100D2F8DE /* NotiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D31BB252630E100D2F8DE /* NotiViewController.swift */; };
 		6A26A87F252337100060351B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A87E252337100060351B /* AppDelegate.swift */; };
 		6A26A881252337100060351B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A880252337100060351B /* SceneDelegate.swift */; };
@@ -17,9 +20,6 @@
 		6A26A88B252337110060351B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A26A889252337110060351B /* LaunchScreen.storyboard */; };
 		6A26A896252337110060351B /* SportsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A895252337110060351B /* SportsterTests.swift */; };
 		6A26A8A1252337110060351B /* SportsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A8A0252337110060351B /* SportsterUITests.swift */; };
-		6A89093F252F7E9100650B5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A89093E252F7E9100650B5E /* GoogleService-Info.plist */; };
-		6A890940252F7E9100650B5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A89093E252F7E9100650B5E /* GoogleService-Info.plist */; };
-		6A890941252F7E9100650B5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A89093E252F7E9100650B5E /* GoogleService-Info.plist */; };
 		6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB44135252C61F400BB8AD6 /* InterestsCell.swift */; };
 		7979C56C274E141DC4F6A8C4 /* Pods_Sportster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53E86061076374187D36D41 /* Pods_Sportster.framework */; };
 		8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8380C95F25233F0C0028FEA4 /* Intro.storyboard */; };
@@ -56,6 +56,7 @@
 		2D8DA65A329285EAE3FC5B74 /* Pods-SportsterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsterTests.debug.xcconfig"; path = "Target Support Files/Pods-SportsterTests/Pods-SportsterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		58F98A75D81ACD7D04FC9E29 /* Pods_Sportster_SportsterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportster_SportsterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B94EBA2EC7E16F2BA369BC /* Pods-Sportster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster.debug.xcconfig"; path = "Target Support Files/Pods-Sportster/Pods-Sportster.debug.xcconfig"; sourceTree = "<group>"; };
+		6A006DCD252FA24D006585E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		6A1D31BB252630E100D2F8DE /* NotiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiViewController.swift; sourceTree = "<group>"; };
 		6A26A87B252337100060351B /* Sportster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A26A87E252337100060351B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		6A26A89C252337110060351B /* SportsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A26A8A0252337110060351B /* SportsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsterUITests.swift; sourceTree = "<group>"; };
 		6A26A8A2252337110060351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A89093E252F7E9100650B5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6AB44135252C61F400BB8AD6 /* InterestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
 		8380C95F25233F0C0028FEA4 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		8380C96425233F1B0028FEA4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 				6A26A887252337110060351B /* Assets.xcassets */,
 				6A26A889252337110060351B /* LaunchScreen.storyboard */,
 				6A26A88C252337110060351B /* Info.plist */,
-				6A89093E252F7E9100650B5E /* GoogleService-Info.plist */,
+				6A006DCD252FA24D006585E4 /* GoogleService-Info.plist */,
 			);
 			path = Sportster;
 			sourceTree = "<group>";
@@ -355,7 +355,7 @@
 				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
 				83A18142252C8EC10095FE9E /* Profile.storyboard in Resources */,
 				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
-				6A89093F252F7E9100650B5E /* GoogleService-Info.plist in Resources */,
+				6A006DCE252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A890940252F7E9100650B5E /* GoogleService-Info.plist in Resources */,
+				6A006DCF252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A890941252F7E9100650B5E /* GoogleService-Info.plist in Resources */,
+				6A006DD0252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
