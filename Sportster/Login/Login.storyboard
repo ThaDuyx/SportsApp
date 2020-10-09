@@ -197,7 +197,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj0-Wb-68R">
-                                <rect key="frame" x="42" y="145" width="137" height="0.0"/>
+                                <rect key="frame" x="42" y="145" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.10980392160000001" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -210,7 +210,6 @@
                             <constraint firstItem="QiK-Ep-ous" firstAttribute="firstBaseline" secondItem="jkh-Ho-bcT" secondAttribute="baseline" constant="60" id="DYr-aK-t0F"/>
                             <constraint firstItem="jkh-Ho-bcT" firstAttribute="firstBaseline" secondItem="OQy-gj-58a" secondAttribute="baseline" constant="150" id="I7k-C0-wC4"/>
                             <constraint firstItem="BgV-R9-b9X" firstAttribute="trailing" secondItem="OQy-gj-58a" secondAttribute="trailing" id="Llz-BD-shr"/>
-                            <constraint firstItem="BgV-R9-b9X" firstAttribute="trailing" secondItem="fj0-Wb-68R" secondAttribute="trailing" constant="235" id="MSd-5a-zcG"/>
                             <constraint firstItem="OQy-gj-58a" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" id="RUa-5E-ajZ"/>
                             <constraint firstItem="YEW-HQ-XI4" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" constant="50" id="YrV-qr-S2T"/>
                             <constraint firstItem="QiK-Ep-ous" firstAttribute="leading" secondItem="BgV-R9-b9X" secondAttribute="leading" constant="50" id="cY9-3R-bt6"/>

@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3t-iG-Q4f">
-                                <rect key="frame" x="42" y="145" width="120" height="0.0"/>
+                                <rect key="frame" x="42" y="145" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -106,7 +106,6 @@
                             <constraint firstItem="cbu-0i-gdv" firstAttribute="leading" secondItem="aAs-Nk-QFB" secondAttribute="leading" constant="71" id="8le-5a-Oz0"/>
                             <constraint firstItem="l3t-iG-Q4f" firstAttribute="leading" secondItem="aAs-Nk-QFB" secondAttribute="leading" constant="42" id="Px3-w2-055"/>
                             <constraint firstItem="AXe-66-Vxn" firstAttribute="leading" secondItem="aAs-Nk-QFB" secondAttribute="leading" constant="50" id="Rkj-Ex-w3w"/>
-                            <constraint firstItem="aAs-Nk-QFB" firstAttribute="trailing" secondItem="l3t-iG-Q4f" secondAttribute="trailing" constant="252" id="Rvd-et-Mk2"/>
                             <constraint firstItem="aAs-Nk-QFB" firstAttribute="trailing" secondItem="cbu-0i-gdv" secondAttribute="trailing" constant="71" id="X6H-Pe-27z"/>
                             <constraint firstItem="l3t-iG-Q4f" firstAttribute="top" secondItem="aAs-Nk-QFB" secondAttribute="top" constant="57" id="Zty-qH-fvB"/>
                             <constraint firstItem="AXe-66-Vxn" firstAttribute="top" secondItem="cbu-0i-gdv" secondAttribute="bottom" constant="98" id="gUj-Wc-s6E"/>
@@ -132,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do8-nk-eN2">
-                                <rect key="frame" x="42" y="145" width="150" height="0.0"/>
+                                <rect key="frame" x="42" y="145" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -188,7 +187,6 @@
                             <constraint firstItem="bkU-w3-lUF" firstAttribute="top" secondItem="do8-nk-eN2" secondAttribute="bottom" constant="175" id="aKk-FA-ow1"/>
                             <constraint firstItem="do8-nk-eN2" firstAttribute="top" secondItem="NEP-Or-u50" secondAttribute="top" constant="57" id="bLf-zv-FIJ"/>
                             <constraint firstItem="8t8-SB-tVo" firstAttribute="top" secondItem="EKY-QH-Y8o" secondAttribute="bottom" constant="21" id="cFt-gT-JaA"/>
-                            <constraint firstAttribute="trailing" secondItem="do8-nk-eN2" secondAttribute="trailing" constant="222" id="fBB-Pm-doZ"/>
                             <constraint firstItem="do8-nk-eN2" firstAttribute="leading" secondItem="uKh-oe-oC4" secondAttribute="leading" constant="42" id="kNa-ZD-SYG"/>
                             <constraint firstItem="NEP-Or-u50" firstAttribute="trailing" secondItem="EKY-QH-Y8o" secondAttribute="trailing" constant="50" id="kzZ-h9-kK6"/>
                             <constraint firstItem="bkU-w3-lUF" firstAttribute="leading" secondItem="NEP-Or-u50" secondAttribute="leading" constant="132" id="mTg-ag-wQO"/>
