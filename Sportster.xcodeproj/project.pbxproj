@@ -29,7 +29,6 @@
 		8380C98B252368180028FEA4 /* RegistrerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C98A252368180028FEA4 /* RegistrerViewController.swift */; };
 		83A18132252B50790095FE9E /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18131252B50790095FE9E /* TextField.swift */; };
 		83A18138252C8A4B0095FE9E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18137252C8A4B0095FE9E /* ProfileViewController.swift */; };
-		83A18142252C8EC10095FE9E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A18141252C8EC10095FE9E /* Profile.storyboard */; };
 		83A1814A252C97B50095FE9E /* DataCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18149252C97B50095FE9E /* DataCollectionCell.swift */; };
 		83A1814F252CA2A50095FE9E /* BackgroundGradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1814E252CA2A50095FE9E /* BackgroundGradientColor.swift */; };
 		A15CA9E84BD3A1C950C90A9D /* Pods_SportsterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */; };
@@ -80,7 +79,6 @@
 		8380C98A252368180028FEA4 /* RegistrerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrerViewController.swift; sourceTree = "<group>"; };
 		83A18131252B50790095FE9E /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		83A18137252C8A4B0095FE9E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		83A18141252C8EC10095FE9E /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		83A18149252C97B50095FE9E /* DataCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionCell.swift; sourceTree = "<group>"; };
 		83A1814E252CA2A50095FE9E /* BackgroundGradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientColor.swift; sourceTree = "<group>"; };
 		8F0996CDB5B50F669276A2EA /* Pods-Sportster-SportsterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster-SportsterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 		83A18136252C8A3A0095FE9E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				83A18141252C8EC10095FE9E /* Profile.storyboard */,
 				83A18137252C8A4B0095FE9E /* ProfileViewController.swift */,
 				83A18149252C97B50095FE9E /* DataCollectionCell.swift */,
 				83A1814E252CA2A50095FE9E /* BackgroundGradientColor.swift */,
@@ -353,7 +350,6 @@
 				6A26A888252337110060351B /* Assets.xcassets in Resources */,
 				6A26A886252337100060351B /* Main.storyboard in Resources */,
 				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
-				83A18142252C8EC10095FE9E /* Profile.storyboard in Resources */,
 				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
 				6A006DCE252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
