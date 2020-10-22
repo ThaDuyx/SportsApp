@@ -8,7 +8,7 @@
 import UIKit
 
 class BackgroundGradientColor: UIView {
-    private let gradientLayer = CAGradientLayer()
+   /* private let gradientLayer = CAGradientLayer()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,5 +41,5 @@ class BackgroundGradientColor: UIView {
 
         // add the gradient to your view (which in my case is gradientView)
         self.layer.insertSublayer(gradientLayer, at: 0)
-    }
+    }*/
 }

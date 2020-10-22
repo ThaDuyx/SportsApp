@@ -14,8 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var fLoginButton: UIButton!
     @IBOutlet weak var gLoginButton: UIButton!
     @IBOutlet weak var eLoginButton: UIButton!
+    @IBOutlet weak var signUpLabel: UILabel!
     override func viewDidLoad() {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
         super.viewDidLoad()
         
         topBoxView.layer.cornerRadius = topBoxView.frame.size.width/2
@@ -26,4 +26,9 @@ class LoginViewController: UIViewController {
         eLoginButton.layer.cornerRadius = 20
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
 }
+

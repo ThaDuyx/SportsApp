@@ -24,8 +24,8 @@ class ProfileViewController: UIViewController {
 
         gradient = CAGradientLayer()
         gradient.frame = informationView.bounds
-        gradient.colors = [UIColor.init(rgb: 0x1C8E8E).withAlphaComponent(0.2).cgColor, UIColor.init(rgb: 0x1C8E8E).withAlphaComponent(0.3).cgColor, UIColor.init(rgb: 0x1C8E8E).cgColor, UIColor.init(rgb: 0x1C8E8E).cgColor]
-        gradient.locations = [0, 0.05, 0.1, 1]
+        gradient.colors = [UIColor.init(rgb: 0x1C8E8E).withAlphaComponent(0.3).cgColor, UIColor.init(rgb: 0x1C8E8E).withAlphaComponent(0.4).cgColor, UIColor.init(rgb: 0x1C8E8E).cgColor, UIColor.init(rgb: 0x1C8E8E).cgColor]
+        gradient.locations = [0, 0.005, 0.05, 1]
         informationView.layer.addSublayer(gradient)
     }
     
