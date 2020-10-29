@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var informationButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var addEventButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +19,9 @@ class ViewController: UIViewController {
         
         profileButton.layer.cornerRadius = profileButton.frame.height/2
         profileButton.clipsToBounds = true
+        
+        addEventButton.layer.cornerRadius = addEventButton.frame.height/2
+        addEventButton.clipsToBounds = true
 
         informationButton.layer.cornerRadius = 20
 
