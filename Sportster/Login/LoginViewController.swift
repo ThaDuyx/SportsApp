@@ -68,8 +68,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet weak var gLoginButton: UIButton!
     @IBOutlet weak var fLoginButton: UIButton!
     @IBOutlet weak var eLoginButton: UIButton!
+    @IBOutlet weak var signUpLabel: UILabel!
     override func viewDidLoad() {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
         super.viewDidLoad()
         topBoxView.layer.cornerRadius = topBoxView.frame.size.width/2
         topBoxView.clipsToBounds = true
@@ -81,5 +81,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
     }
-
-}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    }
