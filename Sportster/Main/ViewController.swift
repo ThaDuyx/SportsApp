@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var informationButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var addEventButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,10 +23,12 @@ class ViewController: UIViewController {
         
         addEventButton.layer.cornerRadius = addEventButton.frame.height/2
         addEventButton.clipsToBounds = true
+        addEventButton.layer.zPosition = 1
 
         informationButton.layer.cornerRadius = 20
 
     }
 
 }
+
 

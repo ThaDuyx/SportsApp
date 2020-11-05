@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="21N-At-E5k" kind="relationship" relationship="rootViewController" id="5pI-Im-1JS"/>
+                        <segue destination="21N-At-E5k" kind="relationship" relationship="rootViewController" id="0wZ-Da-58y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gje-KZ-5oP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -60,6 +61,9 @@
                                         <state key="normal" title="Mangler 4 til fodbold">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="hSS-VP-2fb" kind="show" id="LYO-gY-Zwq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1L-IS-AzN">
                                         <rect key="frame" x="25" y="50" width="55" height="55"/>
@@ -79,6 +83,9 @@
                                         <state key="normal" image="plus" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="LBT-VK-Upy" kind="presentation" id="MiD-sa-3bT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -99,6 +106,7 @@
                                 </connections>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="NCG-We-QfJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -125,6 +133,111 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="clK-cG-fIe"/>
             </objects>
             <point key="canvasLocation" x="-281.15942028985512" y="-534.375"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xGC-3v-m6t">
+            <objects>
+                <viewController id="LBT-VK-Upy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jB5-Fi-gvf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="I7D-Uj-oC2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixB-2d-dq6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949" y="-1072"/>
+        </scene>
+        <!--Event View Controller-->
+        <scene sceneID="ybU-nn-vaG">
+            <objects>
+                <viewController id="hSS-VP-2fb" customClass="EventViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hk9-J4-C3v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsD-w8-D0Z">
+                                <rect key="frame" x="347" y="55" width="23" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="0.10980392160000001" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="person" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTd-oe-Jek">
+                                <rect key="frame" x="180" y="782" width="55" height="55"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="6VK-qL-Ja1"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0h4-7X-DI9">
+                                <rect key="frame" x="20" y="138" width="374" height="624"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aIy-Fc-pcq">
+                                    <size key="itemSize" width="374" height="550"/>
+                                    <size key="estimatedItemSize" width="300" height="550"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="x2s-OX-z5f" customClass="EventDataCollectionCell" customModule="Sportster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="624"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dY4-2A-qwM">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="624"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="tKz-2g-Rxi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="372" height="642"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tKz-2g-Rxi" firstAttribute="leading" secondItem="dY4-2A-qwM" secondAttribute="leading" id="hU2-i8-nba"/>
+                                                <constraint firstItem="tKz-2g-Rxi" firstAttribute="top" secondItem="dY4-2A-qwM" secondAttribute="top" id="rpS-I3-wOS"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="374" height="624"/>
+                                        <connections>
+                                            <outlet property="eventBackgroundImage" destination="tKz-2g-Rxi" id="vA6-Ud-abw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="hSS-VP-2fb" id="Pgj-Go-3fG"/>
+                                    <outlet property="delegate" destination="hSS-VP-2fb" id="pav-TS-0wk"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WAF-LC-6g9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WAF-LC-6g9" firstAttribute="trailing" secondItem="0h4-7X-DI9" secondAttribute="trailing" constant="20" id="5Ad-dR-e5X"/>
+                            <constraint firstItem="tTd-oe-Jek" firstAttribute="leading" secondItem="WAF-LC-6g9" secondAttribute="leading" constant="180" id="Bve-VB-cy4"/>
+                            <constraint firstItem="AsD-w8-D0Z" firstAttribute="top" secondItem="Hk9-J4-C3v" secondAttribute="top" constant="55" id="FhS-LZ-EBg"/>
+                            <constraint firstItem="0h4-7X-DI9" firstAttribute="leading" secondItem="WAF-LC-6g9" secondAttribute="leading" constant="20" id="UsL-2J-LYU"/>
+                            <constraint firstItem="WAF-LC-6g9" firstAttribute="bottom" secondItem="0h4-7X-DI9" secondAttribute="bottom" constant="100" id="YKs-N1-Xyq"/>
+                            <constraint firstItem="WAF-LC-6g9" firstAttribute="trailing" secondItem="AsD-w8-D0Z" secondAttribute="trailing" constant="44" id="cwc-7K-cDb"/>
+                            <constraint firstItem="WAF-LC-6g9" firstAttribute="bottom" secondItem="tTd-oe-Jek" secondAttribute="bottom" constant="25" id="rVs-la-u6H"/>
+                            <constraint firstItem="WAF-LC-6g9" firstAttribute="trailing" secondItem="tTd-oe-Jek" secondAttribute="trailing" constant="179" id="wIj-OU-VtY"/>
+                            <constraint firstItem="0h4-7X-DI9" firstAttribute="top" secondItem="WAF-LC-6g9" secondAttribute="top" constant="50" id="yMP-Jf-zvA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rVD-y6-mxd"/>
+                    <connections>
+                        <outlet property="eventBackgroundCollection" destination="0h4-7X-DI9" id="2wF-bU-Ajk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9H-7G-gz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-642.02898550724638" y="300"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="bOd-aB-DJR">
@@ -185,6 +298,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="kwg-25-mv5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ehF-r5-rR5" secondAttribute="trailing" id="6wW-I7-NiI"/>
@@ -212,6 +326,7 @@
     <resources>
         <image name="Profile" width="55" height="55"/>
         <image name="Snowboarding" width="375" height="667"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
