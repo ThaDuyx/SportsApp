@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -84,6 +85,9 @@
                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="48" maxY="0.0"/>
                                 <state key="normal" title="Forsæt med Gmail" image="Google Icon"/>
+                                <connections>
+                                    <action selector="gButtonTapped:" destination="V5J-W7-47a" eventType="touchUpInside" id="jcm-jj-DZq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yP4-3V-Eym">
                                 <rect key="frame" x="50" y="533" width="314" height="45"/>
@@ -96,6 +100,9 @@
                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="33" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="33" maxY="0.0"/>
                                 <state key="normal" title="Forsæt med Facebook" image="White Facebook Icon"/>
+                                <connections>
+                                    <action selector="fButtonTapped:" destination="V5J-W7-47a" eventType="touchUpInside" id="Apk-BC-ycH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOY-R9-u09">
                                 <rect key="frame" x="0.0" y="336" width="414" height="30"/>
@@ -124,6 +131,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="jDN-OF-OaA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xaX-Rp-nbk" secondAttribute="trailing" constant="50" id="097-fl-X6J"/>
@@ -157,7 +165,7 @@
                     <navigationItem key="navigationItem" id="Xze-P1-nR1"/>
                     <connections>
                         <outlet property="eLoginButton" destination="xaX-Rp-nbk" id="E87-Oe-jYl"/>
-                        <outlet property="fLoginButton" destination="yP4-3V-Eym" id="TmN-Ny-tXP"/>
+                        <outlet property="fLoginButton" destination="yP4-3V-Eym" id="frd-hW-OVm"/>
                         <outlet property="gLoginButton" destination="KRg-Nt-3Ks" id="krW-bO-Dfm"/>
                         <outlet property="signUpLabel" destination="Hev-1K-Ywx" id="dCI-iW-loe"/>
                         <outlet property="topBoxView" destination="RA4-j2-MBU" id="gVc-Fc-cmR"/>
@@ -219,6 +227,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9yY-eZ-HPv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="QiK-Ep-ous" secondAttribute="trailing" constant="50" id="8Q6-1x-YGa"/>

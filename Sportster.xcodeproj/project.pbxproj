@@ -256,6 +256,7 @@
 				6A26A878252337100060351B /* Frameworks */,
 				6A26A879252337100060351B /* Resources */,
 				B4DDD5B2D8F68D542DBB6413 /* [CP] Embed Pods Frameworks */,
+				93C77880786E0AAD7C6E8A82 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,6 +295,7 @@
 				6A26A899252337110060351B /* Frameworks */,
 				6A26A89A252337110060351B /* Resources */,
 				8AEC25985139E675CC0F67A5 /* [CP] Embed Pods Frameworks */,
+				8FBA8FA034EE1AD3562C5F7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -417,6 +419,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FBA8FA034EE1AD3562C5F7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93C77880786E0AAD7C6E8A82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportster/Pods-Sportster-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportster/Pods-Sportster-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sportster/Pods-Sportster-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B4DDD5B2D8F68D542DBB6413 /* [CP] Embed Pods Frameworks */ = {
@@ -678,7 +714,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				DEVELOPMENT_TEAM = ZG95YRN77R;
 				INFOPLIST_FILE = Sportster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -699,7 +735,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				DEVELOPMENT_TEAM = ZG95YRN77R;
 				INFOPLIST_FILE = Sportster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

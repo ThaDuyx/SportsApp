@@ -9,6 +9,7 @@ target 'Sportster' do
 
   # Pods for Sportster
   
+  #Firebase pods
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
   # add pods for any other desired Firebase products
@@ -17,6 +18,14 @@ target 'Sportster' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  
+  # Facebook login
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
+  
+  # Google login
+  pod 'GoogleSignIn'
 
   target 'SportsterTests' do
     inherit! :search_paths
