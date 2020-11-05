@@ -212,12 +212,31 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
+  - FBSDKCoreKit (8.0.0):
+    - FBSDKCoreKit/Basics (= 8.0.0)
+    - FBSDKCoreKit/Core (= 8.0.0)
+  - FBSDKCoreKit/Basics (8.0.0)
+  - FBSDKCoreKit/Core (8.0.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (8.0.0):
+    - FBSDKLoginKit/Login (= 8.0.0)
+  - FBSDKLoginKit/Login (8.0.0):
+    - FBSDKCoreKit (~> 8.0.0)
+  - FBSDKShareKit (8.0.0):
+    - FBSDKShareKit/Share (= 8.0.0)
+  - FBSDKShareKit/Share (8.0.0):
+    - FBSDKCoreKit (~> 8.0.0)
   - Firebase/Analytics (6.34.0):
     - Firebase/Core
   - Firebase/Auth (6.34.0):
@@ -285,6 +304,10 @@ PODS:
     - nanopb (~> 1.30906.0)
   - GoogleDataTransport (7.5.1):
     - nanopb (~> 1.30906.0)
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -328,7 +351,14 @@ PODS:
     - BoringSSL-GRPC (= 0.0.7)
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
+  - GTMAppAuth (1.1.0):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher (~> 1.4)
+  - GTMSessionFetcher (1.4.0):
+    - GTMSessionFetcher/Full (= 1.4.0)
   - GTMSessionFetcher/Core (1.4.0)
+  - GTMSessionFetcher/Full (1.4.0):
+    - GTMSessionFetcher/Core (= 1.4.0)
   - leveldb-library (1.22)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
@@ -338,16 +368,24 @@ PODS:
   - PromisesObjC (1.2.11)
 
 DEPENDENCIES:
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Storage
+  - GoogleSignIn
 
 SPEC REPOS:
   trunk:
     - abseil
+    - AppAuth
     - BoringSSL-GRPC
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - FBSDKShareKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -358,9 +396,11 @@ SPEC REPOS:
     - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleSignIn
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
+    - GTMAppAuth
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
@@ -368,7 +408,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
+  FBSDKCoreKit: 9d27fe97a2fa2abe5eeefea8240e837623ab88e0
+  FBSDKLoginKit: 2cbaf5405379731b22f2ebc224f7c30f62378171
+  FBSDKShareKit: bf3705fc42b660c3da9f15223db791b3c9c2acde
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
   FirebaseAuth: c92d49ada7948d1a23466e3db17bc4c2039dddc3
@@ -379,14 +423,16 @@ SPEC CHECKSUMS:
   FirebaseStorage: 15e0f15ef3c7fec3d1899d68623e47d4447066b4
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
+  GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: 2d1f84bf94de0e15337e6d5188cd6d8ac12db8c1
+PODFILE CHECKSUM: 771ac751b8d5362107d92b2142a98fb43d6f434b
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
