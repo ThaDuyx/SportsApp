@@ -21,7 +21,7 @@ class EventViewController: UIViewController {
         
         eventBackgroundCollection.layer.cornerRadius = 10.0
         eventBackgroundCollection.layer.masksToBounds = true
-        
+
     }
 }
 
@@ -34,6 +34,12 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? EventDataCollectionCell
         cell?.eventBackgroundImage.image = imgArrTwo[indexPath.row]
         return cell!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "TestViewController") as? TestViewController
+        vc?.name = imgArrTwo[indexPath.row]
+        self.navigationController?.present(vc!, animated: true, completion: nil)
     }
     
 }

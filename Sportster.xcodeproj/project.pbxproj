@@ -32,6 +32,7 @@
 		83A18132252B50790095FE9E /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18131252B50790095FE9E /* TextField.swift */; };
 		83A18138252C8A4B0095FE9E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18137252C8A4B0095FE9E /* ProfileViewController.swift */; };
 		83A1814A252C97B50095FE9E /* DataCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18149252C97B50095FE9E /* DataCollectionCell.swift */; };
+		83BE30712554485B00E779BA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE30702554485B00E779BA /* TestViewController.swift */; };
 		A15CA9E84BD3A1C950C90A9D /* Pods_SportsterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		83A18131252B50790095FE9E /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		83A18137252C8A4B0095FE9E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		83A18149252C97B50095FE9E /* DataCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionCell.swift; sourceTree = "<group>"; };
+		83BE30702554485B00E779BA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		8F0996CDB5B50F669276A2EA /* Pods-Sportster-SportsterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster-SportsterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53E86061076374187D36D41 /* Pods_Sportster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +220,7 @@
 				6A26A882252337100060351B /* ViewController.swift */,
 				83281D04254AFFA6007503E9 /* EventDataCollectionCell.swift */,
 				83281D09254B096E007503E9 /* EventViewController.swift */,
+				83BE30702554485B00E779BA /* TestViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BE30712554485B00E779BA /* TestViewController.swift in Sources */,
 				8380C96F25233F3B0028FEA4 /* InterestsViewController.swift in Sources */,
 				8380C96A25233F2C0028FEA4 /* LoginViewController.swift in Sources */,
 				83281D0A254B096E007503E9 /* EventViewController.swift in Sources */,
