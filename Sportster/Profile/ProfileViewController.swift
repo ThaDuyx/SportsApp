@@ -16,11 +16,12 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var informationView: UIView!
     @IBOutlet weak var profilePictureCollection: UICollectionView!
+    
     private var gradient: CAGradientLayer!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileNameLabel.layer.zPosition = 1;
+        profileNameLabel.layer.zPosition = 1
 
         gradient = CAGradientLayer()
         gradient.frame = informationView.bounds
