@@ -15,9 +15,7 @@ import GoogleSignIn
 
 
 class LoginViewController: UIViewController, GIDSignInDelegate {
-    
-    
-    
+
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             print(error.localizedDescription)
@@ -34,12 +32,9 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                 print("Login Successful.")
                 //This is where you should add the functionality of successful login
                 //i.e. dismissing this view or push the home view controller etc
-                
             }
-            
         }
 }
-    
 
     @IBAction func fButtonTapped(_ sender: Any) {
         let loginManager = LoginManager()
@@ -56,13 +51,13 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                     return
                 }
             }
+            //Segue
         }
     }
     
     @IBAction func gButtonTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
     }
-    
     
     @IBOutlet weak var topBoxView: UIView!
     @IBOutlet weak var gLoginButton: UIButton!
