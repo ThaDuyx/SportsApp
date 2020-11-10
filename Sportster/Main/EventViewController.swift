@@ -15,12 +15,16 @@ class EventViewController: UIViewController {
                      UIImage(named: "Profile")]
 
     @IBOutlet weak var eventBackgroundCollection: UICollectionView!
+    @IBOutlet weak var profileBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.isNavigationBarHidden = true
+
         eventBackgroundCollection.layer.cornerRadius = 10.0
         eventBackgroundCollection.layer.masksToBounds = true
+        
+        profileBtn.layer.zPosition = 1
 
     }
 }
