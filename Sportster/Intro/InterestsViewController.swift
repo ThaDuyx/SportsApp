@@ -10,25 +10,19 @@ import UIKit
 
 class InterestsViewController: UIViewController {
     
-    let interests = [" Boldsport + ", " Cykling + ", " Skating + ", " Løb + ", " Svømning + ", " Kampsport + ", " Atletik + ", " Fitness + ", " Gymnastik + "]
+    let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     
     
     @IBOutlet weak var interestsLabel: UILabel!
-    @IBOutlet weak var interestsCollectionView: UICollectionView!
-    @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout!{
-        didSet{
-            collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-
-        }
-    }
+    @IBOutlet weak var interestsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interestsCollectionView.delegate = self
-        interestsCollectionView.dataSource = self
-        interestsCollectionView.allowsMultipleSelection = true
-        
+        interestsTableView.delegate = self
+        interestsTableView.dataSource = self
+        interestsTableView.allowsMultipleSelection = true
+    
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         //https://stackoverflow.com/a/59463814
@@ -47,44 +41,52 @@ class InterestsViewController: UIViewController {
     
 }
 
-extension InterestsViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+extension InterestsViewController: UITableViewDataSource, UITableViewDelegate{
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.interests.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 33
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let label = UILabel(frame: CGRect.zero)
-        label.text = interests[indexPath.item]
-        label.sizeToFit()
-        
-        return CGSize(width: label.frame.width + 10, height: 35)
-    }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        interests.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = interestsCollectionView.dequeueReusableCell(withReuseIdentifier: "interestsCell", for: indexPath) as! InterestsCell
-        
-        cell.interestsCellLabel.text = interests[indexPath.row]
-        cell.layer.cornerRadius = 18
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = interestsTableView.dequeueReusableCell(withIdentifier: "interestsCell") as! InterestsCell
+        cell.interestsCellLabelText?.text = interests[indexPath.row]
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.init(rgb:0x2AC0C0)
+        cell.selectedBackgroundView = backgroundView
+
+        cell.layer.cornerRadius = 15
         cell.layer.borderWidth = 2
         cell.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
-
+        
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
     }
     
 }
-
-
-
