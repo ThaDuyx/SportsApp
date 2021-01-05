@@ -28,7 +28,6 @@ class EventViewController: UIViewController {
         makeEventBtn.layer.cornerRadius = makeEventBtn.frame.height/2
         makeEventBtn.clipsToBounds = true
         
-        
         profileBtn.layer.zPosition = 1
 
     }

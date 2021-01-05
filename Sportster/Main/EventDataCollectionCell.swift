@@ -11,6 +11,7 @@ class EventDataCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var eventBackgroundImage: UIImageView!
     @IBOutlet weak var profileBtn: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func layoutSubviews() {
         eventBackgroundImage.layer.cornerRadius = 10.0
@@ -18,6 +19,9 @@ class EventDataCollectionCell: UICollectionViewCell {
         
         profileBtn.layer.cornerRadius = profileBtn.frame.height/2
         profileBtn.clipsToBounds = true
+        
+        titleLabel.layer.cornerRadius = 20
+        titleLabel.layer.masksToBounds = true
     }
     
 }
