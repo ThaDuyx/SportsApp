@@ -67,7 +67,7 @@ extension InterestsViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = interestsTableView.dequeueReusableCell(withIdentifier: "interestsCell") as! InterestsCell
-        cell.interestsCellLabelText?.text = interests[indexPath.row]
+        cell.interestsCellLabelText?.text = interests[indexPath.section]
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.init(rgb:0x2AC0C0)
         cell.selectedBackgroundView = backgroundView
