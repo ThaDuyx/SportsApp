@@ -16,6 +16,7 @@ class EventViewController: UIViewController {
 
     @IBOutlet weak var eventBackgroundCollection: UICollectionView!
     @IBOutlet weak var profileBtn: UIButton!
+    @IBOutlet weak var makeEventBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class EventViewController: UIViewController {
 
         eventBackgroundCollection.layer.cornerRadius = 10.0
         eventBackgroundCollection.layer.masksToBounds = true
+        
+        makeEventBtn.layer.cornerRadius = makeEventBtn.frame.height/2
+        makeEventBtn.clipsToBounds = true
         
         profileBtn.layer.zPosition = 1
 
