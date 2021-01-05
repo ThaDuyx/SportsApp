@@ -38,22 +38,35 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
 
     @IBAction func fButtonTapped(_ sender: Any) {
         let loginManager = LoginManager()
-        loginManager.logIn(permissions: [.publicProfile, .email], viewController: self) { (result) in
-            
-            let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-            Auth.auth().signIn(with: credential) { (user, error) in
-                if let error = error {
-                    print("Login error: \(error.localizedDescription)")
-                    let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
-                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(okayAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    return
-                }
+        loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error{
+                print("Login error: \(error.localizedDescription)")
+                return
             }
-            //Segue
-        }
+            
+            guard AccessToken.current != nil else {
+                print("Failed to receive accessToken")
+                return
+            }
+                
+                let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if let error = error {
+                        print("Login error: \(error.localizedDescription)")
+                        let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+                        let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alertController.addAction(okayAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    } else {
+                        print("Login successfull")
+                        let storyboard = UIStoryboard(name: "Intro", bundle: nil)
+                        let vc = storyboard.instantiateViewController(identifier: "IntroVC")
+                        self.view.window?.rootViewController = vc
+                        self.view.window?.makeKeyAndVisible()
+                    }
+            }
     }
+}
     
     @IBAction func gButtonTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
@@ -79,5 +92,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
     }
-    }
+    
+}

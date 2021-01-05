@@ -7,26 +7,9 @@
 
 import UIKit
 
-class InterestsCell: UICollectionViewCell {
+class InterestsCell: UITableViewCell {
     
-    @IBOutlet weak var interestsCellLabel: UILabel!
+    @IBOutlet weak var interestsCellLabelText: UILabel!
+    
 
-    
-    override var isSelected: Bool {
-            didSet {
-                if self.isSelected {
-                    backgroundColor = UIColor(rgb: 0x2AC0C0)
-                    interestsCellLabel.textColor = UIColor.white
-                }
-                else {
-                    backgroundColor = UIColor.white
-                    interestsCellLabel.textColor = UIColor(rgb: 0x059EA0)
-                }
-            }
-        }
-    
-    
-    //https://www.vadimbulavin.com/collection-view-cells-self-sizing/
-    //--------------------------------------------------------------
-    //--------------------------------------------------------------
 }
