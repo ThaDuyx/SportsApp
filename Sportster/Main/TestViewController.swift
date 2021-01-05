@@ -19,5 +19,6 @@ class TestViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
 
         img.image = name
+
     }
 }
