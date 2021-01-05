@@ -11,5 +11,9 @@ class InterestsCell: UITableViewCell {
     
     @IBOutlet weak var interestsCellLabelText: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
 
 }
