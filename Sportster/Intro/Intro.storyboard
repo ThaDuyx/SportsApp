@@ -100,8 +100,8 @@
                                 </prototypes>
                                 <sections/>
                                 <connections>
-                                    <outlet property="dataSource" destination="qNQ-a3-sxD" id="v91-Ha-6Ax"/>
-                                    <outlet property="delegate" destination="qNQ-a3-sxD" id="Zxc-bo-jhy"/>
+                                    <outlet property="dataSource" destination="ovC-oI-6lQ" id="IoW-FX-Iho"/>
+                                    <outlet property="delegate" destination="ovC-oI-6lQ" id="Sb5-nV-7p3"/>
                                 </connections>
                             </tableView>
                         </subviews>

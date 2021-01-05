@@ -4,7 +4,6 @@
 //
 //  Created by Christoffer Detlef on 29/10/2020.
 //
-
 import Foundation
 import UIKit
 
@@ -27,6 +26,7 @@ class EventViewController: UIViewController {
         
         makeEventBtn.layer.cornerRadius = makeEventBtn.frame.height/2
         makeEventBtn.clipsToBounds = true
+        
         
         profileBtn.layer.zPosition = 1
 
@@ -71,4 +71,3 @@ extension EventViewController: UICollectionViewDelegateFlowLayout{
     }
     
 }
-

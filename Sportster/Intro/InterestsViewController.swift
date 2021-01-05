@@ -47,12 +47,16 @@ extension InterestsViewController: UITableViewDataSource, UITableViewDelegate{
         return self.interests.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 33
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 33
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -60,11 +64,6 @@ extension InterestsViewController: UITableViewDataSource, UITableViewDelegate{
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = interestsTableView.dequeueReusableCell(withIdentifier: "interestsCell") as! InterestsCell
