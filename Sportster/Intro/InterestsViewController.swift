@@ -4,7 +4,6 @@
 //
 //  Created by Christoffer Detlef on 29/09/2020.
 //
-
 import Foundation
 import UIKit
 
@@ -36,7 +35,6 @@ class InterestsViewController: UIViewController {
                  charIndex += 1
             }
         //----------------------------------------
-
     }
     
 }
