@@ -7,22 +7,34 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class NotiViewController: UIViewController{
     @IBOutlet weak var notificationLabel: UILabel!
     @IBAction func endIntroTapped(_ sender: Any) {
+        
+        /*
+         let db = Firestore.firestore()
+        let uID = "FirebaseGeneratedUserID"
+        let newUser = db.collection("user").document(uID)
+        newUser.setData(["uid" : uID, "interests": selectedInterests, "location": selectedLocation])
+        */
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "MainVC")
-        
         self.view.window?.rootViewController = vc
         self.view.window?.makeKeyAndVisible()
         
     }
+    var selectedInterests: [String] = []
+    var selectedLocation: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
 
+        print(selectedLocation)
+        print(selectedInterests)
         
         //https://stackoverflow.com/a/59463814
         //----------------------------------------
@@ -42,5 +54,6 @@ class NotiViewController: UIViewController{
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
     }
+    
     
 }
