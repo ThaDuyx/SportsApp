@@ -10,6 +10,7 @@ import UIKit
 class InterestsViewController: UIViewController {
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
+    var selectedInterests: [String] = []
     
     
     @IBOutlet weak var interestsLabel: UILabel!
@@ -37,6 +38,13 @@ class InterestsViewController: UIViewController {
         //----------------------------------------
     }
     
+    @IBAction func interestsButton(_ sender: Any) {
+        if selectedInterests.isEmpty {
+            return
+        } else {
+            performSegue(withIdentifier: "showLocationVC", sender: nil)
+        }
+    }
 }
 
 extension InterestsViewController: UITableViewDataSource, UITableViewDelegate{
@@ -78,12 +86,17 @@ extension InterestsViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
+        selectedInterests.append(interests[indexPath.section])
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
+        if let index = selectedInterests.firstIndex(of: interests[indexPath.section]) {
+                    selectedInterests.remove(at: index)
+                }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! LocationViewController
+        destinationVC.selectedInterests = selectedInterests
+    }
 }
