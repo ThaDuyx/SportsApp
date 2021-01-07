@@ -44,7 +44,8 @@ class RegistrerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(rgb: 0x2AC0C0)
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
+        navigationController?.navigationBar.isTranslucent = false
         registerButton.layer.cornerRadius = 20
         
         //https://stackoverflow.com/a/59463814

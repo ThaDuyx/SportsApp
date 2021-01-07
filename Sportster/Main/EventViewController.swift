@@ -44,11 +44,11 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return cell!
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "TestViewController") as? TestViewController
         vc?.name = imgArrTwo[indexPath.row]
         self.navigationController?.present(vc!, animated: true, completion: nil)
-    }
+    }*/
     
 }
 

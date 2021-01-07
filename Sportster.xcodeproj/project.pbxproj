@@ -31,9 +31,13 @@
 		8380C96F25233F3B0028FEA4 /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C96E25233F3B0028FEA4 /* InterestsViewController.swift */; };
 		8380C98B252368180028FEA4 /* RegistrerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380C98A252368180028FEA4 /* RegistrerViewController.swift */; };
 		83A18132252B50790095FE9E /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18131252B50790095FE9E /* TextField.swift */; };
-		83A18138252C8A4B0095FE9E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18137252C8A4B0095FE9E /* ProfileViewController.swift */; };
+		83A18138252C8A4B0095FE9E /* OwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18137252C8A4B0095FE9E /* OwnerProfileViewController.swift */; };
 		83A1814A252C97B50095FE9E /* DataCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A18149252C97B50095FE9E /* DataCollectionCell.swift */; };
-		83BE30712554485B00E779BA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE30702554485B00E779BA /* TestViewController.swift */; };
+		83BDD13C25A5BBD100279A32 /* ParticipantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD13B25A5BBD100279A32 /* ParticipantsCell.swift */; };
+		83BDD14425A5DDAB00279A32 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */; };
+		83BDD14C25A5E70700279A32 /* UserProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */; };
+		83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE30702554485B00E779BA /* SpecificEventViewController.swift */; };
+		83E3759525A710F300F2B4EE /* byer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 83E3759425A710F300F2B4EE /* byer.txt */; };
 		A15CA9E84BD3A1C950C90A9D /* Pods_SportsterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,9 +88,14 @@
 		8380C96E25233F3B0028FEA4 /* InterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
 		8380C98A252368180028FEA4 /* RegistrerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrerViewController.swift; sourceTree = "<group>"; };
 		83A18131252B50790095FE9E /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		83A18137252C8A4B0095FE9E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		83A18137252C8A4B0095FE9E /* OwnerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewController.swift; sourceTree = "<group>"; };
 		83A18149252C97B50095FE9E /* DataCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionCell.swift; sourceTree = "<group>"; };
-		83BE30702554485B00E779BA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		83BDD13B25A5BBD100279A32 /* ParticipantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsCell.swift; sourceTree = "<group>"; };
+		83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEditViewController.swift; sourceTree = "<group>"; };
+		83BE30702554485B00E779BA /* SpecificEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificEventViewController.swift; sourceTree = "<group>"; };
+		83E3757E25A70EC300F2B4EE /* byer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = byer.txt; sourceTree = "<group>"; };
+		83E3759425A710F300F2B4EE /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = byer.txt; path = ../../../../../Downloads/byer.txt; sourceTree = "<group>"; };
 		8F0996CDB5B50F669276A2EA /* Pods-Sportster-SportsterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster-SportsterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53E86061076374187D36D41 /* Pods_Sportster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +180,7 @@
 				6A26A887252337110060351B /* Assets.xcassets */,
 				6A26A889252337110060351B /* LaunchScreen.storyboard */,
 				6A26A88C252337110060351B /* Info.plist */,
+				83E3759425A710F300F2B4EE /* byer.txt */,
 				6A006DCD252FA24D006585E4 /* GoogleService-Info.plist */,
 			);
 			path = Sportster;
@@ -231,7 +241,8 @@
 				6A26A882252337100060351B /* ViewController.swift */,
 				83281D04254AFFA6007503E9 /* EventDataCollectionCell.swift */,
 				83281D09254B096E007503E9 /* EventViewController.swift */,
-				83BE30702554485B00E779BA /* TestViewController.swift */,
+				83BE30702554485B00E779BA /* SpecificEventViewController.swift */,
+				83BDD13B25A5BBD100279A32 /* ParticipantsCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -239,8 +250,11 @@
 		83A18136252C8A3A0095FE9E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				83A18137252C8A4B0095FE9E /* ProfileViewController.swift */,
+				83E3757E25A70EC300F2B4EE /* byer.txt */,
+				83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */,
+				83A18137252C8A4B0095FE9E /* OwnerProfileViewController.swift */,
 				83A18149252C97B50095FE9E /* DataCollectionCell.swift */,
+				83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -369,6 +383,7 @@
 				6A26A888252337110060351B /* Assets.xcassets in Resources */,
 				6A26A886252337100060351B /* Main.storyboard in Resources */,
 				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
+				83E3759525A710F300F2B4EE /* byer.txt in Resources */,
 				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
 				6A006DCE252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
@@ -536,7 +551,9 @@
 			files = (
 				6AF5697B25A5ACC500F3589D /* LocationViewController.swift in Sources */,
 				83BE30712554485B00E779BA /* TestViewController.swift in Sources */,
+				83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */,
 				8380C96F25233F3B0028FEA4 /* InterestsViewController.swift in Sources */,
+				83BDD14C25A5E70700279A32 /* UserProfileEditViewController.swift in Sources */,
 				8380C96A25233F2C0028FEA4 /* LoginViewController.swift in Sources */,
 				83281D0A254B096E007503E9 /* EventViewController.swift in Sources */,
 				6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */,
@@ -544,8 +561,10 @@
 				83A18132252B50790095FE9E /* TextField.swift in Sources */,
 				6A1D31BC252630E100D2F8DE /* NotiViewController.swift in Sources */,
 				6A26A883252337100060351B /* ViewController.swift in Sources */,
-				83A18138252C8A4B0095FE9E /* ProfileViewController.swift in Sources */,
+				83BDD14425A5DDAB00279A32 /* UserProfileViewController.swift in Sources */,
+				83A18138252C8A4B0095FE9E /* OwnerProfileViewController.swift in Sources */,
 				83281D05254AFFA6007503E9 /* EventDataCollectionCell.swift in Sources */,
+				83BDD13C25A5BBD100279A32 /* ParticipantsCell.swift in Sources */,
 				83A1814A252C97B50095FE9E /* DataCollectionCell.swift in Sources */,
 				6A26A87F252337100060351B /* AppDelegate.swift in Sources */,
 				6A26A881252337100060351B /* SceneDelegate.swift in Sources */,

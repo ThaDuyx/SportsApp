@@ -133,6 +133,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="psY-5I-ted"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Hev-1K-Ywx" secondAttribute="trailing" id="0AD-LT-kzu"/>
