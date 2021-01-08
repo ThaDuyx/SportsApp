@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 
-class LocationViewController: UIViewController {
+class LocationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var locationTextField: UITextField!
@@ -20,6 +20,7 @@ class LocationViewController: UIViewController {
         locationTextField.layer.borderWidth = 2
         locationTextField.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
         locationTextField.layer.cornerRadius = 15
+        self.locationTextField.delegate = self
         
         //https://stackoverflow.com/a/59463814
         //----------------------------------------
@@ -33,6 +34,15 @@ class LocationViewController: UIViewController {
             }
         //----------------------------------------
     }
+    
+    //https://stackoverflow.com/a/26582115
+    //----------------------------------------
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return false
+        }
+    //----------------------------------------
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let selectedLocation = locationTextField.text

@@ -172,6 +172,7 @@
 		6A26A87D252337100060351B /* Sportster */ = {
 			isa = PBXGroup;
 			children = (
+				6AF5698225A7030300F3589D /* Models */,
 				83A18136252C8A3A0095FE9E /* Profile */,
 				8380C95E25233EF60028FEA4 /* Main */,
 				8380C95D25233EE50028FEA4 /* Login */,
@@ -203,6 +204,13 @@
 				6A26A8A2252337110060351B /* Info.plist */,
 			);
 			path = SportsterUITests;
+			sourceTree = "<group>";
+		};
+		6AF5698225A7030300F3589D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8380C95925233EDD0028FEA4 /* Intro */ = {

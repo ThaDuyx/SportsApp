@@ -13,10 +13,10 @@ class NotiViewController: UIViewController{
     @IBAction func endIntroTapped(_ sender: Any) {
         
         /*
-         let db = Firestore.firestore()
-        let uID = "FirebaseGeneratedUserID"
-        let newUser = db.collection("user").document(uID)
-        newUser.setData(["uid" : uID, "interests": selectedInterests, "location": selectedLocation])
+        let db = Firestore.firestore()
+        let uID = Auth.auth().currentUser?.uid
+        let newUser = db.collection("user").document(uID!)
+        newUser.setData(["uid" : uID as Any, "interests": selectedInterests, "location": selectedLocation])
         */
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -30,10 +30,6 @@ class NotiViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-
-        print(selectedLocation)
-        print(selectedInterests)
         
         //https://stackoverflow.com/a/59463814
         //----------------------------------------
