@@ -7,13 +7,14 @@
 
 import UIKit
 
-class UserProfileEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class UserProfileEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate {
     
     @IBOutlet weak var interestsTableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var topbarView: UIView!
     @IBOutlet weak var locationPicker: UIPickerView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
@@ -21,10 +22,14 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Navigationbar settings - Her bliver den vist, med en specifik farve
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
-        self.topbarView.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
+        
+        //Her bliver viewet i toppen sat en farve, så den passer overens med navigations baren
+        self.topbarView.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
 
         saveButton.layer.cornerRadius = 5
         
@@ -33,8 +38,27 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         
         interestsTableView.allowsMultipleSelection = true
         
+        descriptionTextView.text = "Placeholder"
+        descriptionTextView.textColor = UIColor.lightGray
+        descriptionTextView.layer.borderWidth = 1
+        descriptionTextView.layer.masksToBounds = true
+        
         parseDanishCities()
         
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if descriptionTextView.textColor == UIColor.lightGray {
+            descriptionTextView.text = nil
+            descriptionTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if descriptionTextView.text.isEmpty {
+            descriptionTextView.text = "Placeholder"
+            descriptionTextView.textColor = UIColor.lightGray
+        }
     }
     
     func parseDanishCities() {
@@ -87,16 +111,6 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         return cell
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        navigationController?.navigationBar.isTranslucent = false
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.isTranslucent = false
-    }
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -106,5 +120,16 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return cities![row]
+    }
+    
+    //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.navigationBar.isTranslucent = false
+    }
+    //Dette viser navigationsbaren i toppen, når man går ind på viewet.
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.isTranslucent = false
     }
 }
