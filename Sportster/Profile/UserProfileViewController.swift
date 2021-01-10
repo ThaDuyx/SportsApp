@@ -20,6 +20,8 @@ class UserProfileViewController: UIViewController {
         
         //Her bliver viewet i toppen sat en farve, så den passer overens med navigations baren
         self.topbarView.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
+        topbarView.layer.cornerRadius = 5
+        topbarView.clipsToBounds = true
         
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
