@@ -28,7 +28,7 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
         
-        //Her bliver viewet i toppen sat en farve, så den passer overens med navigations baren
+        //Her bliver viewet xi toppen sat en farve, så den passer overens med navigations baren
         self.topbarView.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
 
         saveButton.layer.cornerRadius = 5

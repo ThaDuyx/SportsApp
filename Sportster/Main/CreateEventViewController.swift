@@ -55,26 +55,34 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if descriptionTextView.textColor == UIColor.lightGray {
-            descriptionTextView.text = nil
-            descriptionTextView.textColor = UIColor.black
-        } else if titleTextView.textColor == UIColor.lightGray {
+        if textView === descriptionTextView{
+            if descriptionTextView.textColor == UIColor.lightGray {
+                descriptionTextView.text = nil
+                descriptionTextView.textColor = UIColor.black
+            }
+        } else if textView === titleTextView {
+            if titleTextView.textColor == UIColor.lightGray {
             titleTextView.text = nil
             titleTextView.textColor = UIColor.black
+            }
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if descriptionTextView.text.isEmpty {
-            descriptionTextView.text = "Beskriv begivenheden - maks. 150 tegn"
-            descriptionTextView.textColor = UIColor.lightGray
-        }
-        if titleTextView.text.isEmpty {
-            titleTextView.text = "Title - maks. 20 tegn"
-            titleTextView.textColor = UIColor.lightGray
+        if textView === descriptionTextView {
+            if descriptionTextView.text.isEmpty {
+                descriptionTextView.text = "Beskriv begivenheden - maks. 150 tegn"
+                descriptionTextView.textColor = UIColor.lightGray
+            }
+        } else if textView === titleTextView {
+            if titleTextView.text.isEmpty {
+                titleTextView.text = "Title - maks. 20 tegn"
+                titleTextView.textColor = UIColor.lightGray
+            }
         }
     }
-//  https://www.youtube.com/watch?v=WSgRbH5-GKc - Det stykke kode er taget fra denne video.
+
+    //  https://www.youtube.com/watch?v=WSgRbH5-GKc - Det stykke kode er taget fra denne video.
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if textView === titleTextView {
             if range.length + range.location > titleTextView.text.count {
