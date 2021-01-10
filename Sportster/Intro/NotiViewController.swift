@@ -4,7 +4,6 @@
 //
 //  Created by Simon Andersen on 01/10/2020.
 //
-
 import Foundation
 import UIKit
 import Firebase

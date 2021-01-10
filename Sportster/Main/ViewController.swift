@@ -8,27 +8,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var informationButton: UIButton!
-    @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet weak var addEventButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isNavigationBarHidden = true
+        //Navigationbar settings - Her bliver den vist, med en specifik farve
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
+        navigationController?.navigationBar.isTranslucent = false
         
-        profileButton.layer.cornerRadius = profileButton.frame.height/2
-        profileButton.clipsToBounds = true
-        
-        addEventButton.layer.cornerRadius = addEventButton.frame.height/2
-        addEventButton.clipsToBounds = true
-        addEventButton.layer.zPosition = 1
-
-        informationButton.layer.cornerRadius = 20
-
     }
-
+    
+    //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.navigationBar.isTranslucent = false
+    }
+    //Dette viser navigationsbaren i toppen, når man går ind på viewet.
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.isTranslucent = false
+    }
 }
 
 
