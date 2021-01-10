@@ -65,4 +65,31 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let edit = UIContextualAction(style: .normal, title: "Opdate", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
+            print("Opdate")
+            self.performSegue(withIdentifier: "editSegue", sender: ac)
+            success(true)
+        })
+        
+        let delete = UIContextualAction(style: .normal, title: "Slet", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
+            print("Delete")
+            success(true)
+        })
+        
+        edit.image = UIImage(systemName: "square.and.pencil")
+        delete.image = UIImage(systemName: "trash")
+        edit.backgroundColor = .blue
+        delete.backgroundColor = .red
+        
+        let swipe = UISwipeActionsConfiguration(actions: [edit, delete])
+        return swipe
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "editSegue"{
+        _ = segue.destination as! EditEventViewController
+      }
+    }
 }
