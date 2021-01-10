@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseFirestore
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
@@ -38,7 +39,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
 
     @IBAction func fButtonTapped(_ sender: Any) {
         let loginManager = LoginManager()
-        loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+        loginManager.logIn(permissions: ["public_profile", "email", "user_birthday"], from: self) { (result, error) in
             if let error = error{
                 print("Login error: \(error.localizedDescription)")
                 return
@@ -51,7 +52,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                 
             let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
             Auth.auth().signIn(with: credential) { (user, error) in
-                
+    
                 if let error = error {
                     print("Login error: \(error.localizedDescription)")
                     let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -61,8 +62,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                 } else {
                     print("Login successfull")
                     //let newFBUserRef = Firestore.firestore().collection("user").document((user?.user.uid)!)
-                    //newFBUserRef.setData(["uid" : user?.user.uid as Any])
-                    self.getFBUserData()
+                    //newFBUserRef.setData(["uid" : user!.user.uid as Any])
+                    //self.getFBUserData()
                     let storyboard = UIStoryboard(name: "Intro", bundle: nil)
                     let vc = storyboard.instantiateViewController(identifier: "IntroVC")
                     self.view.window?.rootViewController = vc
@@ -99,7 +100,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     //https://stackoverflow.com/a/50447480
     //___________________________________________
     func getFBUserData(){
-        GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler:
+        GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler:
                 { (connection, result, error) -> Void in
                     if (error == nil)
                     {
@@ -107,20 +108,21 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                         //                        print(result!)
                         if let data = result as? NSDictionary
                         {
-                            let firstName  = data.object(forKey: "first_name") as? String
-                            let lastName  = data.object(forKey: "last_name") as? String
-
-
-                            if let email = data.object(forKey: "email") as? String
-                            {
-                                print(email)
-   
-                            }
-                            else
-                            {
-                                 // If user have signup with mobile number you are not able to get their email address
-                                print("We are unable to access Facebook account details, please use other sign in methods.")
-                            }
+                            let fullname  = data.object(forKey: "name") as? String
+                            let email = data.object(forKey: "email") as? String
+                            let fid = data.object(forKey: "id") as? String
+                            let birthday = data.object(forKey: "user_birthday") as? String
+                            
+                            print("we are in here")
+                            
+                            print(fullname!)
+                            print(fid!)
+                            print(email!)
+                            print(birthday ?? "0")
+                            
+                            //db.setData(["uid" : user.user.uid as Any, "name": fullname!, "email":email!, "fid": fid!])
+                            
+                            
                         }
                     }
             })

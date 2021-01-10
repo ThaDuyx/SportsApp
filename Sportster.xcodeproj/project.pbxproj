@@ -37,7 +37,6 @@
 		83BDD14425A5DDAB00279A32 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */; };
 		83BDD14C25A5E70700279A32 /* UserProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */; };
 		83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE30702554485B00E779BA /* SpecificEventViewController.swift */; };
-		83E3759525A710F300F2B4EE /* byer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 83E3759425A710F300F2B4EE /* byer.txt */; };
 		A15CA9E84BD3A1C950C90A9D /* Pods_SportsterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,8 +93,7 @@
 		83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEditViewController.swift; sourceTree = "<group>"; };
 		83BE30702554485B00E779BA /* SpecificEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificEventViewController.swift; sourceTree = "<group>"; };
-		83E3757E25A70EC300F2B4EE /* byer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = byer.txt; sourceTree = "<group>"; };
-		83E3759425A710F300F2B4EE /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = byer.txt; path = ../../../../../Downloads/byer.txt; sourceTree = "<group>"; };
+		83E3757E25A70EC300F2B4EE /* byer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = byer.txt; path = Profile/byer.txt; sourceTree = "<group>"; };
 		8F0996CDB5B50F669276A2EA /* Pods-Sportster-SportsterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster-SportsterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53E86061076374187D36D41 /* Pods_Sportster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,7 +178,7 @@
 				6A26A887252337110060351B /* Assets.xcassets */,
 				6A26A889252337110060351B /* LaunchScreen.storyboard */,
 				6A26A88C252337110060351B /* Info.plist */,
-				83E3759425A710F300F2B4EE /* byer.txt */,
+				83E3757E25A70EC300F2B4EE /* byer.txt */,
 				6A006DCD252FA24D006585E4 /* GoogleService-Info.plist */,
 			);
 			path = Sportster;
@@ -250,7 +248,6 @@
 		83A18136252C8A3A0095FE9E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				83E3757E25A70EC300F2B4EE /* byer.txt */,
 				83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */,
 				83A18137252C8A4B0095FE9E /* OwnerProfileViewController.swift */,
 				83A18149252C97B50095FE9E /* DataCollectionCell.swift */,
@@ -383,7 +380,6 @@
 				6A26A888252337110060351B /* Assets.xcassets in Resources */,
 				6A26A886252337100060351B /* Main.storyboard in Resources */,
 				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
-				83E3759525A710F300F2B4EE /* byer.txt in Resources */,
 				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
 				6A006DCE252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
@@ -550,7 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AF5697B25A5ACC500F3589D /* LocationViewController.swift in Sources */,
-				83BE30712554485B00E779BA /* TestViewController.swift in Sources */,
+				83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */,
 				83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */,
 				8380C96F25233F3B0028FEA4 /* InterestsViewController.swift in Sources */,
 				83BDD14C25A5E70700279A32 /* UserProfileEditViewController.swift in Sources */,
