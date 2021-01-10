@@ -132,6 +132,7 @@
                     <connections>
                         <outlet property="addEventButton" destination="b2Y-eE-DdN" id="eGx-wZ-tpH"/>
                         <outlet property="bulletinTableView" destination="diY-sK-6cF" id="0lp-Bb-5FB"/>
+                        <segue destination="qLa-ag-DGv" kind="show" identifier="editSegue" id="gsL-bq-mYh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixB-2d-dq6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -141,7 +142,7 @@
         <!--Create Event View Controller-->
         <scene sceneID="ZUm-Vk-tdn">
             <objects>
-                <viewController id="5ea-4s-4rc" customClass="CreateEventViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5ea-4s-4rc" customClass="CreateEventViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bof-E6-6bT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -406,6 +407,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ME-aI-YXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1680.8" y="-536.13193403298351"/>
+        </scene>
+        <!--Edit Event View Controller-->
+        <scene sceneID="0gh-qv-Xhq">
+            <objects>
+                <viewController id="qLa-ag-DGv" customClass="EditEventViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yYS-bj-saN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="K8G-pG-Uz1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kkJ-oX-2as"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wcf-3U-uzS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="-535"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="ybU-nn-vaG">
