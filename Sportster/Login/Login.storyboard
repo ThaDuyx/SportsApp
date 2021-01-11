@@ -208,8 +208,8 @@
                                     <action selector="pickProfilePicTapped:" destination="cYB-2T-kgG" eventType="touchUpInside" id="TFm-dg-PgJ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oy3-ZH-PGI">
-                                <rect key="frame" x="88" y="281" width="198" height="25"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oy3-ZH-PGI">
+                                <rect key="frame" x="88" y="266" width="198" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -218,9 +218,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Kodeord" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5j-9j-O3D">
-                                <rect key="frame" x="88" y="336" width="198" height="24.5"/>
-                                <nil key="textColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Kodeord" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5j-9j-O3D">
+                                <rect key="frame" x="88" y="321" width="198" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
@@ -229,8 +228,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Navn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSc-ep-BgT">
-                                <rect key="frame" x="88" y="390.5" width="198" height="24.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Navn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSc-ep-BgT">
+                                <rect key="frame" x="88" y="374" width="198" height="24.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -240,12 +239,12 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="fSm-CJ-qVG">
-                                <rect key="frame" x="207" y="449" width="122" height="35"/>
+                                <rect key="frame" x="207" y="432.5" width="122" height="35"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDe-ds-sCb">
-                                <rect key="frame" x="50" y="542" width="275" height="45"/>
+                                <rect key="frame" x="50" y="525.5" width="275" height="45"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ore-uT-hA6"/>
@@ -259,20 +258,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fødselsdag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouy-C9-LSg">
-                                <rect key="frame" x="88" y="455" width="98" height="23"/>
+                                <rect key="frame" x="88" y="438.5" width="98" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.60337440899999994" blue="0.62683629129999996" alpha="0.30845997429999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-3t-OPX">
-                                <rect key="frame" x="177" y="554" width="20" height="20"/>
+                                <rect key="frame" x="177" y="537.5" width="20" height="37"/>
                                 <color key="color" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BGk-nJ-xNJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BGk-nJ-xNJ" firstAttribute="bottom" secondItem="IDe-ds-sCb" secondAttribute="bottom" constant="80" id="0xa-0R-Ohl"/>
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="fSm-CJ-qVG" secondAttribute="trailing" constant="46" id="2VD-eu-jlq"/>
                             <constraint firstItem="IDe-ds-sCb" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="50" id="4G6-Al-a9r"/>
                             <constraint firstItem="eKh-ra-PTc" firstAttribute="top" secondItem="zG8-iH-Ijw" secondAttribute="bottom" constant="25" id="5Pr-j3-Ift"/>
@@ -297,9 +295,8 @@
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="eKh-ra-PTc" secondAttribute="trailing" constant="149" id="oGA-hF-TLf"/>
                             <constraint firstItem="zG8-iH-Ijw" firstAttribute="top" secondItem="BGk-nJ-xNJ" secondAttribute="top" constant="32" id="ojE-nE-huM"/>
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="I5j-9j-O3D" secondAttribute="trailing" constant="89" id="rKP-dt-afe"/>
-                            <constraint firstItem="BGk-nJ-xNJ" firstAttribute="bottom" secondItem="4Ta-3t-OPX" secondAttribute="bottom" constant="93" id="s8F-X4-nty"/>
                             <constraint firstItem="4Ta-3t-OPX" firstAttribute="top" secondItem="Ouy-C9-LSg" secondAttribute="bottom" constant="76" id="sZC-gz-nKM"/>
-                            <constraint firstItem="oy3-ZH-PGI" firstAttribute="top" secondItem="eKh-ra-PTc" secondAttribute="bottom" constant="45" id="sz3-Hl-1SK"/>
+                            <constraint firstItem="oy3-ZH-PGI" firstAttribute="top" secondItem="eKh-ra-PTc" secondAttribute="bottom" constant="30" id="sz3-Hl-1SK"/>
                             <constraint firstItem="Ouy-C9-LSg" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="88" id="zeB-Kp-L2o"/>
                         </constraints>
                     </view>

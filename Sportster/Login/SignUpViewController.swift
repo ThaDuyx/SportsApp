@@ -27,12 +27,26 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     override func viewDidLoad() {
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
+        //Navigationbar settings - Her bliver den vist, med en specifik farve
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
+        
         profilePicIV.layer.cornerRadius = profilePicIV.frame.height/2
         pickProfilePicBtn.layer.cornerRadius = 15
         signUpBtn.layer.cornerRadius = 20
     
+    }
+    
+    //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.navigationBar.isTranslucent = false
+    }
+    //Dette viser navigationsbaren i toppen, når man går ind på viewet.
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.isTranslucent = false
     }
     
     @IBAction func pickProfilePicTapped(_ sender: Any) {
