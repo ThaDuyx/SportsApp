@@ -36,7 +36,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
             }
         }
 }
-
+    
     @IBAction func fButtonTapped(_ sender: Any) {
         let loginManager = LoginManager()
         loginManager.logIn(permissions: ["public_profile", "email", "user_birthday"], from: self) { (result, error) in
@@ -82,6 +82,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet weak var fLoginButton: UIButton!
     @IBOutlet weak var eLoginButton: UIButton!
     @IBOutlet weak var signUpLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         topBoxView.layer.cornerRadius = topBoxView.frame.size.width/2
@@ -90,6 +91,10 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         eLoginButton.layer.cornerRadius = 20
         fLoginButton.layer.cornerRadius = 20
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tapFunction))
+            signUpLabel.isUserInteractionEnabled = true
+            signUpLabel.addGestureRecognizer(tap)
+        
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().delegate = self
     }
@@ -97,6 +102,13 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
     }
+    
+    @objc
+    func tapFunction(sender:UITapGestureRecognizer) {
+        performSegue(withIdentifier: "showSignUpVC", sender: self)
+        
+    }
+    
     //https://stackoverflow.com/a/50447480
     //___________________________________________
     func getFBUserData(){

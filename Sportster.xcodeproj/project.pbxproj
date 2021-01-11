@@ -22,6 +22,7 @@
 		6A26A8A1252337110060351B /* SportsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A8A0252337110060351B /* SportsterUITests.swift */; };
 		6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB44135252C61F400BB8AD6 /* InterestsCell.swift */; };
 		6AF5697B25A5ACC500F3589D /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF5697A25A5ACC500F3589D /* LocationViewController.swift */; };
+		6AF569B325AB697300F3589D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF569B225AB697300F3589D /* SignUpViewController.swift */; };
 		7979C56C274E141DC4F6A8C4 /* Pods_Sportster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53E86061076374187D36D41 /* Pods_Sportster.framework */; };
 		83281D05254AFFA6007503E9 /* EventDataCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83281D04254AFFA6007503E9 /* EventDataCollectionCell.swift */; };
 		83281D0A254B096E007503E9 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83281D09254B096E007503E9 /* EventViewController.swift */; };
@@ -36,7 +37,6 @@
 		83BDD14425A5DDAB00279A32 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */; };
 		83BDD14C25A5E70700279A32 /* UserProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */; };
 		83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE30702554485B00E779BA /* SpecificEventViewController.swift */; };
-		83E3759525A710F300F2B4EE /* byer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 83E3759425A710F300F2B4EE /* byer.txt */; };
 		83E3759D25A73DF400F2B4EE /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3759C25A73DF400F2B4EE /* PostsCell.swift */; };
 		83E375A525A853C000F2B4EE /* BulletinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375A425A853C000F2B4EE /* BulletinViewController.swift */; };
 		83E375B125A864F800F2B4EE /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375B025A864F800F2B4EE /* CreateEventViewController.swift */; };
@@ -85,6 +85,7 @@
 		6A26A8A2252337110060351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AB44135252C61F400BB8AD6 /* InterestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
 		6AF5697A25A5ACC500F3589D /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		6AF569B225AB697300F3589D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		83281D04254AFFA6007503E9 /* EventDataCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataCollectionCell.swift; sourceTree = "<group>"; };
 		83281D09254B096E007503E9 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8380C95F25233F0C0028FEA4 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -98,9 +99,7 @@
 		83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEditViewController.swift; sourceTree = "<group>"; };
 		83BE30702554485B00E779BA /* SpecificEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificEventViewController.swift; sourceTree = "<group>"; };
-		83E3757E25A70EC300F2B4EE /* byer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = byer.txt; path = Profile/byer.txt; sourceTree = "<group>"; };
 		83E3757E25A70EC300F2B4EE /* byer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = byer.txt; sourceTree = "<group>"; };
-		83E3759425A710F300F2B4EE /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = byer.txt; path = ../../../../../Downloads/byer.txt; sourceTree = "<group>"; };
 		83E3759C25A73DF400F2B4EE /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
 		83E375A425A853C000F2B4EE /* BulletinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinViewController.swift; sourceTree = "<group>"; };
 		83E375B025A864F800F2B4EE /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +233,7 @@
 				8380C96925233F2C0028FEA4 /* LoginViewController.swift */,
 				8380C98A252368180028FEA4 /* RegistrerViewController.swift */,
 				83A18131252B50790095FE9E /* TextField.swift */,
+				6AF569B225AB697300F3589D /* SignUpViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -568,6 +568,7 @@
 				83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */,
 				8380C96F25233F3B0028FEA4 /* InterestsViewController.swift in Sources */,
 				83BDD14C25A5E70700279A32 /* UserProfileEditViewController.swift in Sources */,
+				6AF569B325AB697300F3589D /* SignUpViewController.swift in Sources */,
 				8380C96A25233F2C0028FEA4 /* LoginViewController.swift in Sources */,
 				83281D0A254B096E007503E9 /* EventViewController.swift in Sources */,
 				6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */,
