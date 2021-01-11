@@ -46,11 +46,11 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 33
+        return 40
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -78,18 +78,29 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
             success(true)
         })
         
+        let overview = UIContextualAction(style: .normal, title: "Liste", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
+            print("Overview")
+            self.performSegue(withIdentifier: "participantSegue", sender: ac)
+            success(true)
+        })
+        
         edit.image = UIImage(systemName: "square.and.pencil")
+        overview.image = UIImage(systemName: "person.3.fill")
         delete.image = UIImage(systemName: "trash")
-        edit.backgroundColor = .blue
+        edit.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
+        overview.backgroundColor = .blue
         delete.backgroundColor = .red
         
-        let swipe = UISwipeActionsConfiguration(actions: [edit, delete])
+        
+        let swipe = UISwipeActionsConfiguration(actions: [edit, overview, delete])
         return swipe
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == "editSegue"{
-        _ = segue.destination as! EditEventViewController
+        if segue.identifier == "editSegue"{
+            _ = segue.destination as! EditEventViewController
+        }else if segue.identifier == "participantSegue" {
+            _ = segue.destination as! ParticipantEventViewController
       }
     }
 }
