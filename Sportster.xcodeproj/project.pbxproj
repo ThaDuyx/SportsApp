@@ -36,13 +36,15 @@
 		83BDD14425A5DDAB00279A32 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */; };
 		83BDD14C25A5E70700279A32 /* UserProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */; };
 		83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE30702554485B00E779BA /* SpecificEventViewController.swift */; };
-		83E3759525A710F300F2B4EE /* byer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 83E3759425A710F300F2B4EE /* byer.txt */; };
 		83E3759D25A73DF400F2B4EE /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3759C25A73DF400F2B4EE /* PostsCell.swift */; };
 		83E375A525A853C000F2B4EE /* BulletinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375A425A853C000F2B4EE /* BulletinViewController.swift */; };
 		83E375B125A864F800F2B4EE /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375B025A864F800F2B4EE /* CreateEventViewController.swift */; };
 		83E375B625AB0F2700F2B4EE /* EventOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375B525AB0F2600F2B4EE /* EventOverviewViewController.swift */; };
 		83E375BB25AB0FD900F2B4EE /* EventOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375BA25AB0FD900F2B4EE /* EventOverviewCell.swift */; };
 		83E375C025AB40F800F2B4EE /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375BF25AB40F800F2B4EE /* EditEventViewController.swift */; };
+		83E375EB25AC61E700F2B4EE /* byer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 83E375EA25AC61E700F2B4EE /* byer.txt */; };
+		83E375F925AC673000F2B4EE /* ParticipantEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375F825AC673000F2B4EE /* ParticipantEventViewController.swift */; };
+		83E3760925AC815500F2B4EE /* EventParticipantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3760825AC815500F2B4EE /* EventParticipantsCell.swift */; };
 		A15CA9E84BD3A1C950C90A9D /* Pods_SportsterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,15 +100,15 @@
 		83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEditViewController.swift; sourceTree = "<group>"; };
 		83BE30702554485B00E779BA /* SpecificEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificEventViewController.swift; sourceTree = "<group>"; };
-		83E3757E25A70EC300F2B4EE /* byer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = byer.txt; path = Profile/byer.txt; sourceTree = "<group>"; };
-		83E3757E25A70EC300F2B4EE /* byer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = byer.txt; sourceTree = "<group>"; };
-		83E3759425A710F300F2B4EE /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = byer.txt; path = ../../../../../Downloads/byer.txt; sourceTree = "<group>"; };
 		83E3759C25A73DF400F2B4EE /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
 		83E375A425A853C000F2B4EE /* BulletinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinViewController.swift; sourceTree = "<group>"; };
 		83E375B025A864F800F2B4EE /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		83E375B525AB0F2600F2B4EE /* EventOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventOverviewViewController.swift; sourceTree = "<group>"; };
 		83E375BA25AB0FD900F2B4EE /* EventOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventOverviewCell.swift; sourceTree = "<group>"; };
 		83E375BF25AB40F800F2B4EE /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
+		83E375EA25AC61E700F2B4EE /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = byer.txt; path = ../../../../../../Downloads/byer.txt; sourceTree = "<group>"; };
+		83E375F825AC673000F2B4EE /* ParticipantEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantEventViewController.swift; sourceTree = "<group>"; };
+		83E3760825AC815500F2B4EE /* EventParticipantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsCell.swift; sourceTree = "<group>"; };
 		8F0996CDB5B50F669276A2EA /* Pods-Sportster-SportsterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster-SportsterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53E86061076374187D36D41 /* Pods_Sportster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,7 +183,6 @@
 		6A26A87D252337100060351B /* Sportster */ = {
 			isa = PBXGroup;
 			children = (
-				83E375AC25A8576500F2B4EE /* Models */,
 				83A18136252C8A3A0095FE9E /* Profile */,
 				8380C95E25233EF60028FEA4 /* Main */,
 				8380C95D25233EE50028FEA4 /* Login */,
@@ -191,7 +192,6 @@
 				6A26A887252337110060351B /* Assets.xcassets */,
 				6A26A889252337110060351B /* LaunchScreen.storyboard */,
 				6A26A88C252337110060351B /* Info.plist */,
-				83E3757E25A70EC300F2B4EE /* byer.txt */,
 				6A006DCD252FA24D006585E4 /* GoogleService-Info.plist */,
 			);
 			path = Sportster;
@@ -253,6 +253,8 @@
 				83E375B525AB0F2600F2B4EE /* EventOverviewViewController.swift */,
 				83E375BA25AB0FD900F2B4EE /* EventOverviewCell.swift */,
 				83E375BF25AB40F800F2B4EE /* EditEventViewController.swift */,
+				83E375F825AC673000F2B4EE /* ParticipantEventViewController.swift */,
+				83E3760825AC815500F2B4EE /* EventParticipantsCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -263,15 +265,9 @@
 				83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */,
 				83A18137252C8A4B0095FE9E /* OwnerProfileViewController.swift */,
 				83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */,
+				83E375EA25AC61E700F2B4EE /* byer.txt */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		83E375AC25A8576500F2B4EE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		C29FFD738B5BBBFFAB1FC7C3 /* Frameworks */ = {
@@ -399,6 +395,7 @@
 				6A26A886252337100060351B /* Main.storyboard in Resources */,
 				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
 				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
+				83E375EB25AC61E700F2B4EE /* byer.txt in Resources */,
 				6A006DCE252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,10 +564,12 @@
 				83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */,
 				83BE30712554485B00E779BA /* SpecificEventViewController.swift in Sources */,
 				8380C96F25233F3B0028FEA4 /* InterestsViewController.swift in Sources */,
+				83E375F925AC673000F2B4EE /* ParticipantEventViewController.swift in Sources */,
 				83BDD14C25A5E70700279A32 /* UserProfileEditViewController.swift in Sources */,
 				8380C96A25233F2C0028FEA4 /* LoginViewController.swift in Sources */,
 				83281D0A254B096E007503E9 /* EventViewController.swift in Sources */,
 				6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */,
+				83E3760925AC815500F2B4EE /* EventParticipantsCell.swift in Sources */,
 				8380C98B252368180028FEA4 /* RegistrerViewController.swift in Sources */,
 				83A18132252B50790095FE9E /* TextField.swift in Sources */,
 				6A1D31BC252630E100D2F8DE /* NotiViewController.swift in Sources */,
