@@ -23,8 +23,9 @@ class EventViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
 
-        eventBackgroundCollection.layer.cornerRadius = 10.0
+        eventBackgroundCollection.layer.cornerRadius = 10
         eventBackgroundCollection.layer.masksToBounds = true
+        eventBackgroundCollection.clipsToBounds = true
         
         makeEventBtn.layer.cornerRadius = makeEventBtn.frame.height/2
         makeEventBtn.clipsToBounds = true

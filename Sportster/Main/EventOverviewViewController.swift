@@ -25,11 +25,11 @@ class EventOverviewViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 8
+        return 12
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 40
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -40,7 +40,11 @@ class EventOverviewViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = eventOverviewTableView.dequeueReusableCell(withIdentifier: "eventOverviewCell") as! EventOverviewCell
-        cell.eventNameLabel?.text = events[indexPath.section]
+        cell.eventNameButton?.setTitle("\(events[indexPath.section])", for: .normal)
+        
+        cell.layer.cornerRadius = 15
+        cell.layer.borderWidth = 2
+        cell.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
         return cell
     }
 }

@@ -47,6 +47,8 @@
 		83E375C025AB40F800F2B4EE /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375BF25AB40F800F2B4EE /* EditEventViewController.swift */; };
 		83E375F925AC673000F2B4EE /* ParticipantEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E375F825AC673000F2B4EE /* ParticipantEventViewController.swift */; };
 		83E3760925AC815500F2B4EE /* EventParticipantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3760825AC815500F2B4EE /* EventParticipantsCell.swift */; };
+		83E3761425AD868C00F2B4EE /* PictureCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3761325AD868C00F2B4EE /* PictureCollectionCell.swift */; };
+		83E3761925AD87F100F2B4EE /* PictureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3761825AD87F100F2B4EE /* PictureCollectionViewController.swift */; };
 		A15CA9E84BD3A1C950C90A9D /* Pods_SportsterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +115,8 @@
 		83E375BF25AB40F800F2B4EE /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		83E375F825AC673000F2B4EE /* ParticipantEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantEventViewController.swift; sourceTree = "<group>"; };
 		83E3760825AC815500F2B4EE /* EventParticipantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsCell.swift; sourceTree = "<group>"; };
+		83E3761325AD868C00F2B4EE /* PictureCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionCell.swift; sourceTree = "<group>"; };
+		83E3761825AD87F100F2B4EE /* PictureCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewController.swift; sourceTree = "<group>"; };
 		8F0996CDB5B50F669276A2EA /* Pods-Sportster-SportsterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster-SportsterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportster-SportsterUITests/Pods-Sportster-SportsterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A662BDA743467DC17C308725 /* Pods_SportsterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53E86061076374187D36D41 /* Pods_Sportster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +273,8 @@
 				83E375BF25AB40F800F2B4EE /* EditEventViewController.swift */,
 				83E375F825AC673000F2B4EE /* ParticipantEventViewController.swift */,
 				83E3760825AC815500F2B4EE /* EventParticipantsCell.swift */,
+				83E3761325AD868C00F2B4EE /* PictureCollectionCell.swift */,
+				83E3761825AD87F100F2B4EE /* PictureCollectionViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -587,6 +593,7 @@
 				6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */,
 				83E3760925AC815500F2B4EE /* EventParticipantsCell.swift in Sources */,
 				8380C98B252368180028FEA4 /* RegistrerViewController.swift in Sources */,
+				83E3761925AD87F100F2B4EE /* PictureCollectionViewController.swift in Sources */,
 				83A18132252B50790095FE9E /* TextField.swift in Sources */,
 				6A1D31BC252630E100D2F8DE /* NotiViewController.swift in Sources */,
 				83E375BB25AB0FD900F2B4EE /* EventOverviewCell.swift in Sources */,
@@ -597,6 +604,7 @@
 				83E375B625AB0F2700F2B4EE /* EventOverviewViewController.swift in Sources */,
 				83A18138252C8A4B0095FE9E /* OwnerProfileViewController.swift in Sources */,
 				83281D05254AFFA6007503E9 /* EventDataCollectionCell.swift in Sources */,
+				83E3761425AD868C00F2B4EE /* PictureCollectionCell.swift in Sources */,
 				83BDD13C25A5BBD100279A32 /* ParticipantsCell.swift in Sources */,
 				83E375B125A864F800F2B4EE /* CreateEventViewController.swift in Sources */,
 				83E375A525A853C000F2B4EE /* BulletinViewController.swift in Sources */,
