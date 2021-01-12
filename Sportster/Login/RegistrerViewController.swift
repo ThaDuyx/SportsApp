@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 extension UIColor {
    convenience init(red: Int, green: Int, blue: Int) {
@@ -32,13 +33,25 @@ class RegistrerViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailLoginLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loginLabel: UILabel!
     @IBAction func registerButtonTapped(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Intro", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "IntroVC")
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
         
-        self.view.window?.rootViewController = vc
-        self.view.window?.makeKeyAndVisible()
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                print("Something went wrong: Loggning existing user in")
+                print(error?.localizedDescription ?? "Cannot fetch error")
+            } else {
+                print("Success: Logging new user in")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "MainVC")
+                
+                self.view.window?.rootViewController = vc
+                self.view.window?.makeKeyAndVisible()
+            }
+        }
 
     }
     
@@ -47,6 +60,10 @@ class RegistrerViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
         registerButton.layer.cornerRadius = 20
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(RegistrerViewController.tapFunction))
+        loginLabel.isUserInteractionEnabled = true
+        loginLabel.addGestureRecognizer(tap)
         
         //https://stackoverflow.com/a/59463814
         //----------------------------------------
@@ -74,8 +91,17 @@ class RegistrerViewController: UIViewController {
 
     }
     
+    @objc
+    func tapFunction(sender:UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "MainVC")
+        self.view.window?.rootViewController = vc
+        self.view.window?.makeKeyAndVisible()
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
-
+    
 }

@@ -324,7 +324,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jkh-Ho-bcT" customClass="TextField" customModule="Sportster" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="test@test.com" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jkh-Ho-bcT" customClass="TextField" customModule="Sportster" customModuleProvider="target">
                                 <rect key="frame" x="50" y="422" width="275" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="dgN-Oo-ycM"/>
@@ -346,17 +346,20 @@
                                     <action selector="registerButtonTapped:" destination="f4r-fz-Pgp" eventType="touchUpInside" id="Du6-xr-8Jd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Kodeord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-Ep-ous" customClass="TextField" customModule="Sportster" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="testtest" placeholder="Kodeord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-Ep-ous" customClass="TextField" customModule="Sportster" customModuleProvider="target">
                                 <rect key="frame" x="50" y="482" width="275" height="45"/>
                                 <color key="tintColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="iLX-r4-9Mq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indtast log ind information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQy-gj-58a">
                                 <rect key="frame" x="0.0" y="357" width="375" height="24"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.10980392156862745" green="0.55686274509803924" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -402,6 +405,7 @@
                     <connections>
                         <outlet property="emailLoginLabel" destination="fj0-Wb-68R" id="wuz-f4-fv4"/>
                         <outlet property="emailTextField" destination="jkh-Ho-bcT" id="bQ9-lQ-zlU"/>
+                        <outlet property="loginLabel" destination="OQy-gj-58a" id="vCf-y9-FZi"/>
                         <outlet property="passwordTextField" destination="QiK-Ep-ous" id="d7M-Bd-XQa"/>
                         <outlet property="registerButton" destination="YEW-HQ-XI4" id="QhT-pH-2Mg"/>
                     </connections>

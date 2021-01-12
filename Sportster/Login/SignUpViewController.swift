@@ -77,7 +77,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         signInLoader.startAnimating()
         signUpBtn.alpha = 0
         
-        //receiving data from view
+        //Receiving data from view
         let email = emailTF.text!
         let password = passwordTF.text!
         let name = nameTF.text!
@@ -88,20 +88,21 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         let birthday = dateFormatter.string(from: birthdaydate)
         
         //Instantiating the firebase login
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if error != nil {
-                print("Something went wrong")
-                print(error?.localizedDescription ?? "Cannot fetch error")
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error1) in
+            if error1 != nil {
+                print("Something went wrong: Creating new user")
+                print(error1?.localizedDescription ?? "Cannot fetch error")
                 self.signInLoader.stopAnimating()
                 self.signInLoader.alpha = 0
                 self.signUpBtn.alpha = 1
                 
             } else {
- 
-                //Creating new user with user id from Firestorage
+                print("Success: Creating new firebase user")
+                let uID = user?.user.uid
+                //Creating new user file in the DB with user id from Firestorage
                 let newEmailUserRef = Firestore.firestore().collection("user").document((user?.user.uid)!)
-                newEmailUserRef.setData(["uid" : (user?.user.uid)!, "email": email, "name": name, "birthday": birthday])
-    
+                newEmailUserRef.setData(["uid" : uID!, "email": email, "name": name, "birthday": birthday])
+            
                 //Uploading the selected image to Firebase Storage with user id as name
                 let imageName:String = String((user?.user.uid)!+".jpeg")
                 let storageRef = Storage.storage().reference().child("profileImages").child(imageName)
@@ -109,17 +110,31 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                 data = pfimage.jpegData(compressionQuality: 0.8)! as NSData
                 let metaData = StorageMetadata()
                 metaData.contentType = "image/jpeg"
-                storageRef.putData(data as Data, metadata: metaData, completion: { (metaData, error) in
-                    if error == nil {
-                        print("success")
-                        self.signInLoader.stopAnimating()
-                        let storyboard = UIStoryboard(name: "Intro", bundle: nil)
-                        let vc = storyboard.instantiateViewController(identifier: "IntroVC")
-                        self.view.window?.rootViewController = vc
-                        self.view.window?.makeKeyAndVisible()
+                
+                storageRef.putData(data as Data, metadata: metaData, completion: { (metaData, error2) in
+                    if error2 == nil {
+                        print("Success: Uploading profile picture")
+                        
+                        Auth.auth().signIn(withEmail: email, password: password) { (result, error3) in
+                           if error3 == nil {
+                            print("Success: Logging new user in")
+                            self.signInLoader.stopAnimating()
+                            let storyboard = UIStoryboard(name: "Intro", bundle: nil)
+                            let vc = storyboard.instantiateViewController(identifier: "IntroVC")
+                            self.view.window?.rootViewController = vc
+                            self.view.window?.makeKeyAndVisible()
+                            
+                           }
+                           else{
+                            print("Something went wrong: Logging new user in")
+                            print(error3?.localizedDescription ?? "Cannot fetch error")
+                            
+                           }
+                        }
                         
                     } else {
-                        print(error?.localizedDescription as Any)
+                        print("Something went wrong: Uploading profile picture")
+                        print(error2?.localizedDescription as Any)
                         
                     }
                 })

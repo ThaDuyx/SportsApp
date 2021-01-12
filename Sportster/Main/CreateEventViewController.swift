@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class CreateEventViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -15,6 +17,9 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var interestsTableView: UITableView!
     @IBOutlet weak var locationPicker: UIPickerView!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    var selectedLocation: String = ""
+    var selectedInterests: [String] = []
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
@@ -42,6 +47,8 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         picturePickButton.clipsToBounds = true
         
         parseDanishCities()
+        
+        
     }
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
     override func viewWillDisappear(_ animated: Bool) {
@@ -138,6 +145,10 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedInterests.append(interests[indexPath.section])
+    }
+    
     func parseDanishCities() {
         do {
             // This solution assumes  you've got the file in your bundle
@@ -159,5 +170,25 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return cities![row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedLocation.append(cities![row])
+    }
+    
+    func postEvent() {
+        let ownerid = Auth.auth().currentUser?.uid
+        let title = titleTextView.text
+        let location = selectedLocation
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .short
+        let date = dateFormatter.string(from: datePicker.date)
+        let interests = selectedInterests
+        let description = descriptionTextView.text
+        
+        let newEventRef = Firestore.firestore().collection("event").document()
+        let eventid = newEventRef.documentID
+        //newEventRef.setData(["eid":eventid, "oid":ownerid!, ])
     }
 }

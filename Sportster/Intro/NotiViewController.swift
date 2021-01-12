@@ -6,18 +6,16 @@
 //
 import Foundation
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 
 class NotiViewController: UIViewController{
     @IBOutlet weak var notificationLabel: UILabel!
     @IBAction func endIntroTapped(_ sender: Any) {
         
-        /*
-        let db = Firestore.firestore()
         let uID = Auth.auth().currentUser?.uid
-        let newUser = db.collection("user").document(uID!)
-        newUser.setData(["uid" : uID as Any, "interests": selectedInterests, "location": selectedLocation])
-        */
+        let existingUserRef = Firestore.firestore().collection("user").document(uID!)
+        existingUserRef.setData(["interests" : selectedInterests, "location": selectedLocation], merge: true)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "MainVC")

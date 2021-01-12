@@ -374,6 +374,7 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="createEventButton" destination="325-Be-oS4" id="acx-FX-I29"/>
+                        <outlet property="datePicker" destination="7aO-eW-k0w" id="9Zc-9s-PCY"/>
                         <outlet property="descriptionTextView" destination="aQo-Je-w9Q" id="oZP-9g-PIy"/>
                         <outlet property="interestsTableView" destination="oss-ed-d4K" id="w0W-wI-2Wf"/>
                         <outlet property="locationPicker" destination="Ajp-jl-nEQ" id="zJh-Zm-KSL"/>

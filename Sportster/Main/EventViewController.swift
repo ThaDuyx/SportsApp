@@ -6,6 +6,8 @@
 //
 import Foundation
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class EventViewController: UIViewController {
 
@@ -29,6 +31,11 @@ class EventViewController: UIViewController {
         
         
         profileBtn.layer.zPosition = 1
+    
+        //Firebase CALL
+        //retrieveUser()
+        
+        
 
     }
 }
@@ -49,6 +56,29 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         vc?.name = imgArrTwo[indexPath.row]
         self.navigationController?.present(vc!, animated: true, completion: nil)
     }*/
+    
+    func retrieveUser(){
+        let uid = Auth.auth().currentUser?.uid
+        Firestore.firestore().collection("user").document(uid!).getDocument { (userinfo, error) in
+            if error != nil{
+                print("Something went wrong: Retrieving user info")
+                print(error?.localizedDescription ?? "Cannot fetch error")
+            } else {
+                let data = userinfo?.data()
+                let uid = data!["uid"] as! String
+                let name = data!["name"] as! String
+                let email = data!["email"] as! String
+                let interests = data!["interests"] as! [String]
+                let location = data!["location"] as! String
+                
+                let newUser: User = User(uid: uid, email: email, name: name, location: location, interests: interests)!
+
+                print(newUser.uid)
+                print(newUser.interests)
+            }
+        }
+        
+    }
     
 }
 
