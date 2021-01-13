@@ -379,6 +379,10 @@
                                 </constraints>
                                 <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zZ4-YK-dAY">
+                                <rect key="frame" x="177" y="554" width="20" height="20"/>
+                                <color key="color" red="0.019607843140000001" green="0.61960784310000006" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9yY-eZ-HPv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -391,18 +395,23 @@
                             <constraint firstItem="zOo-Fp-W7V" firstAttribute="centerY" secondItem="9yY-eZ-HPv" secondAttribute="centerY" constant="-100" id="R3b-P9-Z4m"/>
                             <constraint firstItem="OQy-gj-58a" firstAttribute="leading" secondItem="c3e-VP-Eoc" secondAttribute="leading" id="RUa-5E-ajZ"/>
                             <constraint firstItem="YEW-HQ-XI4" firstAttribute="leading" secondItem="c3e-VP-Eoc" secondAttribute="leading" constant="50" id="YrV-qr-S2T"/>
+                            <constraint firstItem="9yY-eZ-HPv" firstAttribute="trailing" secondItem="zZ4-YK-dAY" secondAttribute="trailing" constant="178" id="bmd-Xq-zdO"/>
                             <constraint firstItem="QiK-Ep-ous" firstAttribute="leading" secondItem="c3e-VP-Eoc" secondAttribute="leading" constant="50" id="cY9-3R-bt6"/>
+                            <constraint firstItem="zZ4-YK-dAY" firstAttribute="leading" secondItem="9yY-eZ-HPv" secondAttribute="leading" constant="177" id="fJP-nP-ym4"/>
                             <constraint firstAttribute="trailing" secondItem="YEW-HQ-XI4" secondAttribute="trailing" constant="50" id="gvk-bR-0Af"/>
                             <constraint firstItem="YEW-HQ-XI4" firstAttribute="firstBaseline" secondItem="QiK-Ep-ous" secondAttribute="baseline" constant="60" id="i1m-KP-dmk"/>
                             <constraint firstAttribute="trailing" secondItem="jkh-Ho-bcT" secondAttribute="trailing" constant="50" id="iBR-Zz-X18"/>
                             <constraint firstItem="jkh-Ho-bcT" firstAttribute="leading" secondItem="c3e-VP-Eoc" secondAttribute="leading" constant="50" id="jSe-oH-iZe"/>
+                            <constraint firstItem="zZ4-YK-dAY" firstAttribute="top" secondItem="QiK-Ep-ous" secondAttribute="bottom" constant="27" id="jlr-Rw-vD9"/>
                             <constraint firstItem="zOo-Fp-W7V" firstAttribute="centerX" secondItem="9yY-eZ-HPv" secondAttribute="centerX" id="lNG-Hc-D3c"/>
+                            <constraint firstItem="9yY-eZ-HPv" firstAttribute="bottom" secondItem="zZ4-YK-dAY" secondAttribute="bottom" constant="93" id="n2D-Jc-D9f"/>
                             <constraint firstItem="fj0-Wb-68R" firstAttribute="leading" secondItem="c3e-VP-Eoc" secondAttribute="leading" constant="42" id="qOX-Dd-S32"/>
                             <constraint firstAttribute="bottom" secondItem="YEW-HQ-XI4" secondAttribute="bottom" constant="80" id="rI2-Fd-fvk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="O3q-Mb-Rz7"/>
                     <connections>
+                        <outlet property="dbLoader" destination="zZ4-YK-dAY" id="uhR-gu-m3w"/>
                         <outlet property="emailLoginLabel" destination="fj0-Wb-68R" id="wuz-f4-fv4"/>
                         <outlet property="emailTextField" destination="jkh-Ho-bcT" id="bQ9-lQ-zlU"/>
                         <outlet property="loginLabel" destination="OQy-gj-58a" id="vCf-y9-FZi"/>
