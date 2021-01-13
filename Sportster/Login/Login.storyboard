@@ -324,6 +324,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PrC-ok-Wob" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="50" y="542" width="275" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="yTj-W4-nsS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="test@test.com" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jkh-Ho-bcT" customClass="TextField" customModule="Sportster" customModuleProvider="target">
                                 <rect key="frame" x="50" y="422" width="275" height="45"/>
                                 <constraints>
@@ -396,6 +405,8 @@
                             <constraint firstItem="OQy-gj-58a" firstAttribute="leading" secondItem="c3e-VP-Eoc" secondAttribute="leading" id="RUa-5E-ajZ"/>
                             <constraint firstItem="YEW-HQ-XI4" firstAttribute="leading" secondItem="c3e-VP-Eoc" secondAttribute="leading" constant="50" id="YrV-qr-S2T"/>
                             <constraint firstItem="9yY-eZ-HPv" firstAttribute="trailing" secondItem="zZ4-YK-dAY" secondAttribute="trailing" constant="178" id="bmd-Xq-zdO"/>
+                            <constraint firstItem="PrC-ok-Wob" firstAttribute="leading" secondItem="9yY-eZ-HPv" secondAttribute="leading" constant="50" id="c7X-Ti-YFx"/>
+                            <constraint firstItem="9yY-eZ-HPv" firstAttribute="bottom" secondItem="PrC-ok-Wob" secondAttribute="bottom" constant="80" id="cK3-Zo-jfk"/>
                             <constraint firstItem="QiK-Ep-ous" firstAttribute="leading" secondItem="c3e-VP-Eoc" secondAttribute="leading" constant="50" id="cY9-3R-bt6"/>
                             <constraint firstItem="zZ4-YK-dAY" firstAttribute="leading" secondItem="9yY-eZ-HPv" secondAttribute="leading" constant="177" id="fJP-nP-ym4"/>
                             <constraint firstAttribute="trailing" secondItem="YEW-HQ-XI4" secondAttribute="trailing" constant="50" id="gvk-bR-0Af"/>
@@ -407,6 +418,7 @@
                             <constraint firstItem="9yY-eZ-HPv" firstAttribute="bottom" secondItem="zZ4-YK-dAY" secondAttribute="bottom" constant="93" id="n2D-Jc-D9f"/>
                             <constraint firstItem="fj0-Wb-68R" firstAttribute="leading" secondItem="c3e-VP-Eoc" secondAttribute="leading" constant="42" id="qOX-Dd-S32"/>
                             <constraint firstAttribute="bottom" secondItem="YEW-HQ-XI4" secondAttribute="bottom" constant="80" id="rI2-Fd-fvk"/>
+                            <constraint firstItem="9yY-eZ-HPv" firstAttribute="trailing" secondItem="PrC-ok-Wob" secondAttribute="trailing" constant="50" id="wve-iU-tCn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="O3q-Mb-Rz7"/>
@@ -414,6 +426,7 @@
                         <outlet property="dbLoader" destination="zZ4-YK-dAY" id="uhR-gu-m3w"/>
                         <outlet property="emailLoginLabel" destination="fj0-Wb-68R" id="wuz-f4-fv4"/>
                         <outlet property="emailTextField" destination="jkh-Ho-bcT" id="bQ9-lQ-zlU"/>
+                        <outlet property="loadingAnimationView" destination="PrC-ok-Wob" id="mYc-8d-S9b"/>
                         <outlet property="loginLabel" destination="OQy-gj-58a" id="vCf-y9-FZi"/>
                         <outlet property="passwordTextField" destination="QiK-Ep-ous" id="d7M-Bd-XQa"/>
                         <outlet property="registerButton" destination="YEW-HQ-XI4" id="QhT-pH-2Mg"/>
@@ -421,9 +434,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uya-dj-bKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568" y="173"/>
+            <point key="canvasLocation" x="567.20000000000005" y="172.26386806596702"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="PrC-ok-Wob"/>
+    </designables>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Background" width="4608" height="3072"/>
