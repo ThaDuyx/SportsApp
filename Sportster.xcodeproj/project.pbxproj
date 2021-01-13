@@ -21,6 +21,7 @@
 		6A26A88B252337110060351B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A26A889252337110060351B /* LaunchScreen.storyboard */; };
 		6A26A896252337110060351B /* SportsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A895252337110060351B /* SportsterTests.swift */; };
 		6A26A8A1252337110060351B /* SportsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A8A0252337110060351B /* SportsterUITests.swift */; };
+		6A51795F25AF5EEC00084795 /* byer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A51795E25AF5EEC00084795 /* byer.txt */; };
 		6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB44135252C61F400BB8AD6 /* InterestsCell.swift */; };
 		6AF5697B25A5ACC500F3589D /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF5697A25A5ACC500F3589D /* LocationViewController.swift */; };
 		6AF569B325AB697300F3589D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF569B225AB697300F3589D /* SignUpViewController.swift */; };
@@ -28,7 +29,6 @@
 		6AFDC58F25ADD89F0000EB74 /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDC58E25ADD89F0000EB74 /* event.swift */; };
 		723FE7F38743C7A43C7ADD59 /* Pods_Sportster_SportsterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CEB6635E6402DABAD997DF /* Pods_Sportster_SportsterUITests.framework */; };
 		8310DD6B25AF2B040083B798 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8310DD6A25AF2B040083B798 /* loading.json */; };
-		8310E40225AF4B700083B798 /* byer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8310E40125AF4B700083B798 /* byer.txt */; };
 		83281D05254AFFA6007503E9 /* EventDataCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83281D04254AFFA6007503E9 /* EventDataCollectionCell.swift */; };
 		83281D0A254B096E007503E9 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83281D09254B096E007503E9 /* EventViewController.swift */; };
 		8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8380C95F25233F0C0028FEA4 /* Intro.storyboard */; };
@@ -92,6 +92,7 @@
 		6A26A89C252337110060351B /* SportsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A26A8A0252337110060351B /* SportsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsterUITests.swift; sourceTree = "<group>"; };
 		6A26A8A2252337110060351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A51795E25AF5EEC00084795 /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = byer.txt; path = ../../../../../../../../Downloads/byer.txt; sourceTree = "<group>"; };
 		6AB44135252C61F400BB8AD6 /* InterestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
 		6AF5697A25A5ACC500F3589D /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		6AF569B225AB697300F3589D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		6AFDC58E25ADD89F0000EB74 /* event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = event.swift; sourceTree = "<group>"; };
 		8165E543A95761C539E23C5E /* Pods-Sportster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportster.release.xcconfig"; path = "Target Support Files/Pods-Sportster/Pods-Sportster.release.xcconfig"; sourceTree = "<group>"; };
 		8310DD6A25AF2B040083B798 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
-		8310E40125AF4B700083B798 /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = byer.txt; path = ../../../../../../Downloads/byer.txt; sourceTree = "<group>"; };
 		83281D04254AFFA6007503E9 /* EventDataCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataCollectionCell.swift; sourceTree = "<group>"; };
 		83281D09254B096E007503E9 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8380C95F25233F0C0028FEA4 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 				83BDD14B25A5E70700279A32 /* UserProfileEditViewController.swift */,
 				83A18137252C8A4B0095FE9E /* OwnerProfileViewController.swift */,
 				83BDD14325A5DDAB00279A32 /* UserProfileViewController.swift */,
-				8310E40125AF4B700083B798 /* byer.txt */,
+				6A51795E25AF5EEC00084795 /* byer.txt */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -425,13 +425,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8310E40225AF4B700083B798 /* byer.txt in Resources */,
 				6A26A88B252337110060351B /* LaunchScreen.storyboard in Resources */,
 				6A26A888252337110060351B /* Assets.xcassets in Resources */,
 				8310DD6B25AF2B040083B798 /* loading.json in Resources */,
 				6A26A886252337100060351B /* Main.storyboard in Resources */,
 				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
 				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
+				6A51795F25AF5EEC00084795 /* byer.txt in Resources */,
 				6A006DCE252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
