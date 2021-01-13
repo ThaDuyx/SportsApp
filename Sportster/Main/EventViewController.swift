@@ -9,6 +9,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 import FirebaseStorage
+import Lottie
 
 class EventViewController: UIViewController {
 
@@ -27,7 +28,7 @@ class EventViewController: UIViewController {
     @IBOutlet weak var eventBackgroundCollection: UICollectionView!
     @IBOutlet weak var profileBtn: UIButton!
     @IBOutlet weak var makeEventBtn: UIButton!
-    @IBOutlet weak var dbLoader: UIActivityIndicatorView!
+    @IBOutlet weak var loadingAnimationView: AnimationView!
     let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
@@ -41,7 +42,8 @@ class EventViewController: UIViewController {
         makeEventBtn.clipsToBounds = true
         //profileBtn.layer.zPosition = 1
         eventBackgroundCollection.alpha = 0
-        dbLoader.startAnimating()
+        loadingAnimationView.loopMode = .loop
+        loadingAnimationView.play()
         let uid = Auth.auth().currentUser?.uid
         let dbRef = Firestore.firestore()
         dbRef.collection("user").document(uid!).getDocument { (userinfo, error) in
@@ -96,7 +98,6 @@ class EventViewController: UIViewController {
                                                     print("Success: Retrieving events")
                                                     DispatchQueue.main.async {
                                                         self.eventBackgroundCollection.reloadData()
-                                                        self.dbLoader.stopAnimating()
                                                         self.eventBackgroundCollection.alpha = 1
                                                     }
                                                 }

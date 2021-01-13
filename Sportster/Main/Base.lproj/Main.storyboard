@@ -847,10 +847,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="P9t-8x-m5z">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
-                                <color key="color" red="0.019607843140000001" green="0.61960784310000006" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ANV-AP-pxd" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="50" y="250" width="275" height="167"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTd-oe-Jek">
                                 <rect key="frame" x="160" y="592" width="55" height="55"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
@@ -981,25 +984,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="esZ-vl-xzr" firstAttribute="trailing" secondItem="0h4-7X-DI9" secondAttribute="trailing" constant="20" id="5Ad-dR-e5X"/>
+                            <constraint firstItem="esZ-vl-xzr" firstAttribute="trailing" secondItem="ANV-AP-pxd" secondAttribute="trailing" constant="50" id="7n4-mG-6Ye"/>
                             <constraint firstAttribute="bottom" secondItem="tTd-oe-Jek" secondAttribute="bottom" constant="20" id="FQc-Uc-x9y"/>
-                            <constraint firstItem="P9t-8x-m5z" firstAttribute="leading" secondItem="esZ-vl-xzr" secondAttribute="leading" constant="177" id="H6x-cf-VcN"/>
                             <constraint firstItem="mBM-D7-RKg" firstAttribute="firstBaseline" secondItem="tTd-oe-Jek" secondAttribute="baseline" id="IxR-va-1t5"/>
-                            <constraint firstItem="esZ-vl-xzr" firstAttribute="trailing" secondItem="P9t-8x-m5z" secondAttribute="trailing" constant="178" id="LZf-iq-3Sg"/>
+                            <constraint firstItem="ANV-AP-pxd" firstAttribute="leading" secondItem="esZ-vl-xzr" secondAttribute="leading" constant="50" id="Oot-8h-OeQ"/>
+                            <constraint firstItem="ANV-AP-pxd" firstAttribute="top" secondItem="esZ-vl-xzr" secondAttribute="top" constant="250" id="SGC-ad-COc"/>
                             <constraint firstItem="tTd-oe-Jek" firstAttribute="centerX" secondItem="esZ-vl-xzr" secondAttribute="centerX" id="SWa-b9-AgO"/>
                             <constraint firstItem="0h4-7X-DI9" firstAttribute="leading" secondItem="esZ-vl-xzr" secondAttribute="leading" constant="20" id="UsL-2J-LYU"/>
                             <constraint firstItem="0h4-7X-DI9" firstAttribute="top" secondItem="esZ-vl-xzr" secondAttribute="top" constant="20" id="aRf-l3-3RZ"/>
                             <constraint firstItem="tTd-oe-Jek" firstAttribute="leading" secondItem="mBM-D7-RKg" secondAttribute="trailing" constant="100" id="d38-gb-pxN"/>
+                            <constraint firstItem="esZ-vl-xzr" firstAttribute="bottom" secondItem="ANV-AP-pxd" secondAttribute="bottom" constant="250" id="h6S-1s-ak1"/>
                             <constraint firstItem="tTd-oe-Jek" firstAttribute="top" secondItem="0h4-7X-DI9" secondAttribute="bottom" constant="10" id="lOS-R5-8Pg"/>
-                            <constraint firstItem="tTd-oe-Jek" firstAttribute="top" secondItem="P9t-8x-m5z" secondAttribute="bottom" constant="249" id="mQU-S9-7Ja"/>
                             <constraint firstItem="AsD-w8-D0Z" firstAttribute="leading" secondItem="tTd-oe-Jek" secondAttribute="trailing" constant="100" id="vxg-gU-1du"/>
-                            <constraint firstItem="P9t-8x-m5z" firstAttribute="top" secondItem="esZ-vl-xzr" secondAttribute="top" constant="323" id="yBG-BU-Njd"/>
                             <constraint firstItem="AsD-w8-D0Z" firstAttribute="firstBaseline" secondItem="tTd-oe-Jek" secondAttribute="baseline" id="zIn-Ge-T2T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rVD-y6-mxd"/>
                     <connections>
-                        <outlet property="dbLoader" destination="P9t-8x-m5z" id="sOY-jG-Bfo"/>
                         <outlet property="eventBackgroundCollection" destination="0h4-7X-DI9" id="2wF-bU-Ajk"/>
+                        <outlet property="loadingAnimationView" destination="ANV-AP-pxd" id="4tb-2V-17E"/>
                         <outlet property="makeEventBtn" destination="tTd-oe-Jek" id="ch5-uN-LBB"/>
                         <segue destination="CMQ-q0-JbT" kind="presentation" identifier="showSpecificEvent" id="8v0-Mx-fOF"/>
                     </connections>
@@ -1176,14 +1179,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="crt-TZ-HC2" customClass="ParticipantsCell" customModule="Sportster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="300" height="21"/>
+                                        <rect key="frame" x="0.0" y="28" width="300" height="21.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="crt-TZ-HC2" id="0Hq-aS-waa">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="21"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="21.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simon Andersen, 22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNP-FB-P1i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
