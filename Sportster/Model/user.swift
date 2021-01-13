@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 class User {
     var uid: String
-    //var pfimage: UIImage
+    var pfimage: UIImage
     var email: String
     var name: String
     //var age: String
@@ -22,14 +22,14 @@ class User {
     var location: String
     //var birthday: String
 
-    init?(uid: String, email: String, name: String, location: String, interests: [String], events: [String]) {
+    init?(uid: String, email: String, name: String, location: String, interests: [String], events: [String], pfimage: UIImage) {
         self.uid = uid
         self.email = email
         self.name = name
         self.interests = interests
         self.location = location
         self.events = events
-        
+        self.pfimage = pfimage
     }
     
 }

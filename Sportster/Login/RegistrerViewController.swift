@@ -50,7 +50,7 @@ class RegistrerViewController: UIViewController {
                 print("Something went wrong: Loggning existing user in")
                 print(error?.localizedDescription ?? "Cannot fetch error")
             } else {
-                print("Success: Logging new user in")
+                print("Success: Logging user in")
                 self.registerButton.alpha = 1
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(identifier: "MainVC")

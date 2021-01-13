@@ -16,7 +16,7 @@ class EventViewController: UIViewController {
     var imgArrTwo = [UIImage(named: "Snowboarding"),
                      UIImage(named: "Background"),
                      UIImage(named: "Profile")]
-    var mainUser = User(uid: " ", email: "" , name: "", location: "", interests: [], events: [])
+    var mainUser = User(uid: "", email: "" , name: "", location: "", interests: [], events: [], pfimage: UIImage(named: "Profile")!)
     var eventsList = [Event]()
     var selectedEventTitle = ""
     var selectedEventLocation = ""
@@ -26,9 +26,9 @@ class EventViewController: UIViewController {
     
 
     @IBOutlet weak var eventBackgroundCollection: UICollectionView!
-    @IBOutlet weak var profileBtn: UIButton!
     @IBOutlet weak var makeEventBtn: UIButton!
     @IBOutlet weak var loadingAnimationView: AnimationView!
+    @IBOutlet weak var userProfileBtn: UIButton!
     let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
@@ -58,92 +58,98 @@ class EventViewController: UIViewController {
                 let interests = data!["interests"] as! [String]
                 let location = data!["location"] as! String
                 let events = data!["events"] as! [String]
-                self.mainUser = User(uid: uid, email: email, name: name, location: location, interests: interests, events: events)!
-                print("Success: Retrieving user info")
+                let userImgRef = self.storage.child("profileImages/" + uid + ".jpeg")
+                userImgRef.getData(maxSize: 1 * 1024 * 1024) { (userImgData, error5) in
+                    if error5 != nil {
+                        print("Something went wrong: Retrieving profile image")
+                        print(error5?.localizedDescription ?? "Cannot fetch error")
+                    } else {
+                        let userImage = UIImage(data: userImgData!)
+                        self.mainUser = User(uid: uid, email: email, name: name, location: location, interests: interests, events: events, pfimage: userImage!)!
+                        print("Success: Retrieving user info")
+                        
+                        self.mainUser?.interests.forEach({ (interest) in
+                            dbRef.collection("event").whereField("interests", isEqualTo: interest).addSnapshotListener { (eventInfo, error2) in
+                            if error2 != nil {
+                                    print("Something went wrong: Retrieving events")
+                                    print(error2?.localizedDescription ?? "Cannot fetch error")
+                                } else {
+                                    eventInfo?.documentChanges.forEach({ (change) in
+                                        if (change.type == .added){
+                                            let addedData = change.document.data()
+                                            let eid = addedData["eid"] as! String
+                                            let oid = addedData["oid"] as! String
+                                            let title = addedData["title"] as! String
+                                            let description = addedData["description"] as! String
+                                            let date = addedData["date"] as! String
+                                            let interest = addedData["interests"] as! String
+                                            let location = addedData["location"] as! String
+                                            let ownerName = addedData["ownername"] as! String
                 
-                self.mainUser?.interests.forEach({ (interest) in
-                    dbRef.collection("event").whereField("interests", isEqualTo: interest).addSnapshotListener { (eventInfo, error2) in
-                        if error2 != nil {
-                            print("Something went wrong: Retrieving events")
-                            print(error2?.localizedDescription ?? "Cannot fetch error")
-                        } else {
-                            eventInfo?.documentChanges.forEach({ (change) in
-                                if (change.type == .added){
-                                    let addedData = change.document.data()
-                                    let eid = addedData["eid"] as! String
-                                    let oid = addedData["oid"] as! String
-                                    let title = addedData["title"] as! String
-                                    let description = addedData["description"] as! String
-                                    let date = addedData["date"] as! String
-                                    let interest = addedData["interests"] as! String
-                                    let location = addedData["location"] as! String
-                                    let ownerName = addedData["ownername"] as! String
-                                   
-                                    let eventImgRef = self.storage.child("eventImages/" + eid + ".jpeg")
-                                    eventImgRef.getData(maxSize: 1 * 1024 * 1024) { (eventImgData, error3) in
-                                        if error3 != nil {
-                                            print("Something went wrong: Downloading event picture")
-                                            print(error?.localizedDescription ?? "Cannot fetch error")
-                                        } else {
-                                            let eventImage = UIImage(data: eventImgData!)
-                                            let ownerImageRef = self.storage.child("profileImages/" + oid + ".jpeg")
-                                            
-                                            ownerImageRef.getData(maxSize: 1 * 1024 * 1024) { (ownerImgData, error4) in
-                                                if error4 != nil {
-                                                    print("Something went wrong: Downloading owner picture")
-                                                    print(error4?.localizedDescription ?? "Cannot fetch error")
+                                            let eventImgRef = self.storage.child("eventImages/" + eid + ".jpeg")
+                                            eventImgRef.getData(maxSize: 1 * 1024 * 1024) { (eventImgData, error3) in
+                                                if error3 != nil {
+                                                    print("Something went wrong: Downloading event picture")
+                                                    print(error?.localizedDescription ?? "Cannot fetch error")
                                                 } else {
-                                                    let ownerImage = UIImage(data: ownerImgData!)
-                                                    self.eventsList.append(Event(oid: oid, eid: eid, title: title, date: date, description: description, interest: interest, location: location, ownerName: ownerName, eImage: eventImage!, oImage: ownerImage!)!)
-                                                    print("Success: Retrieving events")
-                                                    DispatchQueue.main.async {
-                                                        self.eventBackgroundCollection.reloadData()
-                                                        self.eventBackgroundCollection.alpha = 1
+                                                    let eventImage = UIImage(data: eventImgData!)
+                                                    let ownerImageRef = self.storage.child("profileImages/" + oid + ".jpeg")
+                                                    
+                                                    ownerImageRef.getData(maxSize: 1 * 1024 * 1024) { (ownerImgData, error4) in
+                                                        if error4 != nil {
+                                                            print("Something went wrong: Downloading owner picture")
+                                                            print(error4?.localizedDescription ?? "Cannot fetch error")
+                                                        } else {
+                                                            let ownerImage = UIImage(data: ownerImgData!)
+                                                            self.eventsList.append(Event(oid: oid, eid: eid, title: title, date: date, description: description, interest: interest, location: location, ownerName: ownerName, eImage: eventImage!, oImage: ownerImage!)!)
+                                                            print("Success: Retrieving events")
+                                                            DispatchQueue.main.async {
+                                                                self.eventBackgroundCollection.reloadData()
+                                                                self.eventBackgroundCollection.alpha = 1
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
                                         }
-                                    }
-                                }
-                                
-                                if (change.type == .modified){
-                                    let modifiedData = change.document.data()
-                                    for event in self.eventsList{
-                                        if modifiedData["eid"] as! String == event.eid{
-                                            event.title = modifiedData["eid"] as! String
-                                            event.location = modifiedData["location"] as! String
-                                            event.date = modifiedData["date"] as! String
-                                            event.description = modifiedData["description"] as! String
-                                            print("Success: Modifying events")
+                                        
+                                        if (change.type == .modified){
+                                            let modifiedData = change.document.data()
+                                            for event in self.eventsList{
+                                                if modifiedData["eid"] as! String == event.eid{
+                                                    event.title = modifiedData["eid"] as! String
+                                                    event.location = modifiedData["location"] as! String
+                                                    event.date = modifiedData["date"] as! String
+                                                    event.description = modifiedData["description"] as! String
+                                                    print("Success: Modifying events")
+                                                }
+                                            }
                                         }
-                                    }
+                                        
+                                        if (change.type == .removed) {
+                                            let removedData = change.document.data()
+                                            let removedEid = removedData["eid"] as! String
+                                            self.eventsList.removeAll{ $0.eid == removedEid}
+                                            self.eventBackgroundCollection.reloadData()
+                                            print("Success: Removed event")
+                                        }
+
+                                    })
                                 }
-                                
-                                if (change.type == .removed) {
-                                    let removedData = change.document.data()
-                                    let removedEid = removedData["eid"] as! String
-                                    self.eventsList.removeAll{ $0.eid == removedEid}
-                                    self.eventBackgroundCollection.reloadData()
-                                    print("Success: Removed event")
-                                }
-                                
-                            })
-                        }
+                            }
+                        })
+
                     }
-                })
+                }
             }
         }
     }
-    @IBAction func profileBtnTapped(_ sender: Any) {
-        performSegue(withIdentifier: "showOwnerProfile", sender: self)
+    
+    @IBAction func userProfileBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: "showUserInfo", sender: self)
     }
     
-
 }
-
-
-
-
 
 extension EventViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -159,14 +165,12 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "showSpecificEvent", sender: self)
         selectedEventTitle = eventsList[indexPath.row].title
         selectedEventDate = eventsList[indexPath.row].date
         selectedEventDescription = eventsList[indexPath.row].description
         selectedEventLocation = eventsList[indexPath.row].location
         selectedOwnerID = eventsList[indexPath.row].oid
-        
+        performSegue(withIdentifier: "showSpecificEvent", sender: self)
     }
     
     
@@ -179,9 +183,9 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
             destinationVC.selectedEventDescription = selectedEventDescription
             destinationVC.selectedEventDate = selectedEventDate
             destinationVC.selectedOid = selectedOwnerID
-        } else if segue.identifier == "showOwnerProfile" {
-            let destinationVC2 = segue.destination as! OwnerProfileViewController
-            destinationVC2.oid = selectedOwnerID
+        } else if segue.identifier == "showUserInfo" {
+            let destinationVC2 = segue.destination as! UserProfileViewController
+            destinationVC2.userProfile = self.mainUser
             
         }
         

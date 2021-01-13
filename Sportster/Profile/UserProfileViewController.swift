@@ -10,6 +10,11 @@ import UIKit
 class UserProfileViewController: UIViewController {
     @IBOutlet weak var topbarView: UIView!
     @IBOutlet weak var profileImage: UIImageView!
+    var userProfile = User(uid: "String", email: "", name: "", location: "", interests: [], events: [], pfimage: UIImage(named: "Profile")!)
+    
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userInterests: UILabel!
+    @IBOutlet weak var userLocation: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,13 @@ class UserProfileViewController: UIViewController {
         
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
+        
+        userName.text = userProfile?.name
+        userLocation.text = userProfile?.location
+        let interestsString = userProfile?.interests.joined(separator:", ")
+        userInterests.text = interestsString
+        profileImage.image = userProfile?.pfimage
+        
     }
     
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
