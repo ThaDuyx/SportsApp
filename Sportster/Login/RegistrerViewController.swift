@@ -36,11 +36,11 @@ class RegistrerViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var loadingAnimationView: AnimationView!
-    @IBOutlet weak var dbLoader: UIActivityIndicatorView!
+        
     @IBAction func registerButtonTapped(_ sender: Any) {
-        dbLoader.startAnimating()
-        //loadingAnimationView.loopMode = .loop
-        //loadingAnimationView.play()
+        loadingAnimationView.alpha = 1
+        loadingAnimationView.loopMode = .loop
+        loadingAnimationView.play()
         registerButton.alpha = 0
         let email = emailTextField.text!
         let password = passwordTextField.text!
@@ -51,8 +51,7 @@ class RegistrerViewController: UIViewController {
                 print(error?.localizedDescription ?? "Cannot fetch error")
             } else {
                 print("Success: Logging new user in")
-                self.dbLoader.stopAnimating()
-                //self.loadingAnimationView.stop()
+                self.loadingAnimationView.stop()
                 self.registerButton.alpha = 1
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(identifier: "MainVC")
@@ -98,6 +97,8 @@ class RegistrerViewController: UIViewController {
         emailTextField.layer.cornerRadius = 20
         passwordTextField.layer.cornerRadius = 20
         //-- Border for Textfield END
+
+        loadingAnimationView.alpha = 0
 
     }
     
