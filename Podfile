@@ -28,6 +28,9 @@ target 'Sportster' do
   
   # Google login
   pod 'GoogleSignIn'
+  
+  # Lottie Animation
+  pod 'lottie-ios'
 
   target 'SportsterTests' do
     inherit! :search_paths

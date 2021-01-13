@@ -10,9 +10,13 @@
 #endif
 #endif
 
+#import "FIRCrashlytics 2.h"
 #import "FIRCrashlytics.h"
+#import "FirebaseCrashlytics 2.h"
 #import "FirebaseCrashlytics.h"
+#import "FIRExceptionModel 2.h"
 #import "FIRExceptionModel.h"
+#import "FIRStackFrame 2.h"
 #import "FIRStackFrame.h"
 
 FOUNDATION_EXPORT double FirebaseCrashlyticsVersionNumber;
