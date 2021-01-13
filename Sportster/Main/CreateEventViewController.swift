@@ -18,8 +18,9 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     @IBOutlet weak var interestsTableView: UITableView!
     @IBOutlet weak var locationPicker: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var dbLoader: UIActivityIndicatorView!
     var selectedLocation: String = ""
-    var selectedInterests: [String] = []
+    var selectedInterest: String = ""
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
@@ -146,7 +147,7 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedInterests.append(interests[indexPath.section])
+        selectedInterest = interests[indexPath.section]
     }
     
     func parseDanishCities() {
@@ -173,10 +174,19 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedLocation.append(cities![row])
+        selectedLocation = cities![row]
+    }
+    @IBAction func createEventBtnTapped(_ sender: Any) {
+        /*dbLoader.alpha = 1
+        dbLoader.startAnimating()
+        createEventButton.alpha = 0
+        postEvent()*/
+        
     }
     
     func postEvent() {
+        
+        //Posting the event data in Firebase/event
         let ownerid = Auth.auth().currentUser?.uid
         let title = titleTextView.text
         let location = selectedLocation
@@ -184,11 +194,35 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         dateFormatter.timeStyle = .short
         dateFormatter.dateStyle = .short
         let date = dateFormatter.string(from: datePicker.date)
-        let interests = selectedInterests
+        let interests = selectedInterest
         let description = descriptionTextView.text
         
         let newEventRef = Firestore.firestore().collection("event").document()
         let eventid = newEventRef.documentID
-        //newEventRef.setData(["eid":eventid, "oid":ownerid!, ])
+        newEventRef.setData(["eid":eventid, "oid":ownerid!, "title":title!, "location": location, "date": date, "interests":interests, "description": description!]) { (error1) in
+            if error1 != nil {
+                print("Something went wrong: Posting event")
+                print(error1?.localizedDescription ?? "Cannot fetch error")
+            } else {
+                print("Success: Posting event")
+                //Adding eventid in firebase/user/events
+                let userRef = Firestore.firestore().collection("user").document(ownerid!).collection("events").document(eventid)
+                userRef.setData(["eid": eventid]) { (error2) in
+                    if error2 != nil {
+                        print("Something went wrong: Posting event to owner")
+                        print(error2?.localizedDescription ?? "Cannot fetch error")
+                    } else {
+                        print("Success: Posting event to owner")
+                        self.createEventButton.alpha = 1
+                        self.dbLoader.stopAnimating()
+                        self.dbLoader.alpha = 0
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                }
+                
+            }
+        }
+        
+        
     }
 }

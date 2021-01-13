@@ -34,8 +34,10 @@ class RegistrerViewController: UIViewController {
     @IBOutlet weak var emailLoginLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var dbLoader: UIActivityIndicatorView!
     @IBAction func registerButtonTapped(_ sender: Any) {
-        
+        dbLoader.startAnimating()
+        registerButton.alpha = 0
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
@@ -45,6 +47,8 @@ class RegistrerViewController: UIViewController {
                 print(error?.localizedDescription ?? "Cannot fetch error")
             } else {
                 print("Success: Logging new user in")
+                self.dbLoader.stopAnimating()
+                self.registerButton.alpha = 1
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(identifier: "MainVC")
                 
@@ -54,6 +58,7 @@ class RegistrerViewController: UIViewController {
         }
 
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

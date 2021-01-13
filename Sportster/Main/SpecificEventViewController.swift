@@ -13,7 +13,16 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var participantsTableView: UITableView!
     @IBOutlet weak var joinButton: UIButton!
-    
+    @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var eventLocation: UILabel!
+    @IBOutlet weak var eventDescription: UILabel!
+    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var ownerProfileBtn: UIButton!
+    var selectedEventTitle = ""
+    var selectedEventDescription = ""
+    var selectedEventLocation = ""
+    var selectedEventDate = ""
+    var selectedOid = ""
     let Participants: [String] = ["Simon Andersen, 22", "Christoffer Detlef, 23", "Asama Hayder, 23", "Line Mørup, 22"]
     
     override func viewDidLoad() {
@@ -23,6 +32,22 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
         img.clipsToBounds = true
         
         joinButton.layer.cornerRadius = 5
+        
+        eventTitle.text = selectedEventTitle
+        eventLocation.text = selectedEventLocation
+        eventDescription.text = selectedEventDescription
+        eventDate.text = selectedEventDate
+        
+    }
+    @IBAction func ownerProfileBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: "showOwnerProfile", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showOwnerProfile"{
+            let destinationVC = segue.destination as! OwnerProfileViewController
+            destinationVC.oid = selectedOid
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
