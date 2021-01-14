@@ -22,11 +22,6 @@ target 'Sportster' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   
-  # Facebook login
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKShareKit'
-  pod 'FBSDKLoginKit'
-  
   # Google login
   pod 'GoogleSignIn'
   

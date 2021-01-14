@@ -9,9 +9,6 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseFirestore
-import FBSDKCoreKit
-import FBSDKLoginKit
-import FBSDKShareKit
 import GoogleSignIn
 
 
@@ -37,7 +34,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         }
 }
     
-    @IBAction func fButtonTapped(_ sender: Any) {
+    /*@IBAction func fButtonTapped(_ sender: Any) {
         let loginManager = LoginManager()
         loginManager.logIn(permissions: ["public_profile", "email", "user_birthday"], from: self) { (result, error) in
             if let error = error{
@@ -71,7 +68,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                 }
         }
     }
-}
+}*/
     
     @IBAction func gButtonTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
@@ -110,7 +107,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     }
     
     //https://stackoverflow.com/a/50447480
-    //___________________________________________
+    /*//___________________________________________
     func getFBUserData(){
         GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler:
                 { (connection, result, error) -> Void in
@@ -138,6 +135,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                         }
                     }
             })
-    }
+    }*/
     //___________________________________________
 }
