@@ -54,6 +54,9 @@ class RegistrerViewController: UIViewController {
             
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if error != nil {
+                    self.loadingAnimationView.stop()
+                    self.loadingAnimationView.alpha = 0
+                    self.registerButton.alpha = 1
                     print("Something went wrong: Loggning existing user in")
                     print(error?.localizedDescription ?? "Cannot fetch error")
                 } else {

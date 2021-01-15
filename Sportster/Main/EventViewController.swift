@@ -13,9 +13,6 @@ import Lottie
 
 class EventViewController: UIViewController {
 
-    var imgArrTwo = [UIImage(named: "Snowboarding"),
-                     UIImage(named: "Background"),
-                     UIImage(named: "Profile")]
     var mainUser = User(uid: "", email: "" , name: "", location: "", interests: [], events: [], pfimage: UIImage(named: "Profile")!)
     var eventsList = [Event]()
     var selectedEventTitle = ""
@@ -27,7 +24,7 @@ class EventViewController: UIViewController {
     @IBOutlet weak var eventBackgroundCollection: UICollectionView!
     @IBOutlet weak var makeEventBtn: UIButton!
     @IBOutlet weak var loadingAnimationView: AnimationView!
-    @IBOutlet weak var userProfileBtn: UIButton!
+
     let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
@@ -143,11 +140,6 @@ class EventViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func userProfileBtnTapped(_ sender: Any) {
-        performSegue(withIdentifier: "showUserInfo", sender: self)
-    }
-
 }
 
 extension EventViewController: UICollectionViewDataSource, UICollectionViewDelegate {
