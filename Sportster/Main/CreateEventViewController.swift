@@ -9,7 +9,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class CreateEventViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreateEventViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var createEventButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -21,6 +21,8 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     @IBOutlet weak var dbLoader: UIActivityIndicatorView!
     var selectedLocation: String = ""
     var selectedInterest: String = ""
+    var eventPicPicker = UIImagePickerController()
+    var selectedImage = UIImage()
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
@@ -61,6 +63,27 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.isTranslucent = false
     }
+    
+    @IBAction func pickEventImage(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
+            eventPicPicker.delegate = self
+            eventPicPicker.sourceType = .savedPhotosAlbum
+            eventPicPicker.allowsEditing = false
+            
+            present(eventPicPicker, animated: true, completion: nil)
+            
+            
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.dismiss(animated: true)
+        
+        if let pickedImage = info[.originalImage] as? UIImage {
+            selectedImage = pickedImage
+        }
+    }
+    
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView === descriptionTextView{

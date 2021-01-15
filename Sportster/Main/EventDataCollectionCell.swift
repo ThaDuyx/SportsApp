@@ -23,5 +23,4 @@ class EventDataCollectionCell: UICollectionViewCell {
         titleLabel.layer.cornerRadius = 20
         titleLabel.layer.masksToBounds = true
     }
-    
 }

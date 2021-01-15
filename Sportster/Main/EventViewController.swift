@@ -23,8 +23,7 @@ class EventViewController: UIViewController {
     var selectedEventDate = ""
     var selectedEventDescription = ""
     var selectedOwnerID = ""
-    
-
+        
     @IBOutlet weak var eventBackgroundCollection: UICollectionView!
     @IBOutlet weak var makeEventBtn: UIButton!
     @IBOutlet weak var loadingAnimationView: AnimationView!
@@ -148,7 +147,7 @@ class EventViewController: UIViewController {
     @IBAction func userProfileBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "showUserInfo", sender: self)
     }
-    
+
 }
 
 extension EventViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -156,7 +155,6 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return eventsList.count
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? EventDataCollectionCell
         cell?.eventBackgroundImage.image = eventsList[indexPath.row].eImage
@@ -190,6 +188,7 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         }
         
     }
+    
     
     /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "TestViewController") as? TestViewController

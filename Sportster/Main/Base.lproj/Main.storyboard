@@ -202,7 +202,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Vælg"/>
                                                 <connections>
-                                                    <segue destination="9Ro-Jx-aLo" kind="show" id="FFz-X9-83G"/>
+                                                    <action selector="pickEventImage:" destination="5ea-4s-4rc" eventType="touchUpInside" id="pVd-i9-hWp"/>
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZDO-ri-Sug">
@@ -470,7 +470,7 @@
         <!--Edit Event View Controller-->
         <scene sceneID="0gh-qv-Xhq">
             <objects>
-                <viewController id="qLa-ag-DGv" customClass="EditEventViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editEvent" id="qLa-ag-DGv" customClass="EditEventViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYS-bj-saN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1756,10 +1756,12 @@
             <point key="canvasLocation" x="1681" y="-1342"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="ANV-AP-pxd"/>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="09O-fj-Cjo"/>
-        <segue reference="fpc-34-CAD"/>
-        <segue reference="ZpQ-wE-Lh9"/>
+        <segue reference="r3L-9l-Dwg"/>
+        <segue reference="8v0-Mx-fOF"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

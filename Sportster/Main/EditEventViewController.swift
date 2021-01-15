@@ -18,6 +18,8 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
+    var selectedImage = UIImage()
+
     
     override func viewDidLoad() {
         
@@ -43,7 +45,9 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         picturePickButton.clipsToBounds = true
         
         parseDanishCities()
+        print(selectedImage)
     }
+    
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -53,6 +57,7 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.isTranslucent = false
+        print(selectedImage)
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
