@@ -36,6 +36,7 @@ class RegistrerViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var loadingAnimationView: AnimationView!
+    @IBOutlet weak var mainView: UIView!
         
     @IBAction func registerButtonTapped(_ sender: Any) {
         if (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
