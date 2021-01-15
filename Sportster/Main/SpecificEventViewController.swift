@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 import UIKit
 
 class SpecificEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -19,6 +20,8 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var ownerProfileBtn: UIButton!
     @IBOutlet weak var backgroundViewOne: UIView!
+    
+    
 
     var selectedEventTitle = ""
     var selectedEid = ""
@@ -27,7 +30,9 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     var selectedEventDate = ""
     var selectedOid = ""
     var username = ""
-    let Participants: [String] = ["Simon Andersen, 22", "Christoffer Detlef, 23", "Asama Hayder, 23", "Line Mørup, 22"]
+    let dbRef = Firestore.firestore()
+    
+    var participants = [Participant]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +46,52 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
         eventLocation.text = selectedEventLocation
         eventDescription.text = selectedEventDescription
         eventDate.text = selectedEventDate
-        
         backgroundViewOne.layer.cornerRadius = 15
+        dbRef.collection("event").document(selectedEid).collection("participants").addSnapshotListener { (participantsInfo, error) in
+            if error != nil {
+            print("Something went wrong: Retreiving participants list")
+            print(error?.localizedDescription ?? "Cannot fetch error")
+                
+            } else {
+                participantsInfo?.documentChanges.forEach({ (participantChange) in
+                    if participantChange.type == .added {
+                        let pDataAdded = participantChange.document.data()
+                        let pName = pDataAdded["name"] as! String
+                        let pId = pDataAdded["pid"] as! String
+                        let pStatus = pDataAdded["status"] as! Bool
+                        if pStatus == true {
+                            self.participants.append(Participant(pid: pId, name: pName, status: pStatus)!)
+                            DispatchQueue.main.async {
+                                self.participantsTableView.reloadData()
+                            }
+                        }
+                    }
+                    
+                    if participantChange.type == .modified {
+                        let pDataModified = participantChange.document.data()
+                        let pName = pDataModified["name"] as! String
+                        let pId = pDataModified["pid"] as! String
+                        let pStatus = pDataModified["status"] as! Bool
+                        if pStatus == true {
+                            self.participants.append(Participant(pid: pId, name: pName, status: pStatus)!)
+                            DispatchQueue.main.async {
+                                self.participantsTableView.reloadData()
+                            }
+                        }
+                    }
+                    
+                    if participantChange.type == .removed{
+                        let pDataRemoved = participantChange.document.data()
+                        let removedpId = pDataRemoved["pid"] as! String
+                        self.participants.removeAll{ $0.pid == removedpId}
+                        DispatchQueue.main.async {
+                            self.participantsTableView.reloadData()
+                            print("Success: Removed event")
+                        }
+                    }
+                })
+            }
+        }
     }
     
     @IBAction func ownerProfileBtnTapped(_ sender: Any) {
@@ -57,7 +106,7 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.Participants.count
+        return self.participants.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,7 +129,7 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = participantsTableView.dequeueReusableCell(withIdentifier: "cell") as! ParticipantsCell
-        cell.participantsLabel?.text = Participants[indexPath.section]
+        cell.participantsLabel?.text = participants[indexPath.section].name
         return cell
     }
 }

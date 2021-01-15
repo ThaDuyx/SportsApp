@@ -21,7 +21,6 @@
 		6A26A88B252337110060351B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A26A889252337110060351B /* LaunchScreen.storyboard */; };
 		6A26A896252337110060351B /* SportsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A895252337110060351B /* SportsterTests.swift */; };
 		6A26A8A1252337110060351B /* SportsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A8A0252337110060351B /* SportsterUITests.swift */; };
-		6A7264E425B1EA2400863DB7 /* byer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A7264E325B1EA2400863DB7 /* byer.txt */; };
 		6A7264E925B1EA9C00863DB7 /* participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7264E825B1EA9C00863DB7 /* participant.swift */; };
 		6A7264EE25B1EABB00863DB7 /* userEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7264ED25B1EABB00863DB7 /* userEventList.swift */; };
 		6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB44135252C61F400BB8AD6 /* InterestsCell.swift */; };
@@ -92,7 +91,6 @@
 		6A26A89C252337110060351B /* SportsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A26A8A0252337110060351B /* SportsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsterUITests.swift; sourceTree = "<group>"; };
 		6A26A8A2252337110060351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A7264E325B1EA2400863DB7 /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = byer.txt; path = ../../../../../../../../Downloads/byer.txt; sourceTree = "<group>"; };
 		6A7264E825B1EA9C00863DB7 /* participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = participant.swift; sourceTree = "<group>"; };
 		6A7264ED25B1EABB00863DB7 /* userEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userEventList.swift; sourceTree = "<group>"; };
 		6AB44135252C61F400BB8AD6 /* InterestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
@@ -104,24 +102,6 @@
 		8310DD6A25AF2B040083B798 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		83281D04254AFFA6007503E9 /* EventDataCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataCollectionCell.swift; sourceTree = "<group>"; };
 		83281D09254B096E007503E9 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		83472D3225B1D2B3005E0A1F /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
-		83472D3325B1D2B3005E0A1F /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
-		83472D3425B1D2B4005E0A1F /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
-		83472D3525B1D2B4005E0A1F /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
-		83472D3625B1D2B4005E0A1F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
-		83472D3725B1D2B5005E0A1F /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		83472D3825B1D2B5005E0A1F /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
-		83472D3925B1D2B6005E0A1F /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
-		83472D3A25B1D2B6005E0A1F /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
-		83472D3B25B1D2B6005E0A1F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		83472D3C25B1D2B7005E0A1F /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		83472D3D25B1D2B7005E0A1F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		83472D3E25B1D2B7005E0A1F /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		83472D3F25B1D2B8005E0A1F /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
-		83472D4025B1D2B8005E0A1F /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
-		83472D4125B1D2B9005E0A1F /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
-		83472D4225B1D2B9005E0A1F /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
-		83472D4325B1D2B9005E0A1F /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		83472D4A25B1EA3B005E0A1F /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = byer.txt; sourceTree = "<group>"; };
 		8380C95F25233F0C0028FEA4 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		8380C96425233F1B0028FEA4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -452,7 +432,6 @@
 				6A26A886252337100060351B /* Main.storyboard in Resources */,
 				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
 				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
-				6A7264E425B1EA2400863DB7 /* byer.txt in Resources */,
 				6A006DCE252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -845,7 +824,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = K62N5868AJ;
+				DEVELOPMENT_TEAM = ZG95YRN77R;
 				INFOPLIST_FILE = Sportster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -866,7 +845,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K62N5868AJ;
+				DEVELOPMENT_TEAM = ZG95YRN77R;
 				INFOPLIST_FILE = Sportster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -7,7 +7,6 @@
 import Foundation
 import UIKit
 
-
 class LocationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var locationTitle: UILabel!

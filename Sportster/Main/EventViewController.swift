@@ -20,7 +20,7 @@ class EventViewController: UIViewController {
     var selectedEventLocation = ""
     var selectedEventDate = ""
     var selectedEventDescription = ""
-    var selectedOwnerID = ""
+    var selectedEventOwnerID = ""
         
     @IBOutlet weak var eventBackgroundCollection: UICollectionView!
     @IBOutlet weak var makeEventBtn: UIButton!
@@ -170,7 +170,8 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         selectedEventDate = eventsList[indexPath.row].date
         selectedEventDescription = eventsList[indexPath.row].description
         selectedEventLocation = eventsList[indexPath.row].location
-        selectedOwnerID = eventsList[indexPath.row].oid
+        selectedEventOwnerID = eventsList[indexPath.row].oid
+        selectedEventEid = eventsList[indexPath.row].eid
         performSegue(withIdentifier: "showSpecificEvent", sender: self)
     }
     
@@ -183,7 +184,7 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
             destinationVC.selectedEventLocation = selectedEventLocation
             destinationVC.selectedEventDescription = selectedEventDescription
             destinationVC.selectedEventDate = selectedEventDate
-            destinationVC.selectedOid = selectedOwnerID
+            destinationVC.selectedOid = selectedEventOwnerID
             destinationVC.selectedEid = selectedEventEid
             destinationVC.username = mainUser!.name
         } else if segue.identifier == "showUserInfo" {
