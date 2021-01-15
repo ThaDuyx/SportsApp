@@ -15,6 +15,7 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var interestsTableView: UITableView!
     @IBOutlet weak var locationPicker: UIPickerView!
+    @IBOutlet weak var mainView: UIView!
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
@@ -45,6 +46,23 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         picturePickButton.clipsToBounds = true
         
         parseDanishCities()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.mainView.frame.origin.y == 0 {
+                self.mainView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.mainView.frame.origin.y != 0 {
+            self.mainView.frame.origin.y = 0
+        }
     }
     
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.

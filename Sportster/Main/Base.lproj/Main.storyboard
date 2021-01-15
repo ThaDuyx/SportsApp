@@ -681,6 +681,7 @@
                         <outlet property="editEventButton" destination="R4t-94-ABv" id="5Xv-vx-QNX"/>
                         <outlet property="interestsTableView" destination="Xso-77-aGY" id="tvD-DD-08M"/>
                         <outlet property="locationPicker" destination="tz0-eo-hTn" id="BoD-2v-esk"/>
+                        <outlet property="mainView" destination="euW-P6-zwT" id="XHh-zE-1A0"/>
                         <outlet property="picturePickButton" destination="0R2-GN-YPf" id="6CC-PY-ZCt"/>
                         <outlet property="titleTextView" destination="rSL-o9-3z9" id="ROo-Gs-OaB"/>
                     </connections>
