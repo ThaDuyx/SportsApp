@@ -13,7 +13,7 @@ import Lottie
 
 class EventViewController: UIViewController {
 
-    var mainUser = User(uid: "", email: "" , name: "", location: "", interests: [], events: [], pfimage: UIImage(named: "Profile")!)
+    var mainUser = User(uid: "", email: "", name: "", location: "", description: "", interests: [], events: [], pfimage: UIImage(named: "Profile")!)
     var eventsList = [Event]()
     var selectedEventEid = ""
     var selectedEventTitle = ""
@@ -55,6 +55,7 @@ class EventViewController: UIViewController {
                 let interests = data!["interests"] as! [String]
                 let location = data!["location"] as! String
                 let events = data!["events"] as! [String]
+                let description = data!["description"] as! String
                 let userImgRef = self.storage.child("profileImages/" + uid + ".jpeg")
                 userImgRef.getData(maxSize: 1 * 1024 * 1024) { (userImgData, error5) in
                     if error5 != nil {
@@ -62,7 +63,7 @@ class EventViewController: UIViewController {
                         print(error5?.localizedDescription ?? "Cannot fetch error")
                     } else {
                         let userImage = UIImage(data: userImgData!)
-                        self.mainUser = User(uid: uid, email: email, name: name, location: location, interests: interests, events: events, pfimage: userImage!)!
+                        self.mainUser = User(uid: uid, email: email, name: name, location: location, description: description, interests: interests, events: events, pfimage: userImage!)!
                         print("Success: Retrieving user info")
                         
                         self.mainUser?.interests.forEach({ (interest) in
