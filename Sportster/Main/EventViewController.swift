@@ -150,8 +150,6 @@ class EventViewController: UIViewController {
     }
 }
 
-
-
 extension EventViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return eventsList.count
