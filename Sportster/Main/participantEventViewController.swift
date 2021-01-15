@@ -42,6 +42,18 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
                         }
                     }
                     
+                    if change.type == .modified {
+                        let modifiedData = change.document.data()
+                        for participant in self.participantsList{
+                            if modifiedData["pid"] as! String == participant.pid{
+                                participant.status = modifiedData["status"] as! Bool
+                                DispatchQueue.main.async {
+                                    self.participantTableView.reloadData()
+                                }
+                            }
+                        }
+                    }
+                    
                     if change.type == .removed {
                         let removedData = change.document.data()
                         let removedPid = removedData["pid"] as! String
@@ -55,6 +67,7 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
             }
         }
     }
+    
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -93,6 +106,9 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = participantTableView.dequeueReusableCell(withIdentifier: "participantCell") as! EventParticipantsCell
         cell.participantButton?.setTitle(participantsList[indexPath.section].name, for: .normal)
+        if participantsList[indexPath.section].status == true{
+            cell.participantButton.setTitleColor(UIColor.init(rgb: 0x1C8E8E), for: .normal)
+        }
         
         cell.delegate = self
         
@@ -120,13 +136,13 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
     func pAcceptTapped(cell: EventParticipantsCell) {
         let indexPath = self.participantTableView.indexPath(for: cell)
         selectedParticipantID = participantsList[indexPath!.section].pid
-        print(indexPath!.section)
+        self.dbRef.collection("event").document(selectedEvent.eid).collection("participants").document(selectedParticipantID).updateData(["status" : true])
     }
     
     func pDeclineTapped(cell: EventParticipantsCell) {
         let indexPath = self.participantTableView.indexPath(for: cell)
         selectedParticipantID = participantsList[indexPath!.section].pid
-        print(indexPath!.section)
+        self.dbRef.collection("event").document(selectedEvent.eid).collection("participants").document(selectedParticipantID).delete()
     }
     
 }
