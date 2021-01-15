@@ -6,18 +6,54 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
-class ParticipantEventViewController: ViewController, UITableViewDelegate, UITableViewDataSource {
+class ParticipantEventViewController: ViewController, UITableViewDelegate, UITableViewDataSource, CellDelegate  {
+
+    
     
     @IBOutlet weak var participantTableView: UITableView!
-    
-    let Participants: [String] = ["Simon Andersen, 22", "Christoffer Detlef, 23", "Asama Hayder, 23", "Line Mørup, 22"]
+    var selectedEvent: UserEventList = UserEventList(eid: "", title: "")!
+    var participantsList = [Participant]()
+    var selectedParticipantID: String = ""
+    let dbRef = Firestore.firestore()
     
     override func viewDidLoad() {
         //Navigationbar settings - Her bliver den vist, med en specifik farve
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
+        
+        dbRef.collection("event").document(selectedEvent.eid).collection("participants").addSnapshotListener { (pInfo, error) in
+            if error != nil {
+                print("Something went wrong: Retrieving particiant data")
+                print(error?.localizedDescription ?? "Cannot fetch error")
+            } else {
+                pInfo?.documentChanges.forEach({ (change) in
+                    
+                    if change.type == .added {
+                        let addedData = change.document.data()
+                        let pname = addedData["name"] as! String
+                        let pstatus = addedData["status"] as! Bool
+                        let pid = addedData["pid"] as! String
+                        self.participantsList.append(Participant(pid: pid, name: pname, status: pstatus)!)
+                        DispatchQueue.main.async {
+                            self.participantTableView.reloadData()
+                        }
+                    }
+                    
+                    if change.type == .removed {
+                        let removedData = change.document.data()
+                        let removedPid = removedData["pid"] as! String
+                        self.participantsList.removeAll{ $0.pid == removedPid}
+                        DispatchQueue.main.async {
+                            self.participantTableView.reloadData()
+                            print("Success: Removed event")
+                        }
+                    }
+                })
+            }
+        }
     }
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
     override func viewWillDisappear(_ animated: Bool) {
@@ -30,8 +66,10 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
         navigationController?.navigationBar.isTranslucent = false
     }
     
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.Participants.count
+        return self.participantsList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +92,41 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = participantTableView.dequeueReusableCell(withIdentifier: "participantCell") as! EventParticipantsCell
-        cell.participantButton?.setTitle(Participants[indexPath.section], for: .normal)
+        cell.participantButton?.setTitle(participantsList[indexPath.section].name, for: .normal)
+        
+        cell.delegate = self
+        
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //selectedParticipantID = participantsList[indexPath.section].pid
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showParticipantProfile"{
+            let destinationVC = segue.destination as! OwnerProfileViewController
+            destinationVC.oid = selectedParticipantID
+        }
+    }
+    
+    func pProfileTapped(cell: EventParticipantsCell) {
+        let indexPath = self.participantTableView.indexPath(for: cell)
+        selectedParticipantID = participantsList[indexPath!.section].pid
+        performSegue(withIdentifier: "showParticipantProfile", sender: self)
+    }
+
+    func pAcceptTapped(cell: EventParticipantsCell) {
+        let indexPath = self.participantTableView.indexPath(for: cell)
+        selectedParticipantID = participantsList[indexPath!.section].pid
+        print(indexPath!.section)
+    }
+    
+    func pDeclineTapped(cell: EventParticipantsCell) {
+        let indexPath = self.participantTableView.indexPath(for: cell)
+        selectedParticipantID = participantsList[indexPath!.section].pid
+        print(indexPath!.section)
+    }
+    
 }

@@ -12,9 +12,10 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     var userProfile = User(uid: "String", email: "", name: "", location: "", interests: [], events: [], pfimage: UIImage(named: "Profile")!)
     
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userInterests: UILabel!
-    @IBOutlet weak var userLocation: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userInterestsLabel: UILabel!
+    @IBOutlet weak var userLocationLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +32,10 @@ class UserProfileViewController: UIViewController {
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
         
-        userName.text = userProfile?.name
-        userLocation.text = userProfile?.location
+        userNameLabel.text = userProfile?.name
+        userLocationLabel.text = userProfile?.location
         let interestsString = userProfile?.interests.joined(separator:", ")
-        userInterests.text = interestsString
+        userInterestsLabel.text = interestsString
         profileImage.image = userProfile?.pfimage
         
     }

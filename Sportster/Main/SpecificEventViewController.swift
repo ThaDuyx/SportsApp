@@ -21,10 +21,12 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var backgroundViewOne: UIView!
 
     var selectedEventTitle = ""
+    var selectedEid = ""
     var selectedEventDescription = ""
     var selectedEventLocation = ""
     var selectedEventDate = ""
     var selectedOid = ""
+    var username = ""
     let Participants: [String] = ["Simon Andersen, 22", "Christoffer Detlef, 23", "Asama Hayder, 23", "Line Mørup, 22"]
     
     override func viewDidLoad() {
