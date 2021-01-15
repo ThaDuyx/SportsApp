@@ -405,68 +405,6 @@
             </objects>
             <point key="canvasLocation" x="1680.8" y="-536.13193403298351"/>
         </scene>
-        <!--Picture Collection View Controller-->
-        <scene sceneID="Uzo-LO-pAE">
-            <objects>
-                <viewController id="9Ro-Jx-aLo" customClass="PictureCollectionViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mur-uM-ohp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bRA-a4-XlT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1JY-Jm-Hfs">
-                                    <size key="itemSize" width="183" height="220"/>
-                                    <size key="estimatedItemSize" width="181" height="220"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pictureCell" id="1y7-dr-c5g" customClass="PictureCollectionCell" customModule="Sportster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="220"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="182" height="220"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="G5F-VE-VVy">
-                                                    <rect key="frame" x="11" y="8" width="160" height="212"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <size key="customSize" width="182" height="220"/>
-                                        <connections>
-                                            <outlet property="eventPictureImage" destination="G5F-VE-VVy" id="6aI-1J-sfy"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="9Ro-Jx-aLo" id="0pd-0r-lID"/>
-                                    <outlet property="delegate" destination="9Ro-Jx-aLo" id="eA8-km-diU"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Oo3-ph-hsR"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bRA-a4-XlT" firstAttribute="top" secondItem="Oo3-ph-hsR" secondAttribute="top" id="Biq-Yc-WbM"/>
-                            <constraint firstItem="bRA-a4-XlT" firstAttribute="leading" secondItem="Oo3-ph-hsR" secondAttribute="leading" id="c8H-tw-9rf"/>
-                            <constraint firstItem="Oo3-ph-hsR" firstAttribute="bottom" secondItem="bRA-a4-XlT" secondAttribute="bottom" id="fAY-Mq-fv8"/>
-                            <constraint firstItem="Oo3-ph-hsR" firstAttribute="trailing" secondItem="bRA-a4-XlT" secondAttribute="trailing" id="rbl-cz-Hpd"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="6gP-cm-Qlw"/>
-                    <connections>
-                        <outlet property="pictureCollectionView" destination="bRA-a4-XlT" id="y0D-Kd-PVK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zve-FV-rwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2864.8000000000002" y="-913.49325337331345"/>
-        </scene>
         <!--Edit Event View Controller-->
         <scene sceneID="0gh-qv-Xhq">
             <objects>
@@ -1765,7 +1703,6 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="Background" width="4608" height="3072"/>
         <image name="Profile" width="55" height="55"/>
         <image name="Snowboarding" width="375" height="667"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
