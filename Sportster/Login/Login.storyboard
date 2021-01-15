@@ -431,6 +431,7 @@
                         <outlet property="emailTextField" destination="jkh-Ho-bcT" id="bQ9-lQ-zlU"/>
                         <outlet property="loadingAnimationView" destination="PrC-ok-Wob" id="mYc-8d-S9b"/>
                         <outlet property="loginLabel" destination="OQy-gj-58a" id="vCf-y9-FZi"/>
+                        <outlet property="mainView" destination="c3e-VP-Eoc" id="OHn-Bv-v8l"/>
                         <outlet property="passwordTextField" destination="QiK-Ep-ous" id="d7M-Bd-XQa"/>
                         <outlet property="registerButton" destination="YEW-HQ-XI4" id="QhT-pH-2Mg"/>
                     </connections>

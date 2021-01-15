@@ -15,7 +15,7 @@ class NotiViewController: UIViewController{
         
         let uID = Auth.auth().currentUser?.uid
         let existingUserRef = Firestore.firestore().collection("user").document(uID!)
-        existingUserRef.setData(["interests" : selectedInterests, "location": selectedLocation], merge: true)
+        existingUserRef.setData(["interests" : selectedInterests, "location": selectedLocation, "description": selectedDescription], merge: true)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "MainVC")
@@ -25,6 +25,7 @@ class NotiViewController: UIViewController{
     }
     var selectedInterests: [String] = []
     var selectedLocation: String = ""
+    var selectedDescription: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)

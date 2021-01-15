@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Goh-W4-AfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="943" y="188"/>
+            <point key="canvasLocation" x="1753" y="188"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="BWY-vT-6e7">
@@ -220,7 +220,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="locationButton:" destination="emu-bu-92k" eventType="touchUpInside" id="0AO-NK-WTL"/>
+                                    <action selector="locationButton:" destination="emu-bu-92k" eventType="touchUpInside" id="Aad-xW-v1F"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinArt" translatesAutoresizingMaskIntoConstraints="NO" id="Aqo-cF-8Dm">
@@ -260,7 +260,7 @@
                     <connections>
                         <outlet property="locationTextField" destination="L8Y-61-WMf" id="Ckb-Z3-a8T"/>
                         <outlet property="locationTitle" destination="Bgd-v4-Nml" id="CBe-34-v0m"/>
-                        <segue destination="8jP-lk-zIf" kind="show" identifier="showNotiVC" id="d76-rn-we2"/>
+                        <segue destination="OF5-WR-ItE" kind="show" identifier="showDescVC" id="PTA-EC-fhE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9D-Ym-nhL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -273,10 +273,91 @@
             </objects>
             <point key="canvasLocation" x="149.59999999999999" y="188.45577211394306"/>
         </scene>
+        <!--Description View Controller-->
+        <scene sceneID="7xB-5S-j1w">
+            <objects>
+                <viewController id="OF5-WR-ItE" customClass="DescriptionViewController" customModule="Sportster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tY2-L9-TOi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzc-M5-mrV">
+                                <rect key="frame" x="57" y="42" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-FN-CKk">
+                                <rect key="frame" x="50" y="268.5" width="275" height="183.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OF5-WR-ItE" id="1g0-tn-1zx"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgt-mP-Cke">
+                                <rect key="frame" x="50" y="502" width="275" height="45"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="vrW-mv-U2k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Fortsæt">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="descriptionButton:" destination="OF5-WR-ItE" eventType="touchUpInside" id="Zhh-Eo-aMR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beskriv dig selv:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVt-IQ-QoN">
+                                <rect key="frame" x="0.0" y="220" width="375" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cgt-mP-Cke" firstAttribute="leading" secondItem="tY2-L9-TOi" secondAttribute="leading" constant="50" id="4lK-zu-oey"/>
+                            <constraint firstItem="Cgt-mP-Cke" firstAttribute="top" secondItem="qR0-FN-CKk" secondAttribute="bottom" constant="50" id="9cx-0P-hzT"/>
+                            <constraint firstItem="Tzc-M5-mrV" firstAttribute="top" secondItem="tY2-L9-TOi" secondAttribute="top" constant="42" id="ARi-4I-yhS"/>
+                            <constraint firstItem="qR0-FN-CKk" firstAttribute="top" secondItem="KVt-IQ-QoN" secondAttribute="bottom" constant="15" id="COB-Jd-JYW"/>
+                            <constraint firstAttribute="trailing" secondItem="KVt-IQ-QoN" secondAttribute="trailing" id="IB0-3K-9cc"/>
+                            <constraint firstAttribute="trailing" secondItem="qR0-FN-CKk" secondAttribute="trailing" constant="50" id="V2i-Cr-TlS"/>
+                            <constraint firstItem="KVt-IQ-QoN" firstAttribute="leading" secondItem="tY2-L9-TOi" secondAttribute="leading" id="Wq3-Sa-FbO"/>
+                            <constraint firstItem="KVt-IQ-QoN" firstAttribute="top" secondItem="tY2-L9-TOi" secondAttribute="top" constant="220" id="i07-qj-iBz"/>
+                            <constraint firstItem="Tzc-M5-mrV" firstAttribute="leading" secondItem="tY2-L9-TOi" secondAttribute="leading" constant="57" id="nQN-wb-r88"/>
+                            <constraint firstAttribute="trailing" secondItem="Cgt-mP-Cke" secondAttribute="trailing" constant="50" id="ojV-le-bLr"/>
+                            <constraint firstItem="qR0-FN-CKk" firstAttribute="leading" secondItem="tY2-L9-TOi" secondAttribute="leading" constant="50" id="pkF-jT-onX"/>
+                            <constraint firstAttribute="bottom" secondItem="Cgt-mP-Cke" secondAttribute="bottom" constant="120" id="xN3-YK-lo5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mOp-Nm-tFm"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="qR0-FN-CKk" id="ya8-30-Itj"/>
+                        <outlet property="descriptionTitle" destination="Tzc-M5-mrV" id="XDI-Vu-QyW"/>
+                        <segue destination="8jP-lk-zIf" kind="show" identifier="showNotiVC" id="PGF-JJ-VCK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jYv-W5-6OX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="188"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NotiAr" width="2000" height="2000"/>
         <image name="PinArt" width="1000" height="1000"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

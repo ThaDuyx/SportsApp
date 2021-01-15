@@ -46,15 +46,16 @@ class LocationViewController: UIViewController, UITextFieldDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let selectedLocation = locationTextField.text
-        let destinationVC = segue.destination as! NotiViewController
+        let destinationVC = segue.destination as! DescriptionViewController
         destinationVC.selectedInterests = selectedInterests
         destinationVC.selectedLocation = selectedLocation!
     }
+    
     @IBAction func locationButton(_ sender: Any) {
         if (locationTextField.text?.isEmpty == true){
             return
         } else {
-            performSegue(withIdentifier: "showNotiVC", sender: nil)
+            performSegue(withIdentifier: "showDescVC", sender: nil)
         }
     }
 }
