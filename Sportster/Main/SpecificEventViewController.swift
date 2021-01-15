@@ -11,10 +11,11 @@ import UIKit
 
 class SpecificEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var img: UIImageView!
+    
     @IBOutlet weak var participantsTableView: UITableView!
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var eventImg: UIImageView!
     @IBOutlet weak var eventLocation: UILabel!
     @IBOutlet weak var eventDescription: UILabel!
     @IBOutlet weak var eventDate: UILabel!
@@ -29,6 +30,7 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     var selectedEventLocation = ""
     var selectedEventDate = ""
     var selectedOid = ""
+    var selectedImage: UIImage = UIImage(named: "defaultArt")!
     var username = ""
     let dbRef = Firestore.firestore()
     
@@ -37,8 +39,8 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        img.layer.cornerRadius = 20
-        img.clipsToBounds = true
+        eventImg.layer.cornerRadius = 20
+        eventImg.clipsToBounds = true
         
         joinButton.layer.cornerRadius = 5
         
@@ -46,6 +48,8 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
         eventLocation.text = selectedEventLocation
         eventDescription.text = selectedEventDescription
         eventDate.text = selectedEventDate
+        eventImg.image = selectedImage
+        
         backgroundViewOne.layer.cornerRadius = 15
         dbRef.collection("event").document(selectedEid).collection("participants").addSnapshotListener { (participantsInfo, error) in
             if error != nil {

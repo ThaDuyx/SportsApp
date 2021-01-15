@@ -84,12 +84,14 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = bulletinTableView.dequeueReusableCell(withIdentifier: "postCell") as! PostsCell
-        cell.bulletinButton?.setTitle(events[indexPath.section].title, for: .normal)
+        cell.eventListLabe.text = events[indexPath.section].title
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedEvent = events[indexPath.row]
+        self.performSegue(withIdentifier: "participantSegue", sender: self)
+        
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -108,7 +110,6 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
         let overview = UIContextualAction(style: .normal, title: "Liste", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
             print("Overview")
             self.selectedEvent = self.events[indexPath.row]
-            self.performSegue(withIdentifier: "participantSegue", sender: ac)
             success(true)
         })
         

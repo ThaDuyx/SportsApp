@@ -69,29 +69,29 @@
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="postCell" id="qQj-GS-rzQ" customClass="PostsCell" customModule="Sportster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="30"/>
+                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qQj-GS-rzQ" id="1gQ-Uo-6zk">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BO1-9A-Ygd">
-                                                    <rect key="frame" x="30" y="0.0" width="275" height="30"/>
-                                                    <color key="backgroundColor" red="0.10980392160000001" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Mangler 2 personer til skifeire">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dL7-dE-jcb">
+                                                    <rect key="frame" x="44" y="12" width="258" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="BO1-9A-Ygd" secondAttribute="bottom" id="eCL-tG-pwa"/>
-                                                <constraint firstAttribute="trailing" secondItem="BO1-9A-Ygd" secondAttribute="trailing" constant="30" id="lGQ-GJ-I0w"/>
-                                                <constraint firstItem="BO1-9A-Ygd" firstAttribute="leading" secondItem="1gQ-Uo-6zk" secondAttribute="leading" constant="30" id="r3e-gt-PJ3"/>
-                                                <constraint firstItem="BO1-9A-Ygd" firstAttribute="top" secondItem="1gQ-Uo-6zk" secondAttribute="top" id="vIi-aM-FEl"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.019607843140000001" green="0.61960784310000006" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="bulletinButton" destination="BO1-9A-Ygd" id="Zkf-JW-Ulu"/>
+                                            <outlet property="eventListLabe" destination="dL7-dE-jcb" id="IUu-AN-Uug"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1070,7 +1070,7 @@
                                     <constraint firstAttribute="height" constant="140" id="hpQ-A8-pOV"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultArt" translatesAutoresizingMaskIntoConstraints="NO" id="iIf-gp-I3A">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultArt" translatesAutoresizingMaskIntoConstraints="NO" id="iIf-gp-I3A">
                                 <rect key="frame" x="137.5" y="65" width="100" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="CbY-LR-Bm8"/>
@@ -1269,9 +1269,9 @@
                         <outlet property="backgroundViewOne" destination="OmP-O8-GZP" id="kGZ-Uo-Eba"/>
                         <outlet property="eventDate" destination="n5e-Sh-qmJ" id="fY8-Di-sXO"/>
                         <outlet property="eventDescription" destination="C0N-u9-ZT2" id="eBa-5g-JD0"/>
+                        <outlet property="eventImg" destination="iIf-gp-I3A" id="l46-3N-gmd"/>
                         <outlet property="eventLocation" destination="YGp-w6-w9F" id="06Y-px-szy"/>
                         <outlet property="eventTitle" destination="KbL-uc-3oL" id="VO3-71-M1M"/>
-                        <outlet property="img" destination="iIf-gp-I3A" id="l46-3N-gmd"/>
                         <outlet property="joinButton" destination="cF6-NN-Zjw" id="icP-E3-fk8"/>
                         <outlet property="ownerProfileBtn" destination="tTc-gV-t7E" id="KFF-tl-LXQ"/>
                         <outlet property="participantsTableView" destination="ruJ-Cr-emq" id="m88-Je-UFY"/>

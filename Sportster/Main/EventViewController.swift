@@ -21,6 +21,7 @@ class EventViewController: UIViewController {
     var selectedEventDate = ""
     var selectedEventDescription = ""
     var selectedEventOwnerID = ""
+    var selectedEventImage = UIImage(named: "defaultArt")
         
     @IBOutlet weak var eventBackgroundCollection: UICollectionView!
     @IBOutlet weak var makeEventBtn: UIButton!
@@ -171,6 +172,7 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         selectedEventLocation = eventsList[indexPath.row].location
         selectedEventOwnerID = eventsList[indexPath.row].oid
         selectedEventEid = eventsList[indexPath.row].eid
+        selectedEventImage = eventsList[indexPath.row].eImage
         performSegue(withIdentifier: "showSpecificEvent", sender: self)
     }
     
@@ -185,6 +187,7 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
             destinationVC.selectedEventDate = selectedEventDate
             destinationVC.selectedOid = selectedEventOwnerID
             destinationVC.selectedEid = selectedEventEid
+            destinationVC.selectedImage = selectedEventImage!
             destinationVC.username = mainUser!.name
         } else if segue.identifier == "showUserInfo" {
             let destinationVC2 = segue.destination as! UserProfileViewController
