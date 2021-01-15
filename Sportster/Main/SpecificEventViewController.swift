@@ -18,6 +18,8 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var eventDescription: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var ownerProfileBtn: UIButton!
+    @IBOutlet weak var backgroundViewOne: UIView!
+
     var selectedEventTitle = ""
     var selectedEventDescription = ""
     var selectedEventLocation = ""
@@ -38,14 +40,7 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
         eventDescription.text = selectedEventDescription
         eventDate.text = selectedEventDate
         
-        eventDescription.layer.borderWidth = 1
-        eventDescription.layer.masksToBounds = true
-        eventDescription.layer.cornerRadius = 15
-        
-        participantsTableView.layer.borderWidth = 1
-        participantsTableView.layer.cornerRadius = 5
-        participantsTableView.layer.masksToBounds = true
-        
+        backgroundViewOne.layer.cornerRadius = 15
     }
     @IBAction func ownerProfileBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "showOwnerProfile", sender: self)
