@@ -88,7 +88,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
                                 <state key="normal" title="Forsæt med Gmail" image="Google Icon"/>
                                 <connections>
-                                    <action selector="gButtonTapped:" destination="V5J-W7-47a" eventType="touchUpInside" id="jcm-jj-DZq"/>
+                                    <action selector="googleLoginPressed:" destination="V5J-W7-47a" eventType="touchUpInside" id="eUr-1Y-iKB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yP4-3V-Eym">
@@ -103,7 +103,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
                                 <state key="normal" title="Forsæt med Facebook" image="White Facebook Icon"/>
                                 <connections>
-                                    <action selector="fButtonTapped:" destination="V5J-W7-47a" eventType="touchUpInside" id="Apk-BC-ycH"/>
+                                    <action selector="facebookLoginPressed:" destination="V5J-W7-47a" eventType="touchUpInside" id="5Ag-Qx-SU1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOY-R9-u09">
@@ -209,7 +209,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oy3-ZH-PGI">
-                                <rect key="frame" x="88" y="266" width="198" height="25"/>
+                                <rect key="frame" x="88" y="261" width="198" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -219,7 +219,17 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Kodeord" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5j-9j-O3D">
-                                <rect key="frame" x="88" y="321" width="198" height="23"/>
+                                <rect key="frame" x="88" y="311" width="198" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" red="0.0" green="0.60337440899999994" blue="0.62683629129999996" alpha="0.30845997429999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bekræft kodeord" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wy-2d-mpu">
+                                <rect key="frame" x="88" y="359" width="198" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
@@ -229,7 +239,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Navn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSc-ep-BgT">
-                                <rect key="frame" x="88" y="374" width="198" height="24.5"/>
+                                <rect key="frame" x="88" y="407" width="198" height="24.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -239,12 +249,12 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="fSm-CJ-qVG">
-                                <rect key="frame" x="207" y="432.5" width="122" height="35"/>
+                                <rect key="frame" x="207" y="466.5" width="122" height="34.5"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDe-ds-sCb">
-                                <rect key="frame" x="50" y="525.5" width="275" height="45"/>
+                                <rect key="frame" x="50" y="559" width="275" height="45"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ore-uT-hA6"/>
@@ -258,13 +268,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fødselsdag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouy-C9-LSg">
-                                <rect key="frame" x="88" y="438.5" width="98" height="23"/>
+                                <rect key="frame" x="88" y="466.5" width="98" height="34.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.60337440899999994" blue="0.62683629129999996" alpha="0.30845997429999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-3t-OPX">
-                                <rect key="frame" x="177" y="537.5" width="20" height="37"/>
+                                <rect key="frame" x="177" y="577" width="20" height="37"/>
                                 <color key="color" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -275,33 +285,37 @@
                             <constraint firstItem="IDe-ds-sCb" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="50" id="4G6-Al-a9r"/>
                             <constraint firstItem="eKh-ra-PTc" firstAttribute="top" secondItem="zG8-iH-Ijw" secondAttribute="bottom" constant="25" id="5Pr-j3-Ift"/>
                             <constraint firstItem="IDe-ds-sCb" firstAttribute="top" secondItem="fSm-CJ-qVG" secondAttribute="bottom" constant="58" id="70g-5x-fh1"/>
+                            <constraint firstItem="RSc-ep-BgT" firstAttribute="top" secondItem="4wy-2d-mpu" secondAttribute="bottom" constant="25" id="75l-uU-dq2"/>
                             <constraint firstItem="I5j-9j-O3D" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="88" id="Arf-vr-Vak"/>
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="4Ta-3t-OPX" secondAttribute="trailing" constant="178" id="CqQ-ff-p9E"/>
-                            <constraint firstItem="I5j-9j-O3D" firstAttribute="top" secondItem="oy3-ZH-PGI" secondAttribute="bottom" constant="30" id="GP3-ob-blf"/>
+                            <constraint firstItem="I5j-9j-O3D" firstAttribute="top" secondItem="oy3-ZH-PGI" secondAttribute="bottom" constant="25" id="GP3-ob-blf"/>
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="zG8-iH-Ijw" secondAttribute="trailing" constant="135" id="NZz-0m-3DD"/>
                             <constraint firstItem="RSc-ep-BgT" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="88" id="Rhd-Qm-sQK"/>
-                            <constraint firstItem="RSc-ep-BgT" firstAttribute="top" secondItem="I5j-9j-O3D" secondAttribute="bottom" constant="30" id="WU4-nQ-VSa"/>
+                            <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="4wy-2d-mpu" secondAttribute="trailing" constant="89" id="SJa-6f-60Y"/>
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="RSc-ep-BgT" secondAttribute="trailing" constant="89" id="Y8n-iw-ZjZ"/>
-                            <constraint firstItem="IDe-ds-sCb" firstAttribute="top" secondItem="Ouy-C9-LSg" secondAttribute="bottom" constant="64" id="Zcq-iL-IIF"/>
+                            <constraint firstItem="IDe-ds-sCb" firstAttribute="top" secondItem="Ouy-C9-LSg" secondAttribute="bottom" constant="58" id="Zcq-iL-IIF"/>
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="IDe-ds-sCb" secondAttribute="trailing" constant="50" id="cQP-E9-8FY"/>
-                            <constraint firstItem="Ouy-C9-LSg" firstAttribute="top" secondItem="RSc-ep-BgT" secondAttribute="bottom" constant="40" id="cn1-Sp-bf0"/>
+                            <constraint firstItem="Ouy-C9-LSg" firstAttribute="top" secondItem="RSc-ep-BgT" secondAttribute="bottom" constant="35" id="cn1-Sp-bf0"/>
                             <constraint firstItem="oy3-ZH-PGI" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="88" id="d5J-yr-zNk"/>
                             <constraint firstItem="zG8-iH-Ijw" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="135" id="dEh-Ks-2I4"/>
                             <constraint firstItem="fSm-CJ-qVG" firstAttribute="leading" secondItem="Ouy-C9-LSg" secondAttribute="trailing" constant="21" id="etD-qb-KO3"/>
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="oy3-ZH-PGI" secondAttribute="trailing" constant="89" id="hN2-jK-7pT"/>
                             <constraint firstItem="4Ta-3t-OPX" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="177" id="hxt-Jk-e2q"/>
                             <constraint firstItem="eKh-ra-PTc" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="149" id="kJU-2g-VPW"/>
-                            <constraint firstItem="fSm-CJ-qVG" firstAttribute="top" secondItem="RSc-ep-BgT" secondAttribute="bottom" constant="34" id="l5X-0S-3EX"/>
+                            <constraint firstItem="fSm-CJ-qVG" firstAttribute="top" secondItem="RSc-ep-BgT" secondAttribute="bottom" constant="35" id="l5X-0S-3EX"/>
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="eKh-ra-PTc" secondAttribute="trailing" constant="149" id="oGA-hF-TLf"/>
                             <constraint firstItem="zG8-iH-Ijw" firstAttribute="top" secondItem="BGk-nJ-xNJ" secondAttribute="top" constant="32" id="ojE-nE-huM"/>
+                            <constraint firstItem="4wy-2d-mpu" firstAttribute="top" secondItem="I5j-9j-O3D" secondAttribute="bottom" constant="25" id="pja-Wn-iqe"/>
+                            <constraint firstItem="4wy-2d-mpu" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="88" id="qbe-kf-FIH"/>
                             <constraint firstItem="BGk-nJ-xNJ" firstAttribute="trailing" secondItem="I5j-9j-O3D" secondAttribute="trailing" constant="89" id="rKP-dt-afe"/>
                             <constraint firstItem="4Ta-3t-OPX" firstAttribute="top" secondItem="Ouy-C9-LSg" secondAttribute="bottom" constant="76" id="sZC-gz-nKM"/>
-                            <constraint firstItem="oy3-ZH-PGI" firstAttribute="top" secondItem="eKh-ra-PTc" secondAttribute="bottom" constant="30" id="sz3-Hl-1SK"/>
+                            <constraint firstItem="oy3-ZH-PGI" firstAttribute="top" secondItem="eKh-ra-PTc" secondAttribute="bottom" constant="25" id="sz3-Hl-1SK"/>
                             <constraint firstItem="Ouy-C9-LSg" firstAttribute="leading" secondItem="BGk-nJ-xNJ" secondAttribute="leading" constant="88" id="zeB-Kp-L2o"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oK1-ll-IhF"/>
                     <connections>
+                        <outlet property="confirmPassswordTF" destination="4wy-2d-mpu" id="jwi-i4-0wa"/>
                         <outlet property="datePicker" destination="fSm-CJ-qVG" id="1p5-g3-Yfw"/>
                         <outlet property="emailTF" destination="oy3-ZH-PGI" id="TfL-4f-G7o"/>
                         <outlet property="nameTF" destination="RSc-ep-BgT" id="epx-fa-27q"/>
@@ -426,6 +440,9 @@
             <point key="canvasLocation" x="567.20000000000005" y="172.26386806596702"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="PrC-ok-Wob"/>
+    </designables>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Background" width="4608" height="3072"/>

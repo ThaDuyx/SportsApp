@@ -38,30 +38,37 @@ class RegistrerViewController: UIViewController {
     @IBOutlet weak var loadingAnimationView: AnimationView!
         
     @IBAction func registerButtonTapped(_ sender: Any) {
-        loadingAnimationView.alpha = 1
-        loadingAnimationView.loopMode = .loop
-        loadingAnimationView.play()
-        registerButton.alpha = 0
-        let email = emailTextField.text!
-        let password = passwordTextField.text!
-        
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if error != nil {
-                print("Something went wrong: Loggning existing user in")
-                print(error?.localizedDescription ?? "Cannot fetch error")
-            } else {
-                print("Success: Logging user in")
-                self.registerButton.alpha = 1
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "MainVC")
+        if (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
+            let refreshAlert = UIAlertController(title: "Hov, du har vist glemt noget", message: "Du har glemt enten Password eller email", preferredStyle: UIAlertController.Style.alert)
+            refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
                 
-                self.view.window?.rootViewController = vc
-                self.view.window?.makeKeyAndVisible()
+            }))
+            self.present(refreshAlert, animated: true, completion: nil)
+        } else {
+            loadingAnimationView.alpha = 1
+            loadingAnimationView.loopMode = .loop
+            loadingAnimationView.play()
+            registerButton.alpha = 0
+            let email = emailTextField.text!
+            let password = passwordTextField.text!
+            
+            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                if error != nil {
+                    print("Something went wrong: Loggning existing user in")
+                    print(error?.localizedDescription ?? "Cannot fetch error")
+                } else {
+                    print("Success: Logging user in")
+                    self.registerButton.alpha = 1
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(identifier: "MainVC")
+                    
+                    self.view.window?.rootViewController = vc
+                    self.view.window?.makeKeyAndVisible()
+                }
             }
-        }
 
+        }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +114,6 @@ class RegistrerViewController: UIViewController {
         let vc = storyboard.instantiateViewController(identifier: "MainVC")
         self.view.window?.rootViewController = vc
         self.view.window?.makeKeyAndVisible()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

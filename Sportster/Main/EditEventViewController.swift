@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditEventViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+class EditEventViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var editEventButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -19,7 +19,7 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
     var selectedImage = UIImage()
-
+    var eventPicPicker = UIImagePickerController()
     
     override func viewDidLoad() {
         
@@ -45,7 +45,6 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         picturePickButton.clipsToBounds = true
         
         parseDanishCities()
-        print(selectedImage)
     }
     
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
@@ -58,6 +57,25 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.isTranslucent = false
         print(selectedImage)
+    }
+    
+    @IBAction func pickEventImage(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
+            eventPicPicker.delegate = self
+            eventPicPicker.sourceType = .savedPhotosAlbum
+            eventPicPicker.allowsEditing = false
+        
+            present(eventPicPicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.dismiss(animated: true)
+        
+        if let pickedImage = info[.originalImage] as? UIImage {
+            selectedImage = pickedImage
+            print(selectedImage)
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

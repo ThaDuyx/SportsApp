@@ -70,10 +70,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     }
 }*/
     
-    @IBAction func gButtonTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().signIn()
-    }
-    
     @IBOutlet weak var topBoxView: UIView!
     @IBOutlet weak var gLoginButton: UIButton!
     @IBOutlet weak var fLoginButton: UIButton!
@@ -105,6 +101,20 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         performSegue(withIdentifier: "showSignUpVC", sender: self)
         
     }
+    @IBAction func facebookLoginPressed(_ sender: Any) {
+        let refreshAlert = UIAlertController(title: "Dette kan du ikke", message: "Dette er endnu ikke blevet implementeret", preferredStyle: UIAlertController.Style.alert)
+        refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
+        }))
+        self.present(refreshAlert, animated: true, completion: nil)
+    }
+    @IBAction func googleLoginPressed(_ sender: Any) {
+        let refreshAlert = UIAlertController(title: "Dette kan du ikke", message: "Dette er endnu ikke blevet implementeret", preferredStyle: UIAlertController.Style.alert)
+        refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
+        }))
+        self.present(refreshAlert, animated: true, completion: nil)
+        //        GIDSignIn.sharedInstance().signIn()
+    }
+    
     
     //https://stackoverflow.com/a/50447480
     /*//___________________________________________

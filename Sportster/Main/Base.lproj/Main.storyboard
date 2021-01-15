@@ -513,11 +513,11 @@
                                                 </constraints>
                                                 <state key="normal" title="Vælg"/>
                                                 <connections>
-                                                    <segue destination="9Ro-Jx-aLo" kind="show" id="ZpQ-wE-Lh9"/>
+                                                    <action selector="pickEventImage:" destination="qLa-ag-DGv" eventType="touchUpInside" id="QuK-BC-TrO"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textformat" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fEy-7x-SkH">
-                                                <rect key="frame" x="45" y="148.5" width="30" height="24.5"/>
+                                                <rect key="frame" x="45" y="153.5" width="30" height="24.5"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="e55-Ft-X36"/>
@@ -538,7 +538,7 @@
                                                 </connections>
                                             </textView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="koa-TB-FaQ">
-                                                <rect key="frame" x="45" y="222" width="30" height="29"/>
+                                                <rect key="frame" x="45" y="252" width="30" height="29"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="4bH-NG-UAD"/>
@@ -546,14 +546,14 @@
                                                 </constraints>
                                             </imageView>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tz0-eo-hTn">
-                                                <rect key="frame" x="95" y="201" width="260" height="115"/>
+                                                <rect key="frame" x="95" y="206" width="260" height="120"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="qLa-ag-DGv" id="gKV-Dh-dBB"/>
                                                     <outlet property="delegate" destination="qLa-ag-DGv" id="c7b-aA-gMm"/>
                                                 </connections>
                                             </pickerView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9pv-fl-Ql9">
-                                                <rect key="frame" x="45" y="327" width="30" height="27.5"/>
+                                                <rect key="frame" x="45" y="347" width="30" height="27.5"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Obo-QV-R1Q"/>
@@ -561,14 +561,14 @@
                                                 </constraints>
                                             </imageView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nhg-hT-GeG">
-                                                <rect key="frame" x="95" y="326" width="260" height="55"/>
+                                                <rect key="frame" x="95" y="336" width="260" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="OiS-vU-h4H"/>
                                                 </constraints>
                                                 <locale key="locale" localeIdentifier="da_DK"/>
                                             </datePicker>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="L5E-JG-Sg2">
-                                                <rect key="frame" x="45" y="400.5" width="30" height="30"/>
+                                                <rect key="frame" x="45" y="420.5" width="30" height="30"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="Og8-yD-esc"/>
@@ -576,7 +576,7 @@
                                                 </constraints>
                                             </imageView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xso-77-aGY">
-                                                <rect key="frame" x="57" y="431" width="298" height="120"/>
+                                                <rect key="frame" x="57" y="451" width="298" height="120"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="interestsCell" rowHeight="30" id="5DB-Fn-2o8" customClass="InterestsCell" customModule="Sportster" customModuleProvider="target">
@@ -620,7 +620,7 @@
                                                 </connections>
                                             </tableView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="z8S-OY-fHp">
-                                                <rect key="frame" x="45" y="561.5" width="30" height="29"/>
+                                                <rect key="frame" x="45" y="581.5" width="30" height="29"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="Im9-zU-QWm"/>
@@ -628,7 +628,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2hH-Ec-9YN">
-                                                <rect key="frame" x="65" y="596" width="245" height="79"/>
+                                                <rect key="frame" x="65" y="616" width="245" height="59"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -638,7 +638,7 @@
                                                 </connections>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Beskrivelse" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0uw-qO-p2c">
-                                                <rect key="frame" x="95" y="561" width="280" height="25"/>
+                                                <rect key="frame" x="95" y="581" width="280" height="25"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="7bL-eR-LvU"/>
@@ -659,15 +659,15 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="Nhg-hT-GeG" firstAttribute="top" secondItem="koa-TB-FaQ" secondAttribute="bottom" constant="75" id="0JP-L5-wxi"/>
+                                            <constraint firstItem="Nhg-hT-GeG" firstAttribute="top" secondItem="koa-TB-FaQ" secondAttribute="bottom" constant="55" id="0JP-L5-wxi"/>
                                             <constraint firstItem="Nhg-hT-GeG" firstAttribute="top" secondItem="tz0-eo-hTn" secondAttribute="bottom" constant="10" id="0cp-vy-v4Q"/>
                                             <constraint firstItem="L5E-JG-Sg2" firstAttribute="leading" secondItem="euW-P6-zwT" secondAttribute="leading" constant="45" id="0nN-0V-Zbs"/>
                                             <constraint firstItem="z8S-OY-fHp" firstAttribute="leading" secondItem="euW-P6-zwT" secondAttribute="leading" constant="45" id="1nZ-JI-B5t"/>
-                                            <constraint firstItem="9pv-fl-Ql9" firstAttribute="top" secondItem="koa-TB-FaQ" secondAttribute="bottom" constant="75" id="28z-xE-cAs"/>
+                                            <constraint firstItem="9pv-fl-Ql9" firstAttribute="top" secondItem="koa-TB-FaQ" secondAttribute="bottom" constant="65" id="28z-xE-cAs"/>
                                             <constraint firstAttribute="trailing" secondItem="0R2-GN-YPf" secondAttribute="trailing" constant="20" id="4Dn-le-1p1"/>
                                             <constraint firstAttribute="trailing" secondItem="Nhg-hT-GeG" secondAttribute="trailing" constant="20" id="4bJ-OF-uhH"/>
                                             <constraint firstItem="tz0-eo-hTn" firstAttribute="leading" secondItem="koa-TB-FaQ" secondAttribute="trailing" constant="20" id="5sj-Sk-exL"/>
-                                            <constraint firstItem="fEy-7x-SkH" firstAttribute="top" secondItem="MGm-kh-Jqa" secondAttribute="bottom" constant="25" id="6Ck-7B-wBe"/>
+                                            <constraint firstItem="fEy-7x-SkH" firstAttribute="top" secondItem="hiz-yl-aJp" secondAttribute="bottom" constant="25" id="73t-al-hEP"/>
                                             <constraint firstItem="0R2-GN-YPf" firstAttribute="top" secondItem="FRt-Z9-Mai" secondAttribute="bottom" constant="35" id="8AQ-LY-T8s"/>
                                             <constraint firstAttribute="trailing" secondItem="tz0-eo-hTn" secondAttribute="trailing" constant="20" id="C5H-fy-IvK"/>
                                             <constraint firstItem="0R2-GN-YPf" firstAttribute="leading" secondItem="MGm-kh-Jqa" secondAttribute="trailing" id="Ckd-dg-T8w"/>
@@ -694,7 +694,7 @@
                                             <constraint firstItem="hiz-yl-aJp" firstAttribute="top" secondItem="FRt-Z9-Mai" secondAttribute="bottom" constant="35" id="fGs-Ec-8oQ"/>
                                             <constraint firstAttribute="trailing" secondItem="FRt-Z9-Mai" secondAttribute="trailing" id="fzK-WC-W8A"/>
                                             <constraint firstAttribute="trailing" secondItem="2hH-Ec-9YN" secondAttribute="trailing" constant="65" id="iVQ-Yu-v36"/>
-                                            <constraint firstItem="koa-TB-FaQ" firstAttribute="top" secondItem="fEy-7x-SkH" secondAttribute="bottom" constant="45" id="iux-aN-LQQ"/>
+                                            <constraint firstItem="koa-TB-FaQ" firstAttribute="top" secondItem="fEy-7x-SkH" secondAttribute="bottom" constant="70" id="iux-aN-LQQ"/>
                                             <constraint firstItem="Nhg-hT-GeG" firstAttribute="leading" secondItem="9pv-fl-Ql9" secondAttribute="trailing" constant="20" id="izT-Yp-o9D"/>
                                             <constraint firstItem="FRt-Z9-Mai" firstAttribute="leading" secondItem="euW-P6-zwT" secondAttribute="leading" id="kz3-ap-Zkz"/>
                                             <constraint firstItem="MGm-kh-Jqa" firstAttribute="leading" secondItem="hiz-yl-aJp" secondAttribute="trailing" constant="20" id="qpV-le-uBy"/>
