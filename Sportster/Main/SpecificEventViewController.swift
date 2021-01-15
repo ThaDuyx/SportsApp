@@ -42,6 +42,7 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
         
         backgroundViewOne.layer.cornerRadius = 15
     }
+    
     @IBAction func ownerProfileBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "showOwnerProfile", sender: self)
     }
