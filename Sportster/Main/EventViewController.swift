@@ -46,7 +46,7 @@ class EventViewController: UIViewController {
             if error != nil{
                 print("Something went wrong: Retrieving user info")
                 print(error?.localizedDescription ?? "Cannot fetch error")
-            } else {
+            } else{
                 let data = userinfo?.data()
                 let uid = data!["uid"] as! String
                 let name = data!["name"] as! String

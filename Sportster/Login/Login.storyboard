@@ -88,7 +88,6 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
                                 <state key="normal" title="Forsæt med Gmail" image="Google Icon"/>
                                 <connections>
-                                    <action selector="gButtonTapped:" destination="V5J-W7-47a" eventType="touchUpInside" id="jcm-jj-DZq"/>
                                     <action selector="googleLoginPressed:" destination="V5J-W7-47a" eventType="touchUpInside" id="eUr-1Y-iKB"/>
                                 </connections>
                             </button>
