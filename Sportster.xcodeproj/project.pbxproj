@@ -21,6 +21,9 @@
 		6A26A88B252337110060351B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A26A889252337110060351B /* LaunchScreen.storyboard */; };
 		6A26A896252337110060351B /* SportsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A895252337110060351B /* SportsterTests.swift */; };
 		6A26A8A1252337110060351B /* SportsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A8A0252337110060351B /* SportsterUITests.swift */; };
+		6A7264E425B1EA2400863DB7 /* byer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A7264E325B1EA2400863DB7 /* byer.txt */; };
+		6A7264E925B1EA9C00863DB7 /* participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7264E825B1EA9C00863DB7 /* participant.swift */; };
+		6A7264EE25B1EABB00863DB7 /* userEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7264ED25B1EABB00863DB7 /* userEventList.swift */; };
 		6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB44135252C61F400BB8AD6 /* InterestsCell.swift */; };
 		6AF5697B25A5ACC500F3589D /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF5697A25A5ACC500F3589D /* LocationViewController.swift */; };
 		6AF569B325AB697300F3589D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF569B225AB697300F3589D /* SignUpViewController.swift */; };
@@ -89,6 +92,9 @@
 		6A26A89C252337110060351B /* SportsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A26A8A0252337110060351B /* SportsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsterUITests.swift; sourceTree = "<group>"; };
 		6A26A8A2252337110060351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A7264E325B1EA2400863DB7 /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = byer.txt; path = ../../../../../../../../Downloads/byer.txt; sourceTree = "<group>"; };
+		6A7264E825B1EA9C00863DB7 /* participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = participant.swift; sourceTree = "<group>"; };
+		6A7264ED25B1EABB00863DB7 /* userEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userEventList.swift; sourceTree = "<group>"; };
 		6AB44135252C61F400BB8AD6 /* InterestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
 		6AF5697A25A5ACC500F3589D /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		6AF569B225AB697300F3589D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -209,7 +215,6 @@
 		6A26A87D252337100060351B /* Sportster */ = {
 			isa = PBXGroup;
 			children = (
-				83472D3125B1D28E005E0A1F /* fonts */,
 				8310DD6F25AF2B150083B798 /* Animations */,
 				6AFDC58525ACAE330000EB74 /* Model */,
 				83A18136252C8A3A0095FE9E /* Profile */,
@@ -249,6 +254,8 @@
 			children = (
 				6AFDC58625ACAE430000EB74 /* user.swift */,
 				6AFDC58E25ADD89F0000EB74 /* event.swift */,
+				6A7264E825B1EA9C00863DB7 /* participant.swift */,
+				6A7264ED25B1EABB00863DB7 /* userEventList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,31 +266,6 @@
 				8310DD6A25AF2B040083B798 /* loading.json */,
 			);
 			path = Animations;
-			sourceTree = "<group>";
-		};
-		83472D3125B1D28E005E0A1F /* fonts */ = {
-			isa = PBXGroup;
-			children = (
-				83472D3A25B1D2B6005E0A1F /* Montserrat-Black.ttf */,
-				83472D3325B1D2B3005E0A1F /* Montserrat-BlackItalic.ttf */,
-				83472D3B25B1D2B6005E0A1F /* Montserrat-Bold.ttf */,
-				83472D3425B1D2B4005E0A1F /* Montserrat-BoldItalic.ttf */,
-				83472D3525B1D2B4005E0A1F /* Montserrat-ExtraBold.ttf */,
-				83472D3725B1D2B5005E0A1F /* Montserrat-ExtraBoldItalic.ttf */,
-				83472D3F25B1D2B8005E0A1F /* Montserrat-ExtraLight.ttf */,
-				83472D3E25B1D2B7005E0A1F /* Montserrat-ExtraLightItalic.ttf */,
-				83472D3225B1D2B3005E0A1F /* Montserrat-Italic.ttf */,
-				83472D4025B1D2B8005E0A1F /* Montserrat-Light.ttf */,
-				83472D4225B1D2B9005E0A1F /* Montserrat-LightItalic.ttf */,
-				83472D3625B1D2B4005E0A1F /* Montserrat-Medium.ttf */,
-				83472D3825B1D2B5005E0A1F /* Montserrat-MediumItalic.ttf */,
-				83472D3D25B1D2B7005E0A1F /* Montserrat-Regular.ttf */,
-				83472D3925B1D2B6005E0A1F /* Montserrat-SemiBold.ttf */,
-				83472D3C25B1D2B7005E0A1F /* Montserrat-SemiBoldItalic.ttf */,
-				83472D4125B1D2B9005E0A1F /* Montserrat-Thin.ttf */,
-				83472D4325B1D2B9005E0A1F /* Montserrat-ThinItalic.ttf */,
-			);
-			path = fonts;
 			sourceTree = "<group>";
 		};
 		8380C95925233EDD0028FEA4 /* Intro */ = {
@@ -470,6 +452,7 @@
 				6A26A886252337100060351B /* Main.storyboard in Resources */,
 				8380C96525233F1B0028FEA4 /* Login.storyboard in Resources */,
 				8380C96025233F0C0028FEA4 /* Intro.storyboard in Resources */,
+				6A7264E425B1EA2400863DB7 /* byer.txt in Resources */,
 				6A006DCE252FA24D006585E4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,8 +663,10 @@
 				83BDD13C25A5BBD100279A32 /* ParticipantsCell.swift in Sources */,
 				83E375B125A864F800F2B4EE /* CreateEventViewController.swift in Sources */,
 				83E375A525A853C000F2B4EE /* BulletinViewController.swift in Sources */,
+				6A7264E925B1EA9C00863DB7 /* participant.swift in Sources */,
 				6A26A87F252337100060351B /* AppDelegate.swift in Sources */,
 				6A26A881252337100060351B /* SceneDelegate.swift in Sources */,
+				6A7264EE25B1EABB00863DB7 /* userEventList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

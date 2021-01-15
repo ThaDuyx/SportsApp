@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class BulletinViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var bulletinTableView: UITableView!
     @IBOutlet weak var addEventButton: UIButton!
-    
-    let events: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
+    var eventsIDs: [String] = []
+    var events: [UserEventList] = []
+    var selectedEvent: UserEventList = UserEventList(eid: "", title: "")!
+    let dbRef = Firestore.firestore()
     
     override func viewDidLoad() {
 //Navigationbar settings - Her bliver den vist, med en specifik farve
@@ -23,6 +26,26 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
 // Add event button in the bottom of the screen is being made to a circle
         addEventButton.layer.cornerRadius = addEventButton.frame.height/2
         addEventButton.clipsToBounds = true
+        
+        if eventsIDs.isEmpty != true{
+            for event in eventsIDs{
+                dbRef.collection("event").document(event).getDocument { (eventData, error) in
+                    if error != nil {
+                        print("Something went wrong: Retrieving user events")
+                        print(error?.localizedDescription ?? "Cannot fetch error")
+                    } else {
+                        let data = eventData?.data()
+                        let title = data!["title"] as! String
+                        let eid = data!["eid"] as! String
+                        let userEvent = UserEventList(eid: eid, title: title)
+                        self.events.append(userEvent!)
+                        DispatchQueue.main.async {
+                            self.bulletinTableView.reloadData()
+                        }
+                    }
+                }
+            }
+        }
         
     }
     
@@ -61,8 +84,12 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = bulletinTableView.dequeueReusableCell(withIdentifier: "postCell") as! PostsCell
-        cell.bulletinButton?.setTitle(events[indexPath.section], for: .normal)
+        cell.bulletinButton?.setTitle(events[indexPath.section].title, for: .normal)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedEvent = events[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -80,6 +107,7 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
         
         let overview = UIContextualAction(style: .normal, title: "Liste", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
             print("Overview")
+            self.selectedEvent = self.events[indexPath.row]
             self.performSegue(withIdentifier: "participantSegue", sender: ac)
             success(true)
         })
@@ -100,7 +128,8 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
         if segue.identifier == "editSegue"{
             _ = segue.destination as! EditEventViewController
         }else if segue.identifier == "participantSegue" {
-            _ = segue.destination as! ParticipantEventViewController
+            let destinationVC2 = segue.destination as! ParticipantEventViewController
+            destinationVC2.selectedEvent = selectedEvent
       }
     }
 }

@@ -15,6 +15,7 @@ class EventViewController: UIViewController {
 
     var mainUser = User(uid: "", email: "" , name: "", location: "", interests: [], events: [], pfimage: UIImage(named: "Profile")!)
     var eventsList = [Event]()
+    var selectedEventEid = ""
     var selectedEventTitle = ""
     var selectedEventLocation = ""
     var selectedEventDate = ""
@@ -140,7 +141,16 @@ class EventViewController: UIViewController {
             }
         }
     }
+    @IBAction func makeEventBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: "showUserEvents", sender: self)
+    }
+    
+    @IBAction func showUserInfo(_ sender: Any) {
+        performSegue(withIdentifier: "showUserInfo", sender: self)
+    }
 }
+
+
 
 extension EventViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -151,6 +161,7 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? EventDataCollectionCell
         cell?.eventBackgroundImage.image = eventsList[indexPath.row].eImage
         cell?.titleLabel.text = eventsList[indexPath.row].title
+        cell?.profileBtn.setImage(eventsList[indexPath.row].oImage, for: .normal)
         return cell!
     }
     
@@ -173,10 +184,17 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
             destinationVC.selectedEventDescription = selectedEventDescription
             destinationVC.selectedEventDate = selectedEventDate
             destinationVC.selectedOid = selectedOwnerID
+            destinationVC.selectedEid = selectedEventEid
+            destinationVC.username = mainUser!.name
         } else if segue.identifier == "showUserInfo" {
             let destinationVC2 = segue.destination as! UserProfileViewController
             destinationVC2.userProfile = self.mainUser
             
+        } else if segue.identifier == "showUserEvents" {
+            let destinationVC3 = segue.destination as! BulletinViewController
+            if self.mainUser?.events.isEmpty != true {
+                destinationVC3.eventsIDs = self.mainUser!.events
+            }
         }
         
     }

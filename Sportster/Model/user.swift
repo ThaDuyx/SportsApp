@@ -18,7 +18,6 @@ class User {
     //var age: String
     var interests: [String]
     var events: [String]
-    //var events: [String]
     var location: String
     //var birthday: String
 
