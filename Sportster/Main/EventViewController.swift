@@ -42,9 +42,13 @@ class EventViewController: UIViewController {
         eventBackgroundCollection.alpha = 0
         loadingAnimationView.loopMode = .loop
         loadingAnimationView.play()
-        let uid = Auth.auth().currentUser?.uid
+        let Authuid = Auth.auth().currentUser?.uid
         let dbRef = Firestore.firestore()
-        dbRef.collection("user").document(uid!).getDocument { (userinfo, error) in
+    
+
+        
+        
+        dbRef.collection("user").document(Authuid!).getDocument { (userinfo, error) in
             if error != nil{
                 print("Something went wrong: Retrieving user info")
                 print(error?.localizedDescription ?? "Cannot fetch error")
@@ -55,7 +59,7 @@ class EventViewController: UIViewController {
                 let email = data!["email"] as! String
                 let interests = data!["interests"] as! [String]
                 let location = data!["location"] as! String
-                let events = data!["events"] as! [String]
+                //let events = data!["events"] as! [String]
                 let description = data!["description"] as! String
                 let userImgRef = self.storage.child("profileImages/" + uid + ".jpeg")
                 userImgRef.getData(maxSize: 1 * 1024 * 1024) { (userImgData, error5) in
@@ -64,7 +68,29 @@ class EventViewController: UIViewController {
                         print(error5?.localizedDescription ?? "Cannot fetch error")
                     } else {
                         let userImage = UIImage(data: userImgData!)
-                        self.mainUser = User(uid: uid, email: email, name: name, location: location, description: description, interests: interests, events: events, pfimage: userImage!)!
+                        self.mainUser = User(uid: uid, email: email, name: name, location: location, description: description, interests: interests, events: [], pfimage: userImage!)!
+                        
+                        dbRef.collection("user").document(Authuid!).collection("events").addSnapshotListener { (ownEvents, errorE) in
+                            if errorE != nil {
+                                print("Something went wrong: Retrieving own events")
+                                print(errorE?.localizedDescription ?? "Cannot fetch error")
+                            }
+                            ownEvents?.documentChanges.forEach({ (eventChange) in
+                                if (eventChange.type == .added){
+                                    let eventAdded = eventChange.document.data()
+                                    let eventEid  = eventAdded["eid"] as! String
+                                    if eventEid != "dummy" {
+                                        self.mainUser?.events.append(eventEid)
+                                    }
+                                }
+                                if eventChange.type == .removed{
+                                    let eventRemoved = eventChange.document.data()
+                                    let removedEid = eventRemoved["eid"] as! String
+                                    self.mainUser?.events.removeAll{$0 == removedEid}
+                                }
+                            })
+                        }
+                        
                         print("Success: Retrieving user info")
                         
                         self.mainUser?.interests.forEach({ (interest) in
@@ -142,7 +168,13 @@ class EventViewController: UIViewController {
                 }
             }
         }
+        //Get Document ends here
+        
+    
     }
+    
+    
+    
     @IBAction func makeEventBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "showUserEvents", sender: self)
     }

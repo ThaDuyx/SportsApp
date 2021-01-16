@@ -210,7 +210,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Qbz-oe-x7b">
+                                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Qbz-oe-x7b">
                                                 <rect key="frame" x="175" y="533" width="20" height="37"/>
                                                 <color key="color" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </activityIndicatorView>
@@ -290,6 +290,7 @@
                                             <constraint firstItem="p69-B9-WCf" firstAttribute="top" secondItem="Eie-0W-J9t" secondAttribute="bottom" constant="25" id="2yt-0c-SHa"/>
                                             <constraint firstItem="at4-Z1-Ta5" firstAttribute="top" secondItem="pTH-H7-Tgz" secondAttribute="bottom" constant="25" id="3k1-VI-Pds"/>
                                             <constraint firstItem="1sM-p6-0DN" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="50" id="43X-4q-ZWo"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qbz-oe-x7b" secondAttribute="trailing" constant="180" id="4yW-tp-plL"/>
                                             <constraint firstItem="1sM-p6-0DN" firstAttribute="top" secondItem="Fos-E0-XMO" secondAttribute="bottom" constant="58" id="5Bp-uX-CdK"/>
                                             <constraint firstItem="Eie-0W-J9t" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="135" id="7iJ-Xq-Cka"/>
                                             <constraint firstAttribute="trailing" secondItem="p69-B9-WCf" secondAttribute="trailing" constant="149" id="9Hv-rW-Kx0"/>
@@ -302,6 +303,7 @@
                                             <constraint firstItem="1sM-p6-0DN" firstAttribute="top" secondItem="9G2-ej-Bdn" secondAttribute="bottom" constant="58" id="VFa-zE-vOp"/>
                                             <constraint firstItem="9G2-ej-Bdn" firstAttribute="top" secondItem="at4-Z1-Ta5" secondAttribute="bottom" constant="35" id="X1t-GN-DBe"/>
                                             <constraint firstItem="Fos-E0-XMO" firstAttribute="top" secondItem="at4-Z1-Ta5" secondAttribute="bottom" constant="35" id="XmX-Uu-iWj"/>
+                                            <constraint firstItem="Qbz-oe-x7b" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="175" id="YXG-WR-rWW"/>
                                             <constraint firstAttribute="trailing" secondItem="pTH-H7-Tgz" secondAttribute="trailing" constant="89" id="aQ6-7W-TdW"/>
                                             <constraint firstItem="pTH-H7-Tgz" firstAttribute="top" secondItem="U92-nu-TQg" secondAttribute="bottom" constant="25" id="b9q-fJ-LlL"/>
                                             <constraint firstAttribute="trailing" secondItem="xMD-6a-uoN" secondAttribute="trailing" constant="89" id="cu4-VR-4XK"/>
@@ -346,6 +348,7 @@
                         <outlet property="passwordTF" destination="U92-nu-TQg" id="URw-qm-Tev"/>
                         <outlet property="pickProfilePicBtn" destination="p69-B9-WCf" id="5f5-pj-uZa"/>
                         <outlet property="profilePicIV" destination="Eie-0W-J9t" id="3e0-uW-pmT"/>
+                        <outlet property="signInLoader" destination="Qbz-oe-x7b" id="Fkj-AS-MWN"/>
                         <outlet property="signUpBtn" destination="1sM-p6-0DN" id="743-jH-cYf"/>
                     </connections>
                 </viewController>
