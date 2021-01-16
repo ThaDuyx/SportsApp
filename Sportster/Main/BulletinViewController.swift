@@ -108,21 +108,13 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
             success(true)
         })
         
-        let overview = UIContextualAction(style: .normal, title: "Liste", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
-            print("Overview")
-            self.selectedEvent = self.events[indexPath.row]
-            success(true)
-        })
-        
         edit.image = UIImage(systemName: "square.and.pencil")
-        overview.image = UIImage(systemName: "person.3.fill")
         delete.image = UIImage(systemName: "trash")
         edit.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
-        overview.backgroundColor = .blue
         delete.backgroundColor = .red
         
         
-        let swipe = UISwipeActionsConfiguration(actions: [edit, overview, delete])
+        let swipe = UISwipeActionsConfiguration(actions: [edit, delete])
         return swipe
     }
     @IBAction func addEventBtnClick(_ sender: Any) {

@@ -348,7 +348,6 @@
                         <outlet property="passwordTF" destination="U92-nu-TQg" id="URw-qm-Tev"/>
                         <outlet property="pickProfilePicBtn" destination="p69-B9-WCf" id="5f5-pj-uZa"/>
                         <outlet property="profilePicIV" destination="Eie-0W-J9t" id="3e0-uW-pmT"/>
-                        <outlet property="signInLoader" destination="Qbz-oe-x7b" id="Fkj-AS-MWN"/>
                         <outlet property="signInLoader" destination="Qbz-oe-x7b" id="KP2-Ar-fgi"/>
                         <outlet property="signUpBtn" destination="1sM-p6-0DN" id="743-jH-cYf"/>
                     </connections>
@@ -378,7 +377,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="4gN-4q-RRU"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="V3f-GF-T4m" id="fDg-y5-NdD"/>
                                                 </connections>
