@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DescriptionViewController: UIViewController {
+class DescriptionViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -17,7 +17,16 @@ class DescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
+        descriptionTextView.text = "Beskriv dig selv med maks. 150 tegn"
+        descriptionTextView.textColor = UIColor.lightGray
+        descriptionTextView.layer.borderWidth = 2
+        descriptionTextView.layer.masksToBounds = true
+        descriptionTextView.layer.cornerRadius = 15
+        descriptionTextView.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
+
         //https://stackoverflow.com/a/59463814
         //----------------------------------------
             let titleText = "Beskrivelse_"
@@ -31,34 +40,44 @@ class DescriptionViewController: UIViewController {
         //----------------------------------------
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if descriptionTextView.textColor == UIColor.lightGray {
+            descriptionTextView.text = nil
+            descriptionTextView.textColor = UIColor.black
+            print("textViewDidBeginEditing")
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if descriptionTextView.text.isEmpty {
+            descriptionTextView.text = "Beskriv dig selv med maks. 150 tegn"
+            descriptionTextView.textColor = UIColor.lightGray
+            print("textViewDidEndEditing")
+        }
+    }
+
+    //  https://www.youtube.com/watch?v=WSgRbH5-GKc
+    //---------    Det stykke kode er taget fra denne video. --------------
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if range.length + range.location > descriptionTextView.text.count {
+            return false
+        }
+        
+        let newLength = descriptionTextView.text.count + text.count - range.length
+        return newLength <= 150
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    //----------------------------------------
+    
     //https://stackoverflow.com/a/26582115
     //----------------------------------------
     func textViewShouldReturn(_ text: UITextView) -> Bool {
             self.view.endEditing(true)
             return false
         }
-    //----------------------------------------
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView === descriptionTextView {
-            if descriptionTextView.text.isEmpty {
-                descriptionTextView.text = "Beskriv dig selv med - maks. 150 tegn"
-                descriptionTextView.textColor = UIColor.lightGray
-            }
-        }
-    }
-    
-    //  https://www.youtube.com/watch?v=WSgRbH5-GKc - Det stykke kode er taget fra denne video.
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if textView === descriptionTextView {
-            if range.length + range.location > descriptionTextView.text.count {
-                return false
-            }
-            let newLength = descriptionTextView.text.count + text.count - range.length
-            return newLength <= 150
-        }
-        return true
-    }
     //----------------------------------------
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -288,9 +288,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-FN-CKk">
-                                <rect key="frame" x="50" y="268.5" width="275" height="183.5"/>
+                                <rect key="frame" x="50" y="292" width="275" height="160"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -317,27 +316,26 @@
                                     <action selector="descriptionButton:" destination="OF5-WR-ItE" eventType="touchUpInside" id="Zhh-Eo-aMR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beskriv dig selv:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVt-IQ-QoN">
-                                <rect key="frame" x="0.0" y="220" width="375" height="33.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.plaintext" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qEz-w7-gA0">
+                                <rect key="frame" x="67" y="90" width="240" height="162"/>
+                                <color key="tintColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Cgt-mP-Cke" firstAttribute="leading" secondItem="tY2-L9-TOi" secondAttribute="leading" constant="50" id="4lK-zu-oey"/>
                             <constraint firstItem="Cgt-mP-Cke" firstAttribute="top" secondItem="qR0-FN-CKk" secondAttribute="bottom" constant="50" id="9cx-0P-hzT"/>
                             <constraint firstItem="Tzc-M5-mrV" firstAttribute="top" secondItem="tY2-L9-TOi" secondAttribute="top" constant="42" id="ARi-4I-yhS"/>
-                            <constraint firstItem="qR0-FN-CKk" firstAttribute="top" secondItem="KVt-IQ-QoN" secondAttribute="bottom" constant="15" id="COB-Jd-JYW"/>
-                            <constraint firstAttribute="trailing" secondItem="KVt-IQ-QoN" secondAttribute="trailing" id="IB0-3K-9cc"/>
+                            <constraint firstAttribute="trailing" secondItem="qEz-w7-gA0" secondAttribute="trailing" constant="68" id="LIR-mw-Iye"/>
                             <constraint firstAttribute="trailing" secondItem="qR0-FN-CKk" secondAttribute="trailing" constant="50" id="V2i-Cr-TlS"/>
-                            <constraint firstItem="KVt-IQ-QoN" firstAttribute="leading" secondItem="tY2-L9-TOi" secondAttribute="leading" id="Wq3-Sa-FbO"/>
-                            <constraint firstItem="KVt-IQ-QoN" firstAttribute="top" secondItem="tY2-L9-TOi" secondAttribute="top" constant="220" id="i07-qj-iBz"/>
                             <constraint firstItem="Tzc-M5-mrV" firstAttribute="leading" secondItem="tY2-L9-TOi" secondAttribute="leading" constant="57" id="nQN-wb-r88"/>
                             <constraint firstAttribute="trailing" secondItem="Cgt-mP-Cke" secondAttribute="trailing" constant="50" id="ojV-le-bLr"/>
                             <constraint firstItem="qR0-FN-CKk" firstAttribute="leading" secondItem="tY2-L9-TOi" secondAttribute="leading" constant="50" id="pkF-jT-onX"/>
+                            <constraint firstItem="qEz-w7-gA0" firstAttribute="leading" secondItem="tY2-L9-TOi" secondAttribute="leading" constant="67" id="qgg-l1-Rni"/>
+                            <constraint firstItem="qEz-w7-gA0" firstAttribute="top" secondItem="tY2-L9-TOi" secondAttribute="top" constant="90" id="uUK-3h-2mS"/>
+                            <constraint firstItem="qR0-FN-CKk" firstAttribute="top" secondItem="qEz-w7-gA0" secondAttribute="bottom" constant="40" id="udM-n3-hXF"/>
                             <constraint firstAttribute="bottom" secondItem="Cgt-mP-Cke" secondAttribute="bottom" constant="120" id="xN3-YK-lo5"/>
+                            <constraint firstItem="Cgt-mP-Cke" firstAttribute="top" secondItem="qEz-w7-gA0" secondAttribute="bottom" constant="250" id="xaL-QJ-m7b"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mOp-Nm-tFm"/>
@@ -355,6 +353,7 @@
     <resources>
         <image name="NotiAr" width="2000" height="2000"/>
         <image name="PinArt" width="1000" height="1000"/>
+        <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
