@@ -54,7 +54,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5ea-4s-4rc" kind="show" id="jYu-gC-Hla"/>
+                                    <action selector="addEventBtnClick:" destination="LBT-VK-Upy" eventType="touchUpInside" id="8go-Nh-uMH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dine begivenheder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4h-gw-1ET">
@@ -121,6 +121,7 @@
                         <outlet property="bulletinTableView" destination="diY-sK-6cF" id="0lp-Bb-5FB"/>
                         <segue destination="qLa-ag-DGv" kind="show" identifier="editSegue" id="gsL-bq-mYh"/>
                         <segue destination="iNA-JL-dYo" kind="show" identifier="participantSegue" id="Ysa-eJ-WKf"/>
+                        <segue destination="5ea-4s-4rc" kind="show" identifier="showCreateEvent" id="KtQ-jm-8uZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixB-2d-dq6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -403,6 +404,7 @@
                         <outlet property="datePicker" destination="7aO-eW-k0w" id="9Zc-9s-PCY"/>
                         <outlet property="dbLoader" destination="bSv-GU-1lc" id="Vmg-GU-NEZ"/>
                         <outlet property="descriptionTextView" destination="aQo-Je-w9Q" id="oZP-9g-PIy"/>
+                        <outlet property="eventImage" destination="OPa-u0-7yC" id="uCD-k3-1uR"/>
                         <outlet property="interestsTableView" destination="oss-ed-d4K" id="w0W-wI-2Wf"/>
                         <outlet property="locationPicker" destination="Ajp-jl-nEQ" id="zJh-Zm-KSL"/>
                         <outlet property="mainView" destination="zY1-ya-wec" id="Qqu-dD-Lns"/>
@@ -1773,7 +1775,7 @@
         <designable name="bF7-Kj-1ny"/>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Dwi-y4-pkl"/>
+        <segue reference="09O-fj-Cjo"/>
         <segue reference="8v0-Mx-fOF"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

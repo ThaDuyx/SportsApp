@@ -14,6 +14,7 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var addEventButton: UIButton!
     var eventsIDs: [String] = []
     var events: [UserEventList] = []
+    var userName: String = ""
     var selectedEvent: UserEventList = UserEventList(eid: "", title: "")!
     let dbRef = Firestore.firestore()
     
@@ -124,6 +125,9 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
         let swipe = UISwipeActionsConfiguration(actions: [edit, overview, delete])
         return swipe
     }
+    @IBAction func addEventBtnClick(_ sender: Any) {
+        performSegue(withIdentifier: "showCreateEvent", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editSegue"{
@@ -131,6 +135,10 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
         }else if segue.identifier == "participantSegue" {
             let destinationVC2 = segue.destination as! ParticipantEventViewController
             destinationVC2.selectedEvent = selectedEvent
-      }
+        } else if segue.identifier == "showCreateEvent" {
+            let destinationVC3 = segue.destination as! CreateEventViewController
+            destinationVC3.userName = userName
+        }
+
     }
 }

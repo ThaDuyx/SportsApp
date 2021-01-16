@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseStorage
 import FirebaseAuth
 
 class CreateEventViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -20,21 +21,26 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dbLoader: UIActivityIndicatorView!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var eventImage: UIImageView!
     var selectedLocation: String = ""
     var selectedInterest: String = ""
     var eventPicPicker = UIImagePickerController()
+    var isImagePicked: Bool = false
     var selectedImage = UIImage()
+    var userName: String = ""
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
     
     override func viewDidLoad() {
+        print(userName)
         //Navigationbar settings - Her bliver den vist, med en specifik farve
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
 
         descriptionTextView.text = "Beskriv begivenheden - maks. 150 tegn"
@@ -54,6 +60,8 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         picturePickButton.clipsToBounds = true
         
         parseDanishCities()
+        
+        
                 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -104,7 +112,8 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         self.dismiss(animated: true)
         
         if let pickedImage = info[.originalImage] as? UIImage {
-            selectedImage = pickedImage
+            eventImage.image = pickedImage
+            isImagePicked = true
         }
     }
     
@@ -224,10 +233,10 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         selectedLocation = cities![row]
     }
     @IBAction func createEventBtnTapped(_ sender: Any) {
-        /*dbLoader.alpha = 1
+        dbLoader.alpha = 1
         dbLoader.startAnimating()
         createEventButton.alpha = 0
-        postEvent()*/
+        postEvent()
         
     }
     
@@ -244,14 +253,16 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         let interests = selectedInterest
         let description = descriptionTextView.text
         
+        //Adding event to event collection
         let newEventRef = Firestore.firestore().collection("event").document()
         let eventid = newEventRef.documentID
-        newEventRef.setData(["eid":eventid, "oid":ownerid!, "title":title!, "location": location, "date": date, "interests":interests, "description": description!]) { (error1) in
+        newEventRef.setData(["eid":eventid, "oid":ownerid!, "title":title!, "location": location, "date": date, "interests":interests, "description": description!, "ownername": userName]) { (error1) in
             if error1 != nil {
                 print("Something went wrong: Posting event")
                 print(error1?.localizedDescription ?? "Cannot fetch error")
             } else {
-                print("Success: Posting event")
+                print("Success: Posting in event collection")
+                
                 //Adding eventid in firebase/user/events
                 let userRef = Firestore.firestore().collection("user").document(ownerid!).collection("events").document(eventid)
                 userRef.setData(["eid": eventid]) { (error2) in
@@ -260,16 +271,33 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
                         print(error2?.localizedDescription ?? "Cannot fetch error")
                     } else {
                         print("Success: Posting event to owner")
-                        self.createEventButton.alpha = 1
-                        self.dbLoader.stopAnimating()
-                        self.dbLoader.alpha = 0
-                        self.navigationController?.popToRootViewController(animated: true)
+                        
+                        if self.isImagePicked == false {
+                            self.selectedImage = UIImage(named: "SportImages/"+self.selectedInterest)!
+                        }
+                        let imageName:String = String((eventid)+".jpeg")
+                        let storageRef = Storage.storage().reference().child("eventImages").child(imageName)
+                        var data: NSData = NSData()
+                        data = self.selectedImage.jpegData(compressionQuality: 0.8)! as NSData
+                        let metaData = StorageMetadata()
+                        metaData.contentType = "image/jpeg"
+                        storageRef.putData(data as Data, metadata: metaData) { (metaData, error3) in
+                            if error3 != nil {
+                                print("Something went wrong: Uploading image eventImages")
+                                print(error3?.localizedDescription ?? "Cannot fetch error")
+                            } else {
+                                print("Success: Uploading image to eventImages")
+                                
+                                self.createEventButton.alpha = 1
+                                self.dbLoader.stopAnimating()
+                                self.dbLoader.alpha = 0
+                                self.navigationController?.popToRootViewController(animated: true)
+                            }
+                        }
                     }
                 }
-                
             }
         }
-        
-        
+        //End of dbRef.setData
     }
 }

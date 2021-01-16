@@ -111,26 +111,28 @@ class EventViewController: UIViewController {
                                             let location = addedData["location"] as! String
                                             let ownerName = addedData["ownername"] as! String
                 
-                                            let eventImgRef = self.storage.child("eventImages/" + eid + ".jpeg")
-                                            eventImgRef.getData(maxSize: 1 * 1024 * 1024) { (eventImgData, error3) in
-                                                if error3 != nil {
-                                                    print("Something went wrong: Downloading event picture")
-                                                    print(error?.localizedDescription ?? "Cannot fetch error")
-                                                } else {
-                                                    let eventImage = UIImage(data: eventImgData!)
-                                                    let ownerImageRef = self.storage.child("profileImages/" + oid + ".jpeg")
-                                                    
-                                                    ownerImageRef.getData(maxSize: 1 * 1024 * 1024) { (ownerImgData, error4) in
-                                                        if error4 != nil {
-                                                            print("Something went wrong: Downloading owner picture")
-                                                            print(error4?.localizedDescription ?? "Cannot fetch error")
-                                                        } else {
-                                                            let ownerImage = UIImage(data: ownerImgData!)
-                                                            self.eventsList.append(Event(oid: oid, eid: eid, title: title, date: date, description: description, interest: interest, location: location, ownerName: ownerName, eImage: eventImage!, oImage: ownerImage!)!)
-                                                            print("Success: Retrieving events")
-                                                            DispatchQueue.main.async {
-                                                                self.eventBackgroundCollection.reloadData()
-                                                                self.eventBackgroundCollection.alpha = 1
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                                                let eventImgRef = self.storage.child("eventImages/" + eid + ".jpeg")
+                                                eventImgRef.getData(maxSize: 1 * 2000 * 2000) { (eventImgData, error3) in
+                                                    if error3 != nil {
+                                                        print("Something went wrong: Downloading event picture")
+                                                        print(error?.localizedDescription ?? "Cannot fetch error")
+                                                    } else {
+                                                        let eventImage = UIImage(data: eventImgData!)
+                                                        let ownerImageRef = self.storage.child("profileImages/" + oid + ".jpeg")
+                                                        
+                                                        ownerImageRef.getData(maxSize: 1 * 2000 * 2000) { (ownerImgData, error4) in
+                                                            if error4 != nil {
+                                                                print("Something went wrong: Downloading owner picture")
+                                                                print(error4?.localizedDescription ?? "Cannot fetch error")
+                                                            } else {
+                                                                let ownerImage = UIImage(data: ownerImgData!)
+                                                                self.eventsList.append(Event(oid: oid, eid: eid, title: title, date: date, description: description, interest: interest, location: location, ownerName: ownerName, eImage: eventImage!, oImage: ownerImage!)!)
+                                                                print("Success: Retrieving events")
+                                                                DispatchQueue.main.async {
+                                                                    self.eventBackgroundCollection.reloadData()
+                                                                    self.eventBackgroundCollection.alpha = 1
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -232,6 +234,7 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
             if self.mainUser?.events.isEmpty != true {
                 destinationVC3.eventsIDs = self.mainUser!.events
             }
+            destinationVC3.userName = self.mainUser!.name
         }
         
     }
