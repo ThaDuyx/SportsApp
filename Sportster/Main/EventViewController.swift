@@ -194,6 +194,8 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         cell?.eventBackgroundImage.image = eventsList[indexPath.row].eImage
         cell?.titleLabel.text = eventsList[indexPath.row].title
         cell?.profileBtn.setImage(eventsList[indexPath.row].oImage, for: .normal)
+        cell?.nameLabel.text = eventsList[indexPath.row].ownerName
+        cell?.placementLabel.text = eventsList[indexPath.row].location
         return cell!
     }
     
