@@ -405,6 +405,7 @@
                         <outlet property="descriptionTextView" destination="aQo-Je-w9Q" id="oZP-9g-PIy"/>
                         <outlet property="interestsTableView" destination="oss-ed-d4K" id="w0W-wI-2Wf"/>
                         <outlet property="locationPicker" destination="Ajp-jl-nEQ" id="zJh-Zm-KSL"/>
+                        <outlet property="mainView" destination="zY1-ya-wec" id="Qqu-dD-Lns"/>
                         <outlet property="picturePickButton" destination="vsI-Pr-30e" id="gfg-eI-aCT"/>
                         <outlet property="titleTextView" destination="ZDO-ri-Sug" id="UYK-dN-QhL"/>
                     </connections>
@@ -1297,7 +1298,7 @@
                                     <constraint firstAttribute="height" constant="140" id="oj6-6y-0ME"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultArt" translatesAutoresizingMaskIntoConstraints="NO" id="D4Z-aL-21P">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D4Z-aL-21P">
                                 <rect key="frame" x="10" y="80" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="AKP-88-z5b"/>
@@ -1305,33 +1306,32 @@
                                     <constraint firstAttribute="width" constant="120" id="WyY-3o-Y44"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simon Andersen, 22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jn-qr-5Ih">
-                                <rect key="frame" x="30" y="217" width="345" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jn-qr-5Ih">
+                                <rect key="frame" x="30" y="217" width="345" height="0.0"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Søborg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ar-0h-Igc">
-                                <rect key="frame" x="70" y="318.5" width="305" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ar-0h-Igc">
+                                <rect key="frame" x="70" y="285" width="305" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fodbold, Skisport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM6-Wz-2Qn">
-                                <rect key="frame" x="70" y="265.5" width="305" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM6-Wz-2Qn">
+                                <rect key="frame" x="70" y="232" width="305" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghc-02-zZw">
-                                <rect key="frame" x="70" y="371.5" width="305" height="203"/>
-                                <string key="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghc-02-zZw">
+                                <rect key="frame" x="70" y="338" width="305" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ntl-E7-fQr">
-                                <rect key="frame" x="30" y="263" width="25" height="25"/>
+                                <rect key="frame" x="30" y="229.5" width="25" height="25"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="etF-LP-eXi"/>
@@ -1339,7 +1339,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wQJ-WN-nnQ">
-                                <rect key="frame" x="30" y="370" width="25" height="24"/>
+                                <rect key="frame" x="30" y="336.5" width="25" height="24"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="F4F-eD-lqd"/>
@@ -1347,7 +1347,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6mH-YS-dou">
-                                <rect key="frame" x="30" y="317.5" width="25" height="24"/>
+                                <rect key="frame" x="30" y="284" width="25" height="24"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="SYe-Yp-CqN"/>
@@ -1739,6 +1739,7 @@
                         <outlet property="descriptionTextView" destination="1oO-G6-lao" id="08Y-mh-iNS"/>
                         <outlet property="interestsTableView" destination="hq3-37-Uzp" id="Y4c-GN-5Q2"/>
                         <outlet property="locationPicker" destination="twV-C2-N2y" id="ktp-Lx-F1n"/>
+                        <outlet property="mainView" destination="B7I-CO-B5k" id="iWn-Ob-Xzn"/>
                         <outlet property="profileImage" destination="x8P-nj-5L2" id="Mlu-cr-a25"/>
                         <outlet property="saveButton" destination="z20-si-uOH" id="Sbl-9D-Hiv"/>
                         <outlet property="topbarView" destination="AnQ-Jm-npL" id="WA1-Lb-yZC"/>

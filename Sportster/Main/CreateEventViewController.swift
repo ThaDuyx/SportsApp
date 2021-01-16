@@ -19,6 +19,7 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     @IBOutlet weak var locationPicker: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dbLoader: UIActivityIndicatorView!
+    @IBOutlet weak var mainView: UIView!
     var selectedLocation: String = ""
     var selectedInterest: String = ""
     var eventPicPicker = UIImagePickerController()
@@ -33,6 +34,9 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+
         descriptionTextView.text = "Beskriv begivenheden - maks. 150 tegn"
         descriptionTextView.textColor = UIColor.lightGray
         descriptionTextView.layer.borderWidth = 1
@@ -50,9 +54,29 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         picturePickButton.clipsToBounds = true
         
         parseDanishCities()
-        
-        
+                
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.mainView.frame.origin.y == 0 {
+                self.mainView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.mainView.frame.origin.y != 0 {
+            self.mainView.frame.origin.y = 0
+        }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)

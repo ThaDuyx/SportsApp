@@ -346,6 +346,7 @@
                         <outlet property="passwordTF" destination="U92-nu-TQg" id="URw-qm-Tev"/>
                         <outlet property="pickProfilePicBtn" destination="p69-B9-WCf" id="5f5-pj-uZa"/>
                         <outlet property="profilePicIV" destination="Eie-0W-J9t" id="3e0-uW-pmT"/>
+                        <outlet property="signInLoader" destination="Qbz-oe-x7b" id="KP2-Ar-fgi"/>
                         <outlet property="signUpBtn" destination="1sM-p6-0DN" id="743-jH-cYf"/>
                     </connections>
                 </viewController>

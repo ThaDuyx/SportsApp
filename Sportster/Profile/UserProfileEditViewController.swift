@@ -15,7 +15,8 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var topbarView: UIView!
     @IBOutlet weak var locationPicker: UIPickerView!
     @IBOutlet weak var descriptionTextView: UITextView!
-    
+    @IBOutlet weak var mainView: UIView!
+
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
@@ -27,6 +28,10 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+
         
         //Her bliver viewet xi toppen sat en farve, så den passer overens med navigations baren
         self.topbarView.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
@@ -47,6 +52,26 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         
         parseDanishCities()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.mainView.frame.origin.y == 0 {
+                self.mainView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.mainView.frame.origin.y != 0 {
+            self.mainView.frame.origin.y = 0
+        }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

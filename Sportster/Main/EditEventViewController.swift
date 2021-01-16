@@ -29,6 +29,9 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         descriptionTextView.text = "Beskriv begivenheden - maks. 150 tegn"
         descriptionTextView.textColor = UIColor.lightGray
         descriptionTextView.layer.borderWidth = 1
@@ -63,6 +66,11 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         if self.mainView.frame.origin.y != 0 {
             self.mainView.frame.origin.y = 0
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
