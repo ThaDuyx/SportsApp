@@ -15,13 +15,12 @@ class User {
     var pfimage: UIImage
     var email: String
     var name: String
-    //var age: String
     var interests: [String]
     var events: [String]
     var location: String
-    //var birthday: String
+    var description: String
 
-    init?(uid: String, email: String, name: String, location: String, interests: [String], events: [String], pfimage: UIImage) {
+    init?(uid: String, email: String, name: String, location: String, description: String, interests: [String], events: [String], pfimage: UIImage) {
         self.uid = uid
         self.email = email
         self.name = name
@@ -29,6 +28,7 @@ class User {
         self.location = location
         self.events = events
         self.pfimage = pfimage
+        self.description = description
     }
     
 }

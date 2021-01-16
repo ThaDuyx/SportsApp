@@ -25,6 +25,7 @@ class OwnerProfileViewController: UIViewController {
         
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
+        profileImage.contentMode = .scaleAspectFill
         let ownerRef = Firestore.firestore().collection("user").document(oid)
         ownerRef.getDocument { (ownerInfo, error) in
             if error != nil {
@@ -35,6 +36,7 @@ class OwnerProfileViewController: UIViewController {
                 let name = data!["name"] as! String
                 let interests = data!["interests"] as! [String]
                 let location = data!["location"] as! String
+                let description = data!["description"] as! String
                 let interestsString = interests.joined(separator:", ")
                 print(interestsString)
                 let ownerImgRef = self.storage.child("profileImages/" + self.oid + ".jpeg")
@@ -51,11 +53,9 @@ class OwnerProfileViewController: UIViewController {
                 self.ownerName.text = name
                 self.ownerInterests.text = interestsString
                 self.ownerLocation.text = location
-                
+                self.ownerDescription.text = description
                 print("Success: Retrieving owner info")
             }
         }
-        print(oid)
     }
-    
 }

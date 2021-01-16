@@ -8,13 +8,12 @@
 import UIKit
 
 class PostsCell: UITableViewCell {
-    @IBOutlet weak var bulletinButton: UIButton!
+    
+    @IBOutlet weak var eventListLabe: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        bulletinButton.layer.cornerRadius = 10
-        bulletinButton.layer.masksToBounds = true
-        bulletinButton.clipsToBounds = true
+
     }
 }
