@@ -23,6 +23,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var signInLoader: UIActivityIndicatorView!
     @IBOutlet weak var confirmPassswordTF: UITextField!
+    @IBOutlet weak var mainView: UIView!
     var profilePicPicker = UIImagePickerController()
     
     
@@ -37,7 +38,28 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         pickProfilePicBtn.layer.cornerRadius = 15
         signUpBtn.layer.cornerRadius = 20
     
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.mainView.frame.origin.y == 0 {
+                self.mainView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.mainView.frame.origin.y != 0 {
+            self.mainView.frame.origin.y = 0
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return false
+        }
     
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
     override func viewWillDisappear(_ animated: Bool) {
