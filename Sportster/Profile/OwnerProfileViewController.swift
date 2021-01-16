@@ -9,23 +9,27 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 import FirebaseStorage
+import Lottie
 
 class OwnerProfileViewController: UIViewController {
-    @IBOutlet weak var profileImage: UIImageView!
     var oid: String = " "
     @IBOutlet weak var ownerName: UILabel!
     @IBOutlet weak var ownerInterests: UILabel!
     @IBOutlet weak var ownerLocation: UILabel!
     @IBOutlet weak var ownerDescription: UILabel!
     @IBOutlet weak var ownerImage: UIImageView!
+    @IBOutlet weak var loadingAnimation: AnimationView!
     let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        profileImage.layer.cornerRadius = profileImage.frame.height/2
-        profileImage.clipsToBounds = true
-        profileImage.contentMode = .scaleAspectFill
+        ownerImage.layer.cornerRadius = ownerImage.frame.height/2
+        ownerImage.clipsToBounds = true
+        ownerImage.contentMode = .scaleAspectFill
+
+        loadingAnimation.loopMode = .loop
+        loadingAnimation.play()
+        loadingAnimation.alpha = 1
         let ownerRef = Firestore.firestore().collection("user").document(oid)
         ownerRef.getDocument { (ownerInfo, error) in
             if error != nil {
@@ -55,7 +59,22 @@ class OwnerProfileViewController: UIViewController {
                 self.ownerLocation.text = location
                 self.ownerDescription.text = description
                 print("Success: Retrieving owner info")
+               
+                self.ownerImage.alpha = 1
+                self.ownerName.alpha = 1
+                self.ownerInterests.alpha = 1
+                self.ownerLocation.alpha = 1
+                self.ownerDescription.alpha = 1
+                self.loadingAnimation.stop()
+                self.loadingAnimation.alpha = 0
             }
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        ownerImage.alpha = 0
+        ownerName.alpha = 0
+        ownerLocation.alpha = 0
+        ownerDescription.alpha = 0
+        ownerInterests.alpha = 0
     }
 }

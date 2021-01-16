@@ -1354,12 +1354,24 @@
                                     <constraint firstAttribute="width" constant="25" id="jWy-60-B01"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bF7-Kj-1ny" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="43" y="233" width="288" height="162"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="hKZ-5d-QtB"/>
+                                    <constraint firstAttribute="height" constant="162" id="tvA-G0-nOz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Loading"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dFs-bI-RY3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5Jn-qr-5Ih" firstAttribute="top" secondItem="D4Z-aL-21P" secondAttribute="bottom" constant="17" id="2mR-Kx-J2L"/>
                             <constraint firstItem="ghc-02-zZw" firstAttribute="leading" secondItem="wQJ-WN-nnQ" secondAttribute="trailing" constant="15" id="8GP-Bc-NXY"/>
+                            <constraint firstItem="bF7-Kj-1ny" firstAttribute="leading" secondItem="dFs-bI-RY3" secondAttribute="leading" constant="43" id="AgF-VP-dLi"/>
                             <constraint firstItem="dFs-bI-RY3" firstAttribute="trailing" secondItem="ghc-02-zZw" secondAttribute="trailing" id="ArD-FP-zh5"/>
                             <constraint firstItem="D4Z-aL-21P" firstAttribute="top" secondItem="KSD-GM-gkM" secondAttribute="bottom" constant="-60" id="CZQ-s6-dyg"/>
                             <constraint firstItem="6mH-YS-dou" firstAttribute="leading" secondItem="dFs-bI-RY3" secondAttribute="leading" constant="30" id="D5l-LI-3IU"/>
@@ -1376,26 +1388,28 @@
                             <constraint firstItem="dFs-bI-RY3" firstAttribute="trailing" secondItem="5ar-0h-Igc" secondAttribute="trailing" id="h83-ok-xSG"/>
                             <constraint firstItem="ntl-E7-fQr" firstAttribute="top" secondItem="5Jn-qr-5Ih" secondAttribute="bottom" constant="13" id="hwp-nY-vQK"/>
                             <constraint firstItem="5Jn-qr-5Ih" firstAttribute="leading" secondItem="dFs-bI-RY3" secondAttribute="leading" constant="30" id="l5G-zK-Tma"/>
+                            <constraint firstItem="dFs-bI-RY3" firstAttribute="trailing" secondItem="bF7-Kj-1ny" secondAttribute="trailing" constant="44" id="oP2-lu-vI7"/>
                             <constraint firstItem="6mH-YS-dou" firstAttribute="top" secondItem="ntl-E7-fQr" secondAttribute="bottom" constant="28" id="oSx-6O-O7z"/>
                             <constraint firstItem="ntl-E7-fQr" firstAttribute="leading" secondItem="dFs-bI-RY3" secondAttribute="leading" constant="30" id="oZ8-Us-7Hm"/>
                             <constraint firstItem="5ar-0h-Igc" firstAttribute="top" secondItem="ntl-E7-fQr" secondAttribute="bottom" constant="30" id="qtm-ud-Rog"/>
+                            <constraint firstItem="dFs-bI-RY3" firstAttribute="bottom" secondItem="bF7-Kj-1ny" secondAttribute="bottom" constant="252" id="rWh-mQ-ELQ"/>
                             <constraint firstItem="QM6-Wz-2Qn" firstAttribute="leading" secondItem="ntl-E7-fQr" secondAttribute="trailing" constant="15" id="s4e-l4-X7f"/>
                             <constraint firstItem="dFs-bI-RY3" firstAttribute="trailing" secondItem="KSD-GM-gkM" secondAttribute="trailing" id="tNy-OK-qi5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jTS-O5-VYP"/>
                     <connections>
+                        <outlet property="loadingAnimation" destination="bF7-Kj-1ny" id="VZo-Md-Paw"/>
                         <outlet property="ownerDescription" destination="ghc-02-zZw" id="sOI-pO-PXb"/>
                         <outlet property="ownerImage" destination="D4Z-aL-21P" id="MWA-kL-DV0"/>
                         <outlet property="ownerInterests" destination="QM6-Wz-2Qn" id="qn8-IG-fIc"/>
                         <outlet property="ownerLocation" destination="5ar-0h-Igc" id="G6n-vg-nwa"/>
                         <outlet property="ownerName" destination="5Jn-qr-5Ih" id="ISf-sD-hGf"/>
-                        <outlet property="profileImage" destination="D4Z-aL-21P" id="xZL-iL-qdm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUP-76-JBK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734" y="-2025"/>
+            <point key="canvasLocation" x="733.60000000000002" y="-2025.3373313343329"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="9AJ-fp-zU3">
@@ -1533,7 +1547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRX-Ce-eOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734" y="-1282"/>
+            <point key="canvasLocation" x="733.60000000000002" y="-1282.3088455772115"/>
         </scene>
         <!--User Profile Edit View Controller-->
         <scene sceneID="QHA-HD-HpZ">
@@ -1737,6 +1751,7 @@
     </scenes>
     <designables>
         <designable name="ANV-AP-pxd"/>
+        <designable name="bF7-Kj-1ny"/>
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="09O-fj-Cjo"/>
