@@ -73,7 +73,7 @@ class DescriptionViewController: UIViewController {
         if (descriptionTextView.text?.isEmpty == true){
             return
         } else {
-            performSegue(withIdentifier: "showLocationVC", sender: nil)
+            performSegue(withIdentifier: "showNotiVC", sender: nil)
         }
     }
 }

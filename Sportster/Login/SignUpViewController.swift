@@ -157,7 +157,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                     //Creating new user file in the DB with user id from Firestorage
                     let newEmailUserRef = Firestore.firestore().collection("user").document((user?.user.uid)!)
                     newEmailUserRef.setData(["uid" : uID!, "email": email, "name": name, "birthday": birthday])
-                
+                    newEmailUserRef.collection("events").document("dummy").setData(["eid" : "dummy"])
+                    
                     //Uploading the selected image to Firebase Storage with user id as name
                     let imageName:String = String((user?.user.uid)!+".jpeg")
                     let storageRef = Storage.storage().reference().child("profileImages").child(imageName)

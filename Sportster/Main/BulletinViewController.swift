@@ -46,7 +46,7 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }
-        
+    
     }
     
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
