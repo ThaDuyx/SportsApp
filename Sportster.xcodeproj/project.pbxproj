@@ -103,7 +103,6 @@
 		8310DD6A25AF2B040083B798 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		83281D04254AFFA6007503E9 /* EventDataCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataCollectionCell.swift; sourceTree = "<group>"; };
 		83281D09254B096E007503E9 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		83472D4A25B1EA3B005E0A1F /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = byer.txt; sourceTree = "<group>"; };
 		83472DB125B1FADF005E0A1F /* byer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = byer.txt; sourceTree = "<group>"; };
 		83472DB625B214D5005E0A1F /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		8380C95F25233F0C0028FEA4 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -837,7 +836,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = ZG95YRN77R;
+				DEVELOPMENT_TEAM = K62N5868AJ;
 				INFOPLIST_FILE = Sportster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -858,7 +857,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZG95YRN77R;
+				DEVELOPMENT_TEAM = K62N5868AJ;
 				INFOPLIST_FILE = Sportster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (

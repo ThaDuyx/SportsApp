@@ -11,6 +11,7 @@ protocol CellDelegate: AnyObject {
     func pProfileTapped(cell: EventParticipantsCell)
     func pAcceptTapped(cell: EventParticipantsCell)
     func pDeclineTapped(cell: EventParticipantsCell)
+    func participantButton(cell: EventParticipantsCell)
 }
 
 class EventParticipantsCell: UITableViewCell {
@@ -37,6 +38,10 @@ class EventParticipantsCell: UITableViewCell {
     }
     @IBAction func pDeclineBtnTapped(_ sender: Any) {
         delegate?.pDeclineTapped(cell: self)
+    }
+    
+    @IBAction func participantButton(_ sender: Any) {
+        delegate?.participantButton(cell: self)
     }
     
     

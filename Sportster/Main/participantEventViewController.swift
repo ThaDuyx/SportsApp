@@ -145,4 +145,10 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
         self.dbRef.collection("event").document(selectedEvent.eid).collection("participants").document(selectedParticipantID).delete()
     }
     
+    func participantButton(cell: EventParticipantsCell) {
+        let indexPath = self.participantTableView.indexPath(for: cell)
+        selectedParticipantID = participantsList[indexPath!.section].pid
+        performSegue(withIdentifier: "showParticipantProfile", sender: self)
+    }
+    
 }
