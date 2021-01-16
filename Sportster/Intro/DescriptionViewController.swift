@@ -29,7 +29,6 @@ class DescriptionViewController: UIViewController {
                  charIndex += 1
             }
         //----------------------------------------
-        
     }
     
     //https://stackoverflow.com/a/26582115

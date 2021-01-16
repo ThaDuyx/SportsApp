@@ -28,7 +28,7 @@ extension UIColor {
    }
 }
 
-class RegistrerViewController: UIViewController {
+class RegistrerViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -109,11 +109,33 @@ class RegistrerViewController: UIViewController {
         //-- Border for Textfield END
 
         loadingAnimationView.alpha = 0
+        emailTextField.clipsToBounds = true
+        passwordTextField.clipsToBounds = true
 
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc
-    func tapFunction(sender:UITapGestureRecognizer) {
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.mainView.frame.origin.y == 0 {
+                self.mainView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.mainView.frame.origin.y != 0 {
+            self.mainView.frame.origin.y = 0
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return false
+        }
+    
+    @objc func tapFunction(sender:UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "MainVC")
         self.view.window?.rootViewController = vc
