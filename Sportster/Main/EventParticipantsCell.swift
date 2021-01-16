@@ -21,13 +21,11 @@ class EventParticipantsCell: UITableViewCell {
     @IBOutlet weak var pAcceptBtn: UIButton!
     @IBOutlet weak var pDeclineBtn: UIButton!
     
-    
     weak var delegate: CellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
     
     @IBAction func pAcceptBtnTapped(_ sender: Any) {
         delegate?.pAcceptTapped(cell: self)
@@ -43,8 +41,5 @@ class EventParticipantsCell: UITableViewCell {
     @IBAction func participantButton(_ sender: Any) {
         delegate?.participantButton(cell: self)
     }
-    
-    
- 
     
 }

@@ -10,8 +10,6 @@ import FirebaseFirestore
 
 class ParticipantEventViewController: ViewController, UITableViewDelegate, UITableViewDataSource, CellDelegate  {
 
-    
-    
     @IBOutlet weak var participantTableView: UITableView!
     var selectedEvent: UserEventList = UserEventList(eid: "", title: "")!
     var participantsList = [Participant]()
@@ -30,7 +28,6 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
                 print(error?.localizedDescription ?? "Cannot fetch error")
             } else {
                 pInfo?.documentChanges.forEach({ (change) in
-                    
                     if change.type == .added {
                         let addedData = change.document.data()
                         let pname = addedData["name"] as! String
@@ -41,7 +38,6 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
                             self.participantTableView.reloadData()
                         }
                     }
-                    
                     if change.type == .modified {
                         let modifiedData = change.document.data()
                         for participant in self.participantsList{
@@ -79,8 +75,6 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
         navigationController?.navigationBar.isTranslucent = false
     }
     
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.participantsList.count
     }
@@ -115,11 +109,11 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //selectedParticipantID = participantsList[indexPath.section].pid
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showParticipantProfile"{
             let destinationVC = segue.destination as! OwnerProfileViewController
@@ -150,5 +144,4 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
         selectedParticipantID = participantsList[indexPath!.section].pid
         performSegue(withIdentifier: "showParticipantProfile", sender: self)
     }
-    
 }
