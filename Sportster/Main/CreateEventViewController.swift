@@ -297,7 +297,7 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
                         let imageName:String = String((eventid)+".jpeg")
                         let storageRef = Storage.storage().reference().child("eventImages").child(imageName)
                         var data: NSData = NSData()
-                        data = self.selectedImage.jpegData(compressionQuality: 0.8)! as NSData
+                        data = self.selectedImage.jpegData(compressionQuality: 0.2)! as NSData
                         let metaData = StorageMetadata()
                         metaData.contentType = "image/jpeg"
                         storageRef.putData(data as Data, metadata: metaData) { (metaData, error3) in
