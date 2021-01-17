@@ -88,5 +88,20 @@ class SportsterTests: XCTestCase {
         wait(for: [expectation], timeout: 2.0)
     }
     
-    
+    func testWritePerformance() throws {
+        let FirebaseReference = Firestore.firestore().collection("unittest")
+        let documentReference = FirebaseReference.document()
+        let documentID = documentReference.documentID
+        documentReference.setData(["id":documentID])
+        FirebaseReference.document(documentID).getDocument { (documentTest, error) in
+            if error != nil {
+                print("Something went wrong: Writing to firebase")
+                print(error?.localizedDescription ?? "Cannot fetch error")
+            } else {
+                let data = documentTest?.data()
+                let testid = data!["id"] as! String
+                XCTAssertEqual(documentID, testid)
+            }
+        }
+    }
 }
