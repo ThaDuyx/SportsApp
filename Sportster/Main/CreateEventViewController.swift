@@ -67,7 +67,6 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            print(keyboardSize.height)
             if self.mainView.frame.origin.y == 0 {
                 if keyboardSize.height <= 216 {
                     self.mainView.frame.origin.y -= 200
@@ -236,11 +235,28 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         selectedLocation = cities![row]
     }
     @IBAction func createEventBtnTapped(_ sender: Any) {
+        if selectedInterest.isEmpty {
+            let refreshAlert = UIAlertController(title: "Mangler interesse", message: "Du har ikke valgt en interesse", preferredStyle: UIAlertController.Style.alert)
+            refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(refreshAlert, animated: true, completion: nil)
+        } else if descriptionTextView.text == "Beskriv begivenheden - maks. 150 tegn"{
+            let refreshAlert = UIAlertController(title: "Mangler en beskrivelse", message: "Du har ikke skrevet en beskrivelse", preferredStyle: UIAlertController.Style.alert)
+            refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(refreshAlert, animated: true, completion: nil)
+        }else if titleTextView.text == "Title - maks. 20 tegn"{
+            let refreshAlert = UIAlertController(title: "Mangler en title", message: "Du har ikke skrevet en title", preferredStyle: UIAlertController.Style.alert)
+            refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(refreshAlert, animated: true, completion: nil)
+        } else {
+        print("jeg er i else")
         dbLoader.alpha = 1
         dbLoader.startAnimating()
         createEventButton.alpha = 0
         postEvent()
-        
+        }
     }
     
     func postEvent() {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UserProfileViewController: UIViewController {
     @IBOutlet weak var topbarView: UIView!
@@ -45,6 +46,8 @@ class UserProfileViewController: UIViewController {
         
         backgroundView.layer.cornerRadius = 15
         
+        logoutButton.layer.cornerRadius = 10
+        logoutButton.clipsToBounds = true
     }
     
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
@@ -70,6 +73,20 @@ class UserProfileViewController: UIViewController {
     }
     
     @IBAction func logOutClick(_ sender: Any) {
-        
+        let logOutController = UIAlertController(title: "Log Ud", message: "Du er ved at logge ud", preferredStyle: .alert)
+        let logOutAction = UIAlertAction(title: "Log Ud", style: .destructive) { (action) in
+            do{
+                try Auth.auth().signOut()
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "LoginVC")
+                self.present(vc, animated: true, completion: nil)
+            } catch let err {
+                print(err)
+            }
+        }
+        logOutController.addAction(logOutAction)
+        let cancelLogOutAction = UIAlertAction(title: "Annullere", style: .cancel, handler: nil)
+        logOutController.addAction(cancelLogOutAction)
+        self.present(logOutController, animated: true, completion: nil)
     }
 }
