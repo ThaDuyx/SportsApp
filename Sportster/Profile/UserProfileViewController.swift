@@ -16,6 +16,8 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var userInterestsLabel: UILabel!
     @IBOutlet weak var userLocationLabel: UILabel!
     @IBOutlet weak var userDescriptionLabel: UILabel!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var logoutButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -41,6 +43,7 @@ class UserProfileViewController: UIViewController {
         userInterestsLabel.text = interestsString
         userDescriptionLabel.text = userProfile?.description
         
+        backgroundView.layer.cornerRadius = 15
         
     }
     
@@ -53,5 +56,20 @@ class UserProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    @IBAction func editUserInfo(_ sender: Any) {
+        performSegue(withIdentifier: "editUserInfo", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "editUserInfo" {
+            let destinationVC = segue.destination as! UserProfileEditViewController
+            destinationVC.userProfile = self.userProfile
+        }
+    }
+    
+    @IBAction func logOutClick(_ sender: Any) {
+        
     }
 }
