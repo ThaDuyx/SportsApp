@@ -21,6 +21,8 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     var cities: [String]?
     var selectedImage = UIImage()
     var eventPicPicker = UIImagePickerController()
+    var selectedInterest: String = ""
+
     
     override func viewDidLoad() {
         
@@ -30,6 +32,7 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         navigationController?.navigationBar.isTranslucent = false
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
         descriptionTextView.text = "Beskriv begivenheden - maks. 150 tegn"
@@ -186,6 +189,10 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         cell.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedInterest = interests[indexPath.section]
     }
     
     func parseDanishCities() {
