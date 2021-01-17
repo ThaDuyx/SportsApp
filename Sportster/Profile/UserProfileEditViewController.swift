@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserProfileEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate {
+class UserProfileEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var interestsTableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
@@ -16,12 +16,16 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var locationPicker: UIPickerView!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var interestsView: UIView!
+    @IBOutlet weak var locationView: UIView!
+    @IBOutlet weak var picturePickButton: UIButton!
 
-    
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
+    var userProfile = User(uid: "", email: "", name: "", location: "", description: "", interests: [], events: [], pfimage: UIImage(named: "Profile")!)
     var cities: [String]?
     var selectedInterest: String = ""
-
+    var profilePicPicker = UIImagePickerController()
+    var isImagePicked: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +35,11 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
         
+        // Lets you click anywhere on the screen and will then hide the keyboard.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
 
-        
         //Her bliver viewet xi toppen sat en farve, så den passer overens med navigations baren
         self.topbarView.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
         topbarView.layer.cornerRadius = 5
@@ -48,10 +52,24 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         
         interestsTableView.allowsMultipleSelection = true
         
-        descriptionTextView.text = "Placeholder"
-        descriptionTextView.textColor = UIColor.lightGray
-        descriptionTextView.layer.borderWidth = 1
+        
+        descriptionTextView.text = "Beskriv dig selv med maks. 150 tegn"
+        if descriptionTextView.text == "Beskriv dig selv med maks. 150 tegn" {
+            descriptionTextView.textColor = UIColor.lightGray
+        }
+        descriptionTextView.layer.borderWidth = 2
         descriptionTextView.layer.masksToBounds = true
+        descriptionTextView.layer.cornerRadius = 15
+        descriptionTextView.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
+        
+        locationView.layer.cornerRadius = 15
+        interestsView.layer.cornerRadius = 15
+        
+        picturePickButton.layer.cornerRadius = 5
+        picturePickButton.clipsToBounds = true
+        
+        profileImage.image = userProfile?.pfimage
+        descriptionTextView.text = userProfile?.description
         
         parseDanishCities()
         
@@ -82,6 +100,25 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         view.endEditing(true)
     }
     
+    @IBAction func changeProfileImage(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
+            profilePicPicker.delegate = self
+            profilePicPicker.sourceType = .savedPhotosAlbum
+            profilePicPicker.allowsEditing = false
+            present(profilePicPicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.dismiss(animated: true)
+        if let pickedImage = info[.originalImage] as? UIImage {
+            profileImage.image = pickedImage
+            isImagePicked = true
+        }
+    }
+    
+    // TextView description about the length, and making a placeholder
+    // --------------- Description textView START ---------------
     func textViewDidBeginEditing(_ textView: UITextView) {
         if descriptionTextView.textColor == UIColor.lightGray {
             descriptionTextView.text = nil
@@ -91,10 +128,32 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if descriptionTextView.text.isEmpty {
-            descriptionTextView.text = "Placeholder"
+            descriptionTextView.text = "Beskriv dig selv med maks. 150 tegn"
             descriptionTextView.textColor = UIColor.lightGray
         }
     }
+
+    //  https://www.youtube.com/watch?v=WSgRbH5-GKc
+    //---------    Det stykke kode er taget fra denne video. --------------
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if range.length + range.location > descriptionTextView.text.count {
+            return false
+        }
+        let newLength = descriptionTextView.text.count + text.count - range.length
+        return newLength <= 150
+    }
+    //----------------------------------------
+
+    // --------------- Description textView END ---------------
+    
+    //https://stackoverflow.com/a/26582115
+    //----------------------------------------
+    func textViewShouldReturn(_ text: UITextView) -> Bool {
+            self.view.endEditing(true)
+            return false
+        }
+    //----------------------------------------
     
     func parseDanishCities() {
             do {
