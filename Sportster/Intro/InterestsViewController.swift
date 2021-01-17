@@ -40,7 +40,10 @@ class InterestsViewController: UIViewController {
     
     @IBAction func interestsButton(_ sender: Any) {
         if selectedInterests.isEmpty {
-            return
+            let refreshAlert = UIAlertController(title: "Mangler interesse", message: "Du har ikke valgt en interesse", preferredStyle: UIAlertController.Style.alert)
+            refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(refreshAlert, animated: true, completion: nil)
         } else {
             performSegue(withIdentifier: "showLocationVC", sender: nil)
         }

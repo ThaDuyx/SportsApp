@@ -52,7 +52,10 @@ class LocationViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func locationButton(_ sender: Any) {
         if (locationTextField.text?.isEmpty == true){
-            return
+            let refreshAlert = UIAlertController(title: "Mangler en lokation", message: "Du har ikke skrevet hvor du er fra", preferredStyle: UIAlertController.Style.alert)
+            refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(refreshAlert, animated: true, completion: nil)
         } else {
             performSegue(withIdentifier: "showDescVC", sender: nil)
         }
