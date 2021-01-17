@@ -23,6 +23,8 @@
 		6A26A8A1252337110060351B /* SportsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A8A0252337110060351B /* SportsterUITests.swift */; };
 		6A7264E925B1EA9C00863DB7 /* participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7264E825B1EA9C00863DB7 /* participant.swift */; };
 		6A7264EE25B1EABB00863DB7 /* userEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7264ED25B1EABB00863DB7 /* userEventList.swift */; };
+		6A8F2E8C25B37BE3009CB58D /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDC58625ACAE430000EB74 /* user.swift */; };
+		6A8F2E9025B37E33009CB58D /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDC58E25ADD89F0000EB74 /* event.swift */; };
 		6AB44136252C61F400BB8AD6 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB44135252C61F400BB8AD6 /* InterestsCell.swift */; };
 		6AF5697B25A5ACC500F3589D /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF5697A25A5ACC500F3589D /* LocationViewController.swift */; };
 		6AF569B325AB697300F3589D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF569B225AB697300F3589D /* SignUpViewController.swift */; };
@@ -665,7 +667,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8F2E8C25B37BE3009CB58D /* user.swift in Sources */,
 				6A26A896252337110060351B /* SportsterTests.swift in Sources */,
+				6A8F2E9025B37E33009CB58D /* event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

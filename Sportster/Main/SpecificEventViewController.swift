@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 import UIKit
 
 class SpecificEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -14,6 +15,8 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var participantsTableView: UITableView!
     @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var joinedLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventImg: UIImageView!
     @IBOutlet weak var eventLocation: UILabel!
@@ -21,6 +24,7 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var ownerProfileBtn: UIButton!
     @IBOutlet weak var backgroundViewOne: UIView!
+    @IBOutlet weak var dbLoader: UIActivityIndicatorView!
     
     
 
@@ -32,6 +36,8 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
     var selectedOid = ""
     var selectedImage: UIImage = UIImage(named: "defaultArt")!
     var username = ""
+    var userID: String = Auth.auth().currentUser!.uid
+    
     let dbRef = Firestore.firestore()
     
     var participants = [Participant]()
@@ -43,6 +49,9 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
         eventImg.clipsToBounds = true
         
         joinButton.layer.cornerRadius = 5
+        cancelButton.layer.cornerRadius = 5
+        joinedLabel.layer.cornerRadius = 5
+        joinedLabel.layer.masksToBounds = true
         
         eventTitle.text = selectedEventTitle
         eventLocation.text = selectedEventLocation
@@ -65,9 +74,18 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
                         let pStatus = pDataAdded["status"] as! Bool
                         if pStatus == true {
                             self.participants.append(Participant(pid: pId, name: pName, status: pStatus)!)
+                            if pId == self.userID {
+                                self.joinedLabel.isHidden = false
+                                self.joinButton.isHidden = true
+                            }
                             DispatchQueue.main.async {
                                 self.participantsTableView.reloadData()
                             }
+                        } else if pId == self.userID {
+                            self.joinButton.isHidden = true
+                            self.cancelButton.isHidden = false
+                        } else {
+                            
                         }
                     }
                     
@@ -78,6 +96,11 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
                         let pStatus = pDataModified["status"] as! Bool
                         if pStatus == true {
                             self.participants.append(Participant(pid: pId, name: pName, status: pStatus)!)
+                            if pId == self.userID {
+                                self.joinedLabel.isHidden = false
+                                self.joinButton.isHidden = true
+                                self.cancelButton.isHidden = true
+                            }
                             DispatchQueue.main.async {
                                 self.participantsTableView.reloadData()
                             }
@@ -90,12 +113,36 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
                         self.participants.removeAll{ $0.pid == removedpId}
                         DispatchQueue.main.async {
                             self.participantsTableView.reloadData()
-                            print("Success: Removed event")
+                            print("Success: Removed participiant")
+                        }
+                        if removedpId == self.userID {
+                            self.joinedLabel.isHidden = true
+                            self.cancelButton.isHidden = true
+                            self.joinButton.isHidden = false
                         }
                     }
                 })
             }
         }
+    }
+    
+    @IBAction func joinBtnTapped(_ sender: Any) {
+        dbLoader.startAnimating()
+        let dbRef = Firestore.firestore().collection("event").document(selectedEid).collection("participants").document(userID)
+        dbRef.setData(["name" : username, "pid": userID, "status": false]) { (error) in
+            if error != nil {
+                print("Something went wrong: Writing participants to event")
+                print(error?.localizedDescription ?? "Cannot fetch error")
+            } else {
+                self.joinButton.isHidden = true
+                self.cancelButton.isHidden = false
+            }
+        }
+        dbLoader.stopAnimating()
+    }
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        let dbRef = Firestore.firestore().collection("event").document(selectedEid).collection("participants")
+        dbRef.document(userID).delete()
     }
     
     @IBAction func ownerProfileBtnTapped(_ sender: Any) {
