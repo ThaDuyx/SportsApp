@@ -20,6 +20,8 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
+    var selectedInterest: String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         navigationController?.navigationBar.isTranslucent = false
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
 
         
@@ -136,6 +139,10 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         cell.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedInterest = interests[indexPath.section]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -1021,12 +1021,9 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CX3-NV-opJ">
                                                     <rect key="frame" x="20" y="7" width="230" height="30"/>
-                                                    <state key="normal" title="Button">
+                                                    <state key="normal" title="Endnu ikke blevet implementeret">
                                                         <color key="titleColor" red="0.10980392160000001" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <segue destination="CMQ-q0-JbT" kind="presentation" id="fpc-34-CAD"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1812,7 +1809,6 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="09O-fj-Cjo"/>
-        <segue reference="8v0-Mx-fOF"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

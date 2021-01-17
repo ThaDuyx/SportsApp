@@ -186,7 +186,7 @@ class EventViewController: UIViewController {
     }
 }
 
-extension EventViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension EventViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return eventsList.count
     }
@@ -210,6 +210,23 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         selectedEventEid = eventsList[indexPath.row].eid
         selectedEventImage = eventsList[indexPath.row].eImage
         performSegue(withIdentifier: "showSpecificEvent", sender: self)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: eventBackgroundCollection.frame.size.width, height: eventBackgroundCollection.frame.size.height)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     
@@ -238,32 +255,4 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
         }
         
     }
-    
-    
-    /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "TestViewController") as? TestViewController
-        vc?.name = imgArrTwo[indexPath.row]
-        self.navigationController?.present(vc!, animated: true, completion: nil)
-    }*/
-
-}
-
-extension EventViewController: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: eventBackgroundCollection.frame.size.width, height: eventBackgroundCollection.frame.size.height)
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
 }

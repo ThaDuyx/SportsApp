@@ -11,13 +11,12 @@ class EventOverviewViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var eventOverviewTableView: UITableView!
     
-    let events: [String] = ["Mangler 2 til skiferie", "8 til fodboldkamp", "Løbetur om Furesø", "Mountenbike tur", "FCN mod BIF", "Håndbold VM", "Makker til fitten"]
-    
     override func viewDidLoad() {
         
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.events.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,11 +39,16 @@ class EventOverviewViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = eventOverviewTableView.dequeueReusableCell(withIdentifier: "eventOverviewCell") as! EventOverviewCell
-        cell.eventNameButton?.setTitle("\(events[indexPath.section])", for: .normal)
         
         cell.layer.cornerRadius = 15
         cell.layer.borderWidth = 2
         cell.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let refreshAlert = UIAlertController(title: "Hov", message: "Dette er endnu ikke blevet implementeret", preferredStyle: UIAlertController.Style.alert)
+        refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
+        }))
+        self.present(refreshAlert, animated: true, completion: nil)
     }
 }
