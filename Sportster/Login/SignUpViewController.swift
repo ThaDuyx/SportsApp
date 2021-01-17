@@ -34,6 +34,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
         profilePicIV.layer.cornerRadius = profilePicIV.frame.height/2
         pickProfilePicBtn.layer.cornerRadius = 15
         signUpBtn.layer.cornerRadius = 20
@@ -45,7 +49,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.mainView.frame.origin.y == 0 {
-                self.mainView.frame.origin.y -= keyboardSize.height
+                self.mainView.frame.origin.y -= keyboardSize.height - 40
             }
         }
     }
@@ -60,6 +64,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.view.endEditing(true)
             return false
         }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
     //Dette fjerner navigationsbaren i toppen, når man går væk fra viewet.
     override func viewWillDisappear(_ animated: Bool) {

@@ -70,7 +70,6 @@ class RegistrerViewController: UIViewController, UITextFieldDelegate {
                     self.view.window?.makeKeyAndVisible()
                 }
             }
-
         }
     }
     
@@ -81,6 +80,8 @@ class RegistrerViewController: UIViewController, UITextFieldDelegate {
         registerButton.layer.cornerRadius = 20
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(RegistrerViewController.tapFunction))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
         loginLabel.isUserInteractionEnabled = true
         loginLabel.addGestureRecognizer(tap)
         
@@ -119,7 +120,7 @@ class RegistrerViewController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.mainView.frame.origin.y == 0 {
-                self.mainView.frame.origin.y -= keyboardSize.height
+                self.mainView.frame.origin.y -= keyboardSize.height - 70
             }
         }
     }
