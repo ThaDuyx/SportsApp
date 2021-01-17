@@ -40,7 +40,7 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        //Her bliver viewet i toppen sat en farve, så den passer overens med navigations baren
+        //The top view color is being matched with the navigations bar color
         self.topbarView.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
         topbarView.layer.cornerRadius = 5
         topbarView.clipsToBounds = true
@@ -60,6 +60,7 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
             descriptionTextView.text = "Beskriv dig selv med maks. 150 tegn"
             descriptionTextView.textColor = UIColor.lightGray
         }
+        
         descriptionTextView.layer.borderWidth = 2
         descriptionTextView.layer.masksToBounds = true
         descriptionTextView.layer.cornerRadius = 15
