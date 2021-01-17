@@ -39,22 +39,25 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
-
-        //Her bliver viewet xi toppen sat en farve, så den passer overens med navigations baren
+        
+        //Her bliver viewet i toppen sat en farve, så den passer overens med navigations baren
         self.topbarView.backgroundColor = UIColor.init(rgb: 0x1C8E8E)
         topbarView.layer.cornerRadius = 5
         topbarView.clipsToBounds = true
 
         saveButton.layer.cornerRadius = 5
         
-        profileImage.layer.cornerRadius = profileImage.frame.height/2
-        profileImage.clipsToBounds = true
-        
         interestsTableView.allowsMultipleSelection = true
         
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
+        profileImage.image = userProfile?.pfimage
         
-        descriptionTextView.text = "Beskriv dig selv med maks. 150 tegn"
-        if descriptionTextView.text == "Beskriv dig selv med maks. 150 tegn" {
+        descriptionTextView.text = userProfile?.description
+        
+        
+        if descriptionTextView.text.isEmpty {
+            descriptionTextView.text = "Beskriv dig selv med maks. 150 tegn"
             descriptionTextView.textColor = UIColor.lightGray
         }
         descriptionTextView.layer.borderWidth = 2
@@ -68,9 +71,6 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         picturePickButton.layer.cornerRadius = 5
         picturePickButton.clipsToBounds = true
         
-        profileImage.image = userProfile?.pfimage
-        descriptionTextView.text = userProfile?.description
-        
         parseDanishCities()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -79,7 +79,6 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            print(keyboardSize.height)
             if self.mainView.frame.origin.y == 0 {
                 if keyboardSize.height <= 216 {
                     self.mainView.frame.origin.y -= 200

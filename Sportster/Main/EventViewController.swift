@@ -171,11 +171,7 @@ class EventViewController: UIViewController {
             }
         }
         //Get Document ends here
-        
-    
     }
-    
-    
     
     @IBAction func makeEventBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "showUserEvents", sender: self)
