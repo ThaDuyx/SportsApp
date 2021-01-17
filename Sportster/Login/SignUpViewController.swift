@@ -176,7 +176,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                     let imageName:String = String((user?.user.uid)!+".jpeg")
                     let storageRef = Storage.storage().reference().child("profileImages").child(imageName)
                     var data: NSData = NSData()
-                    data = pfimage.jpegData(compressionQuality: 0.8)! as NSData
+                    data = pfimage.jpegData(compressionQuality: 0.2)! as NSData
                     let metaData = StorageMetadata()
                     metaData.contentType = "image/jpeg"
                     
