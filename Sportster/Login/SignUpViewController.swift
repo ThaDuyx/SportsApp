@@ -48,8 +48,13 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            print(keyboardSize.height)
             if self.mainView.frame.origin.y == 0 {
-                self.mainView.frame.origin.y -= keyboardSize.height - 40
+                if keyboardSize.height <= 216 {
+                    self.mainView.frame.origin.y -= 200
+                } else if keyboardSize.height > 216 {
+                    self.mainView.frame.origin.y -= 100
+                }
             }
         }
     }
@@ -65,7 +70,6 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             return false
         }
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
@@ -116,6 +120,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         dateFormatter.dateStyle = .short
         let birthday = dateFormatter.string(from: birthdaydate)
 
+        // Alerts if the user is missing og have typed something wrong
         if password != confirmPassword {
             let refreshAlert = UIAlertController(title: "Det er ikke helt rigtigt", message: "Du har ikke indtastet dit password korrekt ind begge steder", preferredStyle: UIAlertController.Style.alert)
             refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in

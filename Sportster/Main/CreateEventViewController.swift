@@ -60,8 +60,6 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
         picturePickButton.clipsToBounds = true
         
         parseDanishCities()
-        
-        
                 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -69,8 +67,13 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UITableVi
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            print(keyboardSize.height)
             if self.mainView.frame.origin.y == 0 {
-                self.mainView.frame.origin.y -= keyboardSize.height
+                if keyboardSize.height <= 216 {
+                    self.mainView.frame.origin.y -= 200
+                } else if keyboardSize.height > 216 {
+                    self.mainView.frame.origin.y -= 100
+                }
             }
         }
     }

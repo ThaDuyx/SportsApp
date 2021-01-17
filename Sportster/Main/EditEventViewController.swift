@@ -59,8 +59,13 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            print(keyboardSize.height)
             if self.mainView.frame.origin.y == 0 {
-                self.mainView.frame.origin.y -= keyboardSize.height
+                if keyboardSize.height <= 216 {
+                    self.mainView.frame.origin.y -= 200
+                } else if keyboardSize.height > 216 {
+                    self.mainView.frame.origin.y -= 100
+                }
             }
         }
     }
@@ -72,7 +77,6 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     }
     
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
@@ -141,14 +145,12 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
             if range.length + range.location > titleTextView.text.count {
                 return false
             }
-            
             let newLength = titleTextView.text.count + text.count - range.length
             return newLength <= 20
         } else if textView === descriptionTextView {
             if range.length + range.location > descriptionTextView.text.count {
                 return false
             }
-            
             let newLength = descriptionTextView.text.count + text.count - range.length
             return newLength <= 150
         }
@@ -197,13 +199,11 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     
     func parseDanishCities() {
         do {
-            // This solution assumes  you've got the file in your bundle
             if let path = Bundle.main.path(forResource: "byer", ofType: "txt"){
                 let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
                 cities = data.components(separatedBy: "\r")
             }
         } catch let err as NSError {
-            // do something with Error
             print(err)
         }
     }

@@ -12,7 +12,5 @@ class ParticipantsCell: UITableViewCell {
     @IBOutlet weak var participantsLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
 }

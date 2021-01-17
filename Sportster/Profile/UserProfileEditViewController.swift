@@ -61,8 +61,13 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            print(keyboardSize.height)
             if self.mainView.frame.origin.y == 0 {
-                self.mainView.frame.origin.y -= keyboardSize.height
+                if keyboardSize.height <= 216 {
+                    self.mainView.frame.origin.y -= 200
+                } else if keyboardSize.height > 216 {
+                    self.mainView.frame.origin.y -= 100
+                }
             }
         }
     }
@@ -92,15 +97,12 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func parseDanishCities() {
-        
             do {
-                // This solution assumes  you've got the file in your bundle
                 if let path = Bundle.main.path(forResource: "byer", ofType: "txt"){
                     let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
                     cities = data.components(separatedBy: "\r")
                 }
             } catch let err as NSError {
-                // do something with Error
                 print(err)
             }
     }
