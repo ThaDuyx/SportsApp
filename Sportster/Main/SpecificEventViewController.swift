@@ -53,6 +53,12 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
         joinedLabel.layer.cornerRadius = 5
         joinedLabel.layer.masksToBounds = true
         
+        if userID == selectedOid {
+            joinButton.isHidden = true
+            cancelButton.isHidden = true
+            joinedLabel.isHidden = true
+        }
+        
         eventTitle.text = selectedEventTitle
         eventLocation.text = selectedEventLocation
         eventDescription.text = selectedEventDescription

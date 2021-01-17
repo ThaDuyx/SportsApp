@@ -90,7 +90,7 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedEvent = events[indexPath.row]
+        self.selectedEvent = events[indexPath.section]
         self.performSegue(withIdentifier: "participantSegue", sender: self)
         
     }
@@ -99,7 +99,9 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
         
         let edit = UIContextualAction(style: .normal, title: "Opdate", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
             print("Opdate")
+            self.selectedEvent = self.events[indexPath.section]
             self.performSegue(withIdentifier: "editSegue", sender: ac)
+            
             success(true)
         })
         
@@ -123,7 +125,8 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editSegue"{
-            _ = segue.destination as! EditEventViewController
+            let destinationVC = segue.destination as! EditEventViewController
+            destinationVC.selectedEvent = selectedEvent.eid
         }else if segue.identifier == "participantSegue" {
             let destinationVC2 = segue.destination as! ParticipantEventViewController
             destinationVC2.selectedEvent = selectedEvent

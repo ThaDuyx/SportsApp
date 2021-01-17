@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EditEventViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -17,15 +18,22 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     @IBOutlet weak var locationPicker: UIPickerView!
     @IBOutlet weak var mainView: UIView!
     
+    
     let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
     var cities: [String]?
     var selectedImage = UIImage()
+    var selectedEvent = ""
     var eventPicPicker = UIImagePickerController()
     var selectedInterest: String = ""
-
+    var eventTitle = ""
+    var eventDate = ""
+    var eventLocation = ""
+    var eventDescription = ""
+    var eventInterest = ""
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     
     override func viewDidLoad() {
-        
         //Navigationbar settings - Her bliver den vist, med en specifik farve
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
@@ -48,8 +56,35 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         editEventButton.layer.cornerRadius = 5
         editEventButton.clipsToBounds = true
         
-        picturePickButton.layer.cornerRadius = 5
-        picturePickButton.clipsToBounds = true
+        //picturePickButton.layer.cornerRadius = 5
+        //picturePickButton.clipsToBounds = true
+        
+        let dbRef = Firestore.firestore().collection("event").document(selectedEvent)
+        dbRef.getDocument { (editEvent, error) in
+            if error != nil {
+                print("Something went wrong: Retrieving event")
+                print(error?.localizedDescription ?? "Cannot fetch error")
+            } else {
+                let eventRef = editEvent?.data()
+                self.eventTitle = eventRef!["title"] as! String
+                self.eventDate = eventRef!["date"] as! String
+                self.eventDescription = eventRef!["description"] as! String
+                self.eventInterest = eventRef!["interests"] as! String
+                self.eventLocation = eventRef!["location"] as! String
+                self.titleTextView.text = self.eventTitle
+                self.descriptionTextView.text = self.eventDescription
+                let pickerViewRow = self.cities!.firstIndex(of: self.eventLocation)
+                self.locationPicker.selectRow(pickerViewRow!, inComponent: 0, animated: false)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yy, h:mm a"
+                let date = dateFormatter.date(from: self.eventDate)
+                self.datePicker.date = date!
+ 
+                DispatchQueue.main.async {
+                    self.interestsTableView.reloadData()
+                }
+            }
+        }
         
         parseDanishCities()
         
@@ -182,6 +217,7 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = interestsTableView.dequeueReusableCell(withIdentifier: "interestsCell") as! InterestsCell
         cell.interestsCellLabelText?.text = interests[indexPath.section]
+        
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.init(rgb:0x2AC0C0)
         cell.selectedBackgroundView = backgroundView
@@ -190,6 +226,9 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         cell.layer.borderWidth = 2
         cell.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
         
+        if interests[indexPath.section] == eventInterest {
+            self.interestsTableView.selectRow(at: indexPath, animated: false, scrollPosition: .middle)
+        }
         return cell
     }
     
@@ -217,4 +256,5 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return cities![row]
     }
+    
 }
