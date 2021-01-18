@@ -25,7 +25,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         Auth.auth().signIn(with: credentials) { (authResult, error) in
             if let error = error {
                 print(error.localizedDescription)
-                
             } else {
                 print("Login Successful.")
                 //This is where you should add the functionality of successful login
