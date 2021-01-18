@@ -144,11 +144,14 @@ class EventViewController: UIViewController {
                                             let modifiedData = change.document.data()
                                             for event in self.eventsList{
                                                 if modifiedData["eid"] as! String == event.eid{
-                                                    event.title = modifiedData["eid"] as! String
+                                                    event.title = modifiedData["title"] as! String
                                                     event.location = modifiedData["location"] as! String
                                                     event.date = modifiedData["date"] as! String
                                                     event.description = modifiedData["description"] as! String
                                                     print("Success: Modifying events")
+                                                    DispatchQueue.main.async {
+                                                        self.eventBackgroundCollection.reloadData()
+                                                    }
                                                 }
                                             }
                                         }
