@@ -6,17 +6,68 @@
 //
 
 import UIKit
+import Firebase
 
 class EventOverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var eventOverviewTableView: UITableView!
     
+    let userID = Auth.auth().currentUser?.uid
+    let dbRef = Firestore.firestore().collection("user").document()
+    var participationList = [Participant]()
+    
     override func viewDidLoad() {
         
+        let dbRef = Firestore.firestore().collection("user").document(userID!).collection("participations")
+        dbRef.addSnapshotListener { (participation, error) in
+            if error != nil {
+                print("Something went wrong")
+            } else {
+                participation?.documentChanges.forEach({ (change) in
+                    if error != nil {
+                        print("Something went wrong")
+                    } else {
+                        if change.type == .added {
+                            let addedData = change.document.data()
+                            let eid = addedData["eid"] as! String
+                            let eventName = addedData["name"] as! String
+                            let status = addedData["status"] as! Bool
+                            self.participationList.append(Participant(pid: eid, name: eventName, status: status)!)
+                            DispatchQueue.main.async {
+                                self.eventOverviewTableView.reloadData()
+                            }
+                        }
+                        
+                        if change.type == .modified {
+                            let modifiedData = change.document.data()
+                            for participation in self.participationList{
+                                if modifiedData["eid"] as! String == participation.pid{
+                                    participation.status = modifiedData["status"] as! Bool
+                                    DispatchQueue.main.async {
+                                        self.eventOverviewTableView.reloadData()
+                                    }
+                                }
+                            }
+                        }
+                        
+                        if change.type == .removed {
+                            let removedData = change.document.data()
+                            let removedEid = removedData["eid"] as! String
+                            self.participationList.removeAll{ $0.pid == removedEid}
+                            DispatchQueue.main.async {
+                                self.eventOverviewTableView.reloadData()
+                                print("Success: Removed event")
+                                
+                            }
+                        }
+                    }
+                })
+            }
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return participationList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +91,11 @@ class EventOverviewViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = eventOverviewTableView.dequeueReusableCell(withIdentifier: "eventOverviewCell") as! EventOverviewCell
         
+        if participationList[indexPath.section].status == true {
+            cell.eventOverviewImage.image = UIImage(systemName: "checkmark.square.fill")
+        }
+        
+        cell.eventNameButton.setTitle(participationList[indexPath.section].name, for: .normal)
         cell.layer.cornerRadius = 15
         cell.layer.borderWidth = 2
         cell.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor

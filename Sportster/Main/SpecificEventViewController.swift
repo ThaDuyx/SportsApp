@@ -53,12 +53,13 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
         joinedLabel.layer.cornerRadius = 5
         joinedLabel.layer.masksToBounds = true
         
+        /*
         if userID == selectedOid {
             joinButton.isHidden = true
             cancelButton.isHidden = true
             joinedLabel.isHidden = true
         }
-        
+        */
         eventTitle.text = selectedEventTitle
         eventLocation.text = selectedEventLocation
         eventDescription.text = selectedEventDescription
@@ -144,11 +145,16 @@ class SpecificEventViewController: UIViewController, UITableViewDataSource, UITa
                 self.cancelButton.isHidden = false
             }
         }
+        let dbRef2 = Firestore.firestore().collection("user").document(userID).collection("participations").document(selectedEid)
+        dbRef2.setData(["eid" : selectedEid, "name": selectedEventTitle, "status" : false])
         dbLoader.stopAnimating()
     }
     @IBAction func cancelButtonTapped(_ sender: Any) {
         let dbRef = Firestore.firestore().collection("event").document(selectedEid).collection("participants")
         dbRef.document(userID).delete()
+        let dbRef2 = Firestore.firestore().collection("user").document(userID).collection("participations")
+        dbRef2.document(selectedEid).delete()
+
     }
     
     @IBAction func ownerProfileBtnTapped(_ sender: Any) {
