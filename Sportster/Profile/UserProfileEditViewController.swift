@@ -54,17 +54,15 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
         profileImage.image = userProfile?.pfimage
         
         descriptionTextView.text = userProfile?.description
-        
+        descriptionTextView.layer.borderWidth = 2
+        descriptionTextView.layer.masksToBounds = true
+        descriptionTextView.layer.cornerRadius = 15
+        descriptionTextView.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
         
         if descriptionTextView.text.isEmpty {
             descriptionTextView.text = "Beskriv dig selv med maks. 150 tegn"
             descriptionTextView.textColor = UIColor.lightGray
         }
-        
-        descriptionTextView.layer.borderWidth = 2
-        descriptionTextView.layer.masksToBounds = true
-        descriptionTextView.layer.cornerRadius = 15
-        descriptionTextView.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
         
         locationView.layer.cornerRadius = 15
         interestsView.layer.cornerRadius = 15
