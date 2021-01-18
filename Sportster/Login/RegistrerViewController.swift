@@ -15,10 +15,8 @@ extension UIColor {
        assert(red >= 0 && red <= 255, "Invalid red component")
        assert(green >= 0 && green <= 255, "Invalid green component")
        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-
        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
    }
-
    convenience init(rgb: Int) {
        self.init(
            red: (rgb >> 16) & 0xFF,
@@ -37,41 +35,6 @@ class RegistrerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var loadingAnimationView: AnimationView!
     @IBOutlet weak var mainView: UIView!
-        
-    @IBAction func registerButtonTapped(_ sender: Any) {
-        if (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
-            let refreshAlert = UIAlertController(title: "Hov, du har vist glemt noget", message: "Du har glemt enten Password eller email", preferredStyle: UIAlertController.Style.alert)
-            refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
-                
-            }))
-            self.present(refreshAlert, animated: true, completion: nil)
-        } else {
-            loadingAnimationView.alpha = 1
-            loadingAnimationView.loopMode = .loop
-            loadingAnimationView.play()
-            registerButton.alpha = 0
-            let email = emailTextField.text!
-            let password = passwordTextField.text!
-            
-            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-                if error != nil {
-                    self.loadingAnimationView.stop()
-                    self.loadingAnimationView.alpha = 0
-                    self.registerButton.alpha = 1
-                    print("Something went wrong: Loggning existing user in")
-                    print(error?.localizedDescription ?? "Cannot fetch error")
-                } else {
-                    print("Success: Logging user in")
-                    self.registerButton.alpha = 1
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(identifier: "MainVC")
-                    
-                    self.view.window?.rootViewController = vc
-                    self.view.window?.makeKeyAndVisible()
-                }
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,9 +95,9 @@ class RegistrerViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            self.view.endEditing(true)
-            return false
-        }
+        self.view.endEditing(true)
+        return false
+    }
     
     @objc func tapFunction(sender:UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -147,4 +110,38 @@ class RegistrerViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    @IBAction func registerButtonTapped(_ sender: Any) {
+        if (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
+            let refreshAlert = UIAlertController(title: "Hov, du har vist glemt noget", message: "Du har glemt enten Password eller email", preferredStyle: UIAlertController.Style.alert)
+            refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
+                
+            }))
+            self.present(refreshAlert, animated: true, completion: nil)
+        } else {
+            loadingAnimationView.alpha = 1
+            loadingAnimationView.loopMode = .loop
+            loadingAnimationView.play()
+            registerButton.alpha = 0
+            let email = emailTextField.text!
+            let password = passwordTextField.text!
+            
+            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                if error != nil {
+                    self.loadingAnimationView.stop()
+                    self.loadingAnimationView.alpha = 0
+                    self.registerButton.alpha = 1
+                    print("Something went wrong: Loggning existing user in")
+                    print(error?.localizedDescription ?? "Cannot fetch error")
+                } else {
+                    print("Success: Logging user in")
+                    self.registerButton.alpha = 1
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(identifier: "MainVC")
+                    
+                    self.view.window?.rootViewController = vc
+                    self.view.window?.makeKeyAndVisible()
+                }
+            }
+        }
+    }
 }

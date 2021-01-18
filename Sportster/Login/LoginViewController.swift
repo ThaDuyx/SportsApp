@@ -11,7 +11,6 @@ import Firebase
 import FirebaseFirestore
 import GoogleSignIn
 
-
 class LoginViewController: UIViewController, GIDSignInDelegate {
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -20,6 +19,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
             return
             
         }
+        
         guard let auth = user.authentication else { return }
         let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
         Auth.auth().signIn(with: credentials) { (authResult, error) in
@@ -78,6 +78,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         topBoxView.layer.cornerRadius = topBoxView.frame.size.width/2
         topBoxView.clipsToBounds = true
         gLoginButton.layer.cornerRadius = 20
@@ -85,29 +86,28 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         fLoginButton.layer.cornerRadius = 20
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tapFunction))
-            signUpLabel.isUserInteractionEnabled = true
-            signUpLabel.addGestureRecognizer(tap)
+        signUpLabel.isUserInteractionEnabled = true
+        signUpLabel.addGestureRecognizer(tap)
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().delegate = self
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
     }
     
-    @objc
-    func tapFunction(sender:UITapGestureRecognizer) {
-        performSegue(withIdentifier: "showSignUpVC", sender: self)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    @objc func tapFunction(sender:UITapGestureRecognizer) {
+        performSegue(withIdentifier: "showSignUpVC", sender: self)
+    }
+    
     @IBAction func facebookLoginPressed(_ sender: Any) {
         let refreshAlert = UIAlertController(title: "Dette kan du ikke", message: "Dette er endnu ikke blevet implementeret", preferredStyle: UIAlertController.Style.alert)
         refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
         }))
         self.present(refreshAlert, animated: true, completion: nil)
     }
+    
     @IBAction func googleLoginPressed(_ sender: Any) {
         let refreshAlert = UIAlertController(title: "Dette kan du ikke", message: "Dette er endnu ikke blevet implementeret", preferredStyle: UIAlertController.Style.alert)
         refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -115,7 +115,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         self.present(refreshAlert, animated: true, completion: nil)
         //        GIDSignIn.sharedInstance().signIn()
     }
-    
     
     //https://stackoverflow.com/a/50447480
     /*//___________________________________________

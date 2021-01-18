@@ -13,7 +13,6 @@ import FirebaseStorage
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var nameTF: UITextField!
@@ -24,12 +23,12 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var signInLoader: UIActivityIndicatorView!
     @IBOutlet weak var confirmPassswordTF: UITextField!
     @IBOutlet weak var mainView: UIView!
+    
     var profilePicPicker = UIImagePickerController()
     
-    
-    
     override func viewDidLoad() {
-        //Navigationbar settings - Her bliver den vist, med en specifik farve
+        
+        //Navigationbar settings - specific color is picked
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
@@ -69,6 +68,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.view.endEditing(true)
             return false
         }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -85,12 +85,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func pickProfilePicTapped(_ sender: Any) {
-        
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
             profilePicPicker.delegate = self
             profilePicPicker.sourceType = .savedPhotosAlbum
             profilePicPicker.allowsEditing = false
-            
             present(profilePicPicker, animated: true, completion: nil)
         }
     }
@@ -98,12 +96,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         self.dismiss(animated: true)
-        
         if let pickedImage = info[.originalImage] as? UIImage {
-                profilePicIV.contentMode = .scaleAspectFill
-                profilePicIV.image = pickedImage
-            }
-        
+            profilePicIV.contentMode = .scaleAspectFill
+            profilePicIV.image = pickedImage
+        }
     }
     
     @IBAction func signUpBtnTapped(_ sender: Any) {
@@ -120,7 +116,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         dateFormatter.dateStyle = .short
         let birthday = dateFormatter.string(from: birthdaydate)
 
-        // Alerts if the user is missing og have typed something wrong
+        // Alerts if the user is missing or have typed something wrong
         if password != confirmPassword {
             let refreshAlert = UIAlertController(title: "Det er ikke helt rigtigt", message: "Du har ikke indtastet dit password korrekt ind begge steder", preferredStyle: UIAlertController.Style.alert)
             refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -192,19 +188,14 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                                 let vc = storyboard.instantiateViewController(identifier: "IntroVC")
                                 self.view.window?.rootViewController = vc
                                 self.view.window?.makeKeyAndVisible()
-                                
-                               }
-                               else{
+                               } else {
                                 print("Something went wrong: Logging new user in")
                                 print(error3?.localizedDescription ?? "Cannot fetch error")
-                                
                                }
                             }
-                            
                         } else {
                             print("Something went wrong: Uploading profile picture")
                             print(error2?.localizedDescription as Any)
-                            
                         }
                     })
                 }

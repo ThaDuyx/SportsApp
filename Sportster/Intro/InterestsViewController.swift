@@ -7,14 +7,13 @@
 import Foundation
 import UIKit
 
-class InterestsViewController: UIViewController {
-    
-    let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
-    var selectedInterests: [String] = []
-    
+class InterestsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var interestsLabel: UILabel!
     @IBOutlet weak var interestsTableView: UITableView!
+    
+    let interests: [String] = ["Boldsport", "Cykling", "Skating", "Løb", "Svømning", "Kampsport", "Atletik", "Fitness", "Gymnastik"]
+    var selectedInterests: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +47,6 @@ class InterestsViewController: UIViewController {
             performSegue(withIdentifier: "showLocationVC", sender: nil)
         }
     }
-}
-
-extension InterestsViewController: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.interests.count
@@ -95,7 +91,7 @@ extension InterestsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let index = selectedInterests.firstIndex(of: interests[indexPath.section]) {
                     selectedInterests.remove(at: index)
-                }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -42,7 +42,6 @@ class LocationViewController: UIViewController, UITextFieldDelegate {
         }
     //----------------------------------------
     
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let selectedLocation = locationTextField.text
         let destinationVC = segue.destination as! DescriptionViewController

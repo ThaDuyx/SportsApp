@@ -14,7 +14,6 @@ class DescriptionViewController: UIViewController, UITextViewDelegate {
     var selectedInterests: [String] = []
     var selectedLocation: String = ""
 
-    
     override func viewDidLoad() {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -63,13 +62,14 @@ class DescriptionViewController: UIViewController, UITextViewDelegate {
         if range.length + range.location > descriptionTextView.text.count {
             return false
         }
-        
         let newLength = descriptionTextView.text.count + text.count - range.length
         return newLength <= 150
     }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
     //----------------------------------------
     
     //https://stackoverflow.com/a/26582115

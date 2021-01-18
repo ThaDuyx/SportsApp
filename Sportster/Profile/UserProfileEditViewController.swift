@@ -30,7 +30,7 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Navigationbar settings - Her bliver den vist, med en specifik farve
+        //Navigationbar settings - specific color is picked
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController!.navigationBar.barTintColor = UIColor.init(rgb: 0x1C8E8E)
         navigationController?.navigationBar.isTranslucent = false
