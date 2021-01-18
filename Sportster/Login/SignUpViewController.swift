@@ -20,9 +20,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var profilePicIV: UIImageView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var signUpBtn: UIButton!
-    @IBOutlet weak var signInLoader: UIActivityIndicatorView!
     @IBOutlet weak var confirmPassswordTF: UITextField!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var loadingAnimationView: AnimationView!
     
     var profilePicPicker = UIImagePickerController()
     

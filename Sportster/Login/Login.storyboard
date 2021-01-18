@@ -192,7 +192,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkV-Tp-oUZ">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fødselsdag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9G2-ej-Bdn">
                                                 <rect key="frame" x="88" y="422.5" width="98" height="34.5"/>
@@ -211,10 +211,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Qbz-oe-x7b">
-                                                <rect key="frame" x="175" y="533" width="20" height="37"/>
-                                                <color key="color" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            </activityIndicatorView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p69-B9-WCf">
                                                 <rect key="frame" x="149" y="162" width="77" height="30"/>
                                                 <color key="backgroundColor" red="0.1647058824" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -287,6 +283,12 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dmd-wQ-lE2" customClass="AnimationView" customModule="Lottie">
+                                                <rect key="frame" x="50" y="657" width="275" height="0.0"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading_balls"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -294,20 +296,19 @@
                                             <constraint firstItem="p69-B9-WCf" firstAttribute="top" secondItem="Eie-0W-J9t" secondAttribute="bottom" constant="25" id="2yt-0c-SHa"/>
                                             <constraint firstItem="at4-Z1-Ta5" firstAttribute="top" secondItem="pTH-H7-Tgz" secondAttribute="bottom" constant="25" id="3k1-VI-Pds"/>
                                             <constraint firstItem="1sM-p6-0DN" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="50" id="43X-4q-ZWo"/>
-                                            <constraint firstAttribute="trailing" secondItem="Qbz-oe-x7b" secondAttribute="trailing" constant="180" id="4yW-tp-plL"/>
                                             <constraint firstItem="1sM-p6-0DN" firstAttribute="top" secondItem="Fos-E0-XMO" secondAttribute="bottom" constant="58" id="5Bp-uX-CdK"/>
                                             <constraint firstItem="Eie-0W-J9t" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="135" id="7iJ-Xq-Cka"/>
                                             <constraint firstAttribute="trailing" secondItem="p69-B9-WCf" secondAttribute="trailing" constant="149" id="9Hv-rW-Kx0"/>
-                                            <constraint firstItem="Qbz-oe-x7b" firstAttribute="top" secondItem="9G2-ej-Bdn" secondAttribute="bottom" constant="76" id="Cpm-mY-xas"/>
+                                            <constraint firstAttribute="trailing" secondItem="dmd-wQ-lE2" secondAttribute="trailing" constant="50" id="GGh-GR-1Kj"/>
                                             <constraint firstItem="9G2-ej-Bdn" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="88" id="I3X-2q-zer"/>
                                             <constraint firstAttribute="trailing" secondItem="U92-nu-TQg" secondAttribute="trailing" constant="89" id="IlS-St-bAU"/>
                                             <constraint firstItem="Fos-E0-XMO" firstAttribute="leading" secondItem="9G2-ej-Bdn" secondAttribute="trailing" constant="21" id="MEc-6N-4Di"/>
                                             <constraint firstItem="pTH-H7-Tgz" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="89" id="QVn-Ab-ObI"/>
+                                            <constraint firstAttribute="bottom" secondItem="dmd-wQ-lE2" secondAttribute="bottom" constant="10" id="Sz2-xU-FaL"/>
                                             <constraint firstAttribute="trailing" secondItem="Eie-0W-J9t" secondAttribute="trailing" constant="135" id="Tgo-Vi-5VM"/>
                                             <constraint firstItem="1sM-p6-0DN" firstAttribute="top" secondItem="9G2-ej-Bdn" secondAttribute="bottom" constant="58" id="VFa-zE-vOp"/>
                                             <constraint firstItem="9G2-ej-Bdn" firstAttribute="top" secondItem="at4-Z1-Ta5" secondAttribute="bottom" constant="35" id="X1t-GN-DBe"/>
                                             <constraint firstItem="Fos-E0-XMO" firstAttribute="top" secondItem="at4-Z1-Ta5" secondAttribute="bottom" constant="35" id="XmX-Uu-iWj"/>
-                                            <constraint firstItem="Qbz-oe-x7b" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="175" id="YXG-WR-rWW"/>
                                             <constraint firstAttribute="trailing" secondItem="pTH-H7-Tgz" secondAttribute="trailing" constant="89" id="aQ6-7W-TdW"/>
                                             <constraint firstItem="pTH-H7-Tgz" firstAttribute="top" secondItem="U92-nu-TQg" secondAttribute="bottom" constant="25" id="b9q-fJ-LlL"/>
                                             <constraint firstAttribute="trailing" secondItem="xMD-6a-uoN" secondAttribute="trailing" constant="89" id="cu4-VR-4XK"/>
@@ -319,6 +320,7 @@
                                             <constraint firstItem="xMD-6a-uoN" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="89" id="qeu-1c-ZXE"/>
                                             <constraint firstItem="U92-nu-TQg" firstAttribute="top" secondItem="xMD-6a-uoN" secondAttribute="bottom" constant="25" id="u3S-ZW-mXL"/>
                                             <constraint firstItem="Eie-0W-J9t" firstAttribute="top" secondItem="bkV-Tp-oUZ" secondAttribute="top" constant="32" id="ula-r1-pma"/>
+                                            <constraint firstItem="dmd-wQ-lE2" firstAttribute="leading" secondItem="bkV-Tp-oUZ" secondAttribute="leading" constant="50" id="yeK-Q2-NJc"/>
                                             <constraint firstAttribute="trailing" secondItem="Fos-E0-XMO" secondAttribute="trailing" constant="46" id="zJI-iR-QuT"/>
                                         </constraints>
                                     </view>
@@ -353,7 +355,6 @@
                         <outlet property="passwordTF" destination="U92-nu-TQg" id="URw-qm-Tev"/>
                         <outlet property="pickProfilePicBtn" destination="p69-B9-WCf" id="5f5-pj-uZa"/>
                         <outlet property="profilePicIV" destination="Eie-0W-J9t" id="3e0-uW-pmT"/>
-                        <outlet property="signInLoader" destination="Qbz-oe-x7b" id="KP2-Ar-fgi"/>
                         <outlet property="signUpBtn" destination="1sM-p6-0DN" id="743-jH-cYf"/>
                     </connections>
                 </viewController>
@@ -440,7 +441,7 @@
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="93Y-wF-MCe" customClass="AnimationView" customModule="Lottie">
                                                 <rect key="frame" x="50" y="527" width="275" height="130"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading_balls"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -507,6 +508,7 @@
     </scenes>
     <designables>
         <designable name="93Y-wF-MCe"/>
+        <designable name="dmd-wQ-lE2"/>
     </designables>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
