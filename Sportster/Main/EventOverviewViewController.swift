@@ -125,8 +125,6 @@ class EventOverviewViewController: UIViewController, UITableViewDelegate, UITabl
             }
         }
         
-        
-        
         let refreshAlert = UIAlertController(title: "Hov", message: "Dette er endnu ikke blevet implementeret", preferredStyle: UIAlertController.Style.alert)
         refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
         }))
