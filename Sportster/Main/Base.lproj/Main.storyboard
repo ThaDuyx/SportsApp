@@ -924,7 +924,7 @@
                                 <color key="tintColor" red="0.10980392160000001" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="list.bullet.rectangle" catalog="system"/>
                                 <connections>
-                                    <segue destination="vNa-tS-6pZ" kind="presentation" id="Lgo-jF-ekf"/>
+                                    <action selector="eventOverviewBtnTapped:" destination="hSS-VP-2fb" eventType="touchUpInside" id="uWr-O9-vh0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -950,11 +950,13 @@
                     <navigationItem key="navigationItem" id="rVD-y6-mxd"/>
                     <connections>
                         <outlet property="eventBackgroundCollection" destination="0h4-7X-DI9" id="2wF-bU-Ajk"/>
+                        <outlet property="eventOverviewBtn" destination="mBM-D7-RKg" id="9sp-N5-GWw"/>
                         <outlet property="loadingAnimationView" destination="ANV-AP-pxd" id="4tb-2V-17E"/>
                         <outlet property="makeEventBtn" destination="tTd-oe-Jek" id="ch5-uN-LBB"/>
                         <segue destination="CMQ-q0-JbT" kind="presentation" identifier="showSpecificEvent" id="8v0-Mx-fOF"/>
                         <segue destination="LBT-VK-Upy" kind="show" identifier="showUserEvents" id="buG-8O-r7b"/>
                         <segue destination="lxb-5z-ewn" kind="show" identifier="showUserInfo" id="PiN-97-2xX"/>
+                        <segue destination="vNa-tS-6pZ" kind="presentation" identifier="showParticipationView" id="wXm-QW-Voy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9H-7G-gz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1040,7 +1042,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUR-a1-Lmq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-238" y="522"/>
+            <point key="canvasLocation" x="-238" y="317"/>
         </scene>
         <!--Specific Event View Controller-->
         <scene sceneID="luH-3I-UvM">

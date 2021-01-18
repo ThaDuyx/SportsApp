@@ -141,6 +141,5 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
             let destinationVC3 = segue.destination as! CreateEventViewController
             destinationVC3.userName = userName
         }
-
     }
 }

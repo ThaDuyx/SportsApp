@@ -26,7 +26,8 @@ class EventViewController: UIViewController {
     @IBOutlet weak var eventBackgroundCollection: UICollectionView!
     @IBOutlet weak var makeEventBtn: UIButton!
     @IBOutlet weak var loadingAnimationView: AnimationView!
-
+    @IBOutlet weak var eventOverviewBtn: UIButton!
+    
     let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
@@ -42,12 +43,9 @@ class EventViewController: UIViewController {
         eventBackgroundCollection.alpha = 0
         loadingAnimationView.loopMode = .loop
         loadingAnimationView.play()
+        
         let Authuid = Auth.auth().currentUser?.uid
         let dbRef = Firestore.firestore()
-    
-
-        
-        
         dbRef.collection("user").document(Authuid!).getDocument { (userinfo, error) in
             if error != nil{
                 print("Something went wrong: Retrieving user info")
@@ -183,6 +181,9 @@ class EventViewController: UIViewController {
     @IBAction func showUserInfo(_ sender: Any) {
         performSegue(withIdentifier: "showUserInfo", sender: self)
     }
+    @IBAction func eventOverviewBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: "showParticipationView", sender: self)
+    }
 }
 
 extension EventViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -251,6 +252,8 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
                 destinationVC3.eventsIDs = self.mainUser!.events
             }
             destinationVC3.userName = self.mainUser!.name
+        } else if segue.identifier == "showParticipationView" {
+            
         }
         
     }
