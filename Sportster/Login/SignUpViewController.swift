@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import Lottie
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
@@ -148,16 +149,16 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             }))
             self.present(refreshAlert, animated: true, completion: nil)
         }else {
-            signInLoader.alpha = 1
-            signInLoader.startAnimating()
+            //signInLoader.alpha = 1
+            //signInLoader.startAnimating()
             signUpBtn.alpha = 0
             //Instantiating the firebase login
             Auth.auth().createUser(withEmail: email, password: password) { (user, error1) in
                 if error1 != nil {
                     print("Something went wrong: Creating new user")
                     print(error1?.localizedDescription ?? "Cannot fetch error")
-                    self.signInLoader.stopAnimating()
-                    self.signInLoader.alpha = 0
+                    //self.signInLoader.stopAnimating()
+                    //self.signInLoader.alpha = 0
                     self.signUpBtn.alpha = 1
                     
                 } else {
@@ -183,7 +184,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                             Auth.auth().signIn(withEmail: email, password: password) { (result, error3) in
                                if error3 == nil {
                                 print("Success: Logging new user in")
-                                self.signInLoader.stopAnimating()
+                                //self.signInLoader.stopAnimating()
                                 let storyboard = UIStoryboard(name: "Intro", bundle: nil)
                                 let vc = storyboard.instantiateViewController(identifier: "IntroVC")
                                 self.view.window?.rootViewController = vc

@@ -350,6 +350,7 @@
                         <outlet property="confirmPassswordTF" destination="pTH-H7-Tgz" id="pJc-fh-Vuc"/>
                         <outlet property="datePicker" destination="Fos-E0-XMO" id="aDT-zm-L2O"/>
                         <outlet property="emailTF" destination="xMD-6a-uoN" id="FNU-Ey-HXj"/>
+                        <outlet property="loadingAnimationView" destination="dmd-wQ-lE2" id="daw-Mt-0ZO"/>
                         <outlet property="mainView" destination="bkV-Tp-oUZ" id="u38-wE-YU3"/>
                         <outlet property="nameTF" destination="at4-Z1-Ta5" id="zKK-bb-mkR"/>
                         <outlet property="passwordTF" destination="U92-nu-TQg" id="URw-qm-Tev"/>
