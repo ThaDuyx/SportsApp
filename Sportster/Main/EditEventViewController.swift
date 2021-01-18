@@ -97,7 +97,6 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            print(keyboardSize.height)
             if self.mainView.frame.origin.y == 0 {
                 if keyboardSize.height <= 216 {
                     self.mainView.frame.origin.y -= 200
