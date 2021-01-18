@@ -284,7 +284,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dmd-wQ-lE2" customClass="AnimationView" customModule="Lottie">
-                                                <rect key="frame" x="50" y="657" width="275" height="0.0"/>
+                                                <rect key="frame" x="50" y="507" width="275" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="cXK-0v-f1C"/>
+                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading_balls"/>
                                                 </userDefinedRuntimeAttributes>
