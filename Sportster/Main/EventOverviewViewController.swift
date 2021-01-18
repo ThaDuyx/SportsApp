@@ -9,9 +9,18 @@ import UIKit
 import Firebase
 
 class EventOverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var selectedEventEid = ""
+    var selectedEventTitle = ""
+    var selectedEventLocation = ""
+    var selectedEventDate = ""
+    var selectedEventDescription = ""
+    var selectedEventOwnerID = ""
+    var selectedEventImage = UIImage()
+    var username = ""
+    
     
     @IBOutlet weak var eventOverviewTableView: UITableView!
-    
+    var eventsList = [Event]()
     let userID = Auth.auth().currentUser?.uid
     let dbRef = Firestore.firestore().collection("user").document()
     var participationList = [Participant]()
@@ -102,9 +111,39 @@ class EventOverviewViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        for event in eventsList {
+            if event.eid == participationList[indexPath.section].pid {
+                selectedEventEid = event.eid
+                selectedEventDate = event.date
+                selectedEventTitle = event.title
+                selectedEventLocation = event.location
+                selectedEventDescription = event.location
+                selectedEventImage = event.eImage
+                selectedEventOwnerID = event.oid
+                performSegue(withIdentifier: "showParticipationVC", sender: self)
+                break
+            }
+        }
+        
+        
+        
         let refreshAlert = UIAlertController(title: "Hov", message: "Dette er endnu ikke blevet implementeret", preferredStyle: UIAlertController.Style.alert)
         refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
         }))
         self.present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showParticipationVC" {
+            let destinationVC = segue.destination as! SpecificEventViewController
+            destinationVC.selectedEventTitle = selectedEventTitle
+            destinationVC.selectedEventLocation = selectedEventLocation
+            destinationVC.selectedEventDescription = selectedEventDescription
+            destinationVC.selectedEventDate = selectedEventDate
+            destinationVC.selectedOid = selectedEventOwnerID
+            destinationVC.selectedEid = selectedEventEid
+            destinationVC.selectedImage = selectedEventImage
+            destinationVC.username = username
+        }
     }
 }

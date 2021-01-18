@@ -253,7 +253,9 @@ extension EventViewController: UICollectionViewDataSource, UICollectionViewDeleg
             }
             destinationVC3.userName = self.mainUser!.name
         } else if segue.identifier == "showParticipationView" {
-            
+            let destinationVC4 = segue.destination as! EventOverviewViewController
+            destinationVC4.eventsList = eventsList
+            destinationVC4.username = mainUser!.name
         }
         
     }
