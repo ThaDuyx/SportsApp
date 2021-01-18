@@ -19,6 +19,7 @@ class OwnerProfileViewController: UIViewController {
     @IBOutlet weak var ownerDescription: UILabel!
     @IBOutlet weak var ownerImage: UIImageView!
     @IBOutlet weak var loadingAnimation: AnimationView!
+    @IBOutlet weak var mainView: UIView!
     let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
@@ -26,10 +27,13 @@ class OwnerProfileViewController: UIViewController {
         ownerImage.layer.cornerRadius = ownerImage.frame.height/2
         ownerImage.clipsToBounds = true
         ownerImage.contentMode = .scaleAspectFill
+        
+        mainView.layer.cornerRadius = 15
 
         loadingAnimation.loopMode = .loop
         loadingAnimation.play()
         loadingAnimation.alpha = 1
+        
         let ownerRef = Firestore.firestore().collection("user").document(oid)
         ownerRef.getDocument { (ownerInfo, error) in
             if error != nil {
