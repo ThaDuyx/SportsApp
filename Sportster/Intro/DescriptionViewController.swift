@@ -89,7 +89,7 @@ class DescriptionViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func descriptionButton(_ sender: Any) {
-        if (descriptionTextView.text?.isEmpty == true){
+        if (descriptionTextView.text?.isEmpty == true || descriptionTextView.text == "Beskriv dig selv med maks. 150 tegn" ){
             let refreshAlert = UIAlertController(title: "Mangler en beskrivelse", message: "Du har ikke skrevet en beskrivelse", preferredStyle: UIAlertController.Style.alert)
             refreshAlert.addAction(UIAlertAction(title: "Prøv igen", style: .cancel, handler: { (action: UIAlertAction!) in
             }))

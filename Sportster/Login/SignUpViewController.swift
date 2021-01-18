@@ -41,6 +41,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         profilePicIV.layer.cornerRadius = profilePicIV.frame.height/2
         pickProfilePicBtn.layer.cornerRadius = 15
         signUpBtn.layer.cornerRadius = 20
+        
+        loadingAnimationView.alpha = 0
     
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -151,6 +153,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         }else {
             //signInLoader.alpha = 1
             //signInLoader.startAnimating()
+            loadingAnimationView.alpha = 1
+            loadingAnimationView.loopMode = .loop
+            loadingAnimationView.play()
             signUpBtn.alpha = 0
             //Instantiating the firebase login
             Auth.auth().createUser(withEmail: email, password: password) { (user, error1) in
@@ -159,6 +164,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                     print(error1?.localizedDescription ?? "Cannot fetch error")
                     //self.signInLoader.stopAnimating()
                     //self.signInLoader.alpha = 0
+                    self.loadingAnimationView.stop()
+                    self.loadingAnimationView.alpha = 0
                     self.signUpBtn.alpha = 1
                     
                 } else {
@@ -185,6 +192,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                                if error3 == nil {
                                 print("Success: Logging new user in")
                                 //self.signInLoader.stopAnimating()
+                                self.loadingAnimationView.stop()
                                 let storyboard = UIStoryboard(name: "Intro", bundle: nil)
                                 let vc = storyboard.instantiateViewController(identifier: "IntroVC")
                                 self.view.window?.rootViewController = vc
