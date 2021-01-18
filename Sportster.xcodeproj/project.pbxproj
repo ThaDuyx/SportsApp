@@ -15,7 +15,6 @@
 		6A1D31BC252630E100D2F8DE /* NotiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D31BB252630E100D2F8DE /* NotiViewController.swift */; };
 		6A26A87F252337100060351B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A87E252337100060351B /* AppDelegate.swift */; };
 		6A26A881252337100060351B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A880252337100060351B /* SceneDelegate.swift */; };
-		6A26A883252337100060351B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A882252337100060351B /* ViewController.swift */; };
 		6A26A886252337100060351B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A26A884252337100060351B /* Main.storyboard */; };
 		6A26A888252337110060351B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A26A887252337110060351B /* Assets.xcassets */; };
 		6A26A88B252337110060351B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A26A889252337110060351B /* LaunchScreen.storyboard */; };
@@ -84,7 +83,6 @@
 		6A26A87B252337100060351B /* Sportster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A26A87E252337100060351B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A26A880252337100060351B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6A26A882252337100060351B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6A26A885252337100060351B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A26A887252337110060351B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A26A88A252337110060351B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -292,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				6A26A884252337100060351B /* Main.storyboard */,
-				6A26A882252337100060351B /* ViewController.swift */,
 				83281D04254AFFA6007503E9 /* EventDataCollectionCell.swift */,
 				83281D09254B096E007503E9 /* EventViewController.swift */,
 				83BE30702554485B00E779BA /* SpecificEventViewController.swift */,
@@ -650,7 +647,6 @@
 				83E375BB25AB0FD900F2B4EE /* EventOverviewCell.swift in Sources */,
 				6AFDC58F25ADD89F0000EB74 /* event.swift in Sources */,
 				83E3759D25A73DF400F2B4EE /* PostsCell.swift in Sources */,
-				6A26A883252337100060351B /* ViewController.swift in Sources */,
 				83BDD14425A5DDAB00279A32 /* UserProfileViewController.swift in Sources */,
 				83E375C025AB40F800F2B4EE /* EditEventViewController.swift in Sources */,
 				83E375B625AB0F2700F2B4EE /* EventOverviewViewController.swift in Sources */,
