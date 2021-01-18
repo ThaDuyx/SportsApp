@@ -25,6 +25,7 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
     var selectedEvent = ""
     var eventPicPicker = UIImagePickerController()
     var selectedInterest: String = ""
+    var selectedLocation: String = ""
     var eventTitle = ""
     var eventDate = ""
     var eventLocation = ""
@@ -75,6 +76,8 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
                 self.descriptionTextView.text = self.eventDescription
                 let pickerViewRow = self.cities!.firstIndex(of: self.eventLocation)
                 self.locationPicker.selectRow(pickerViewRow!, inComponent: 0, animated: false)
+                self.selectedLocation = self.eventLocation
+                
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "MM/dd/yy, h:mm a"
                 let date = dateFormatter.date(from: self.eventDate)
@@ -228,6 +231,7 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         
         if interests[indexPath.section] == eventInterest {
             self.interestsTableView.selectRow(at: indexPath, animated: false, scrollPosition: .middle)
+            self.selectedInterest = interests[indexPath.section]
         }
         return cell
     }
@@ -257,4 +261,26 @@ class EditEventViewController: UIViewController, UITextViewDelegate, UITableView
         return cities![row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedLocation = cities![row]
+    }
+    
+    
+    @IBAction func editBtnTapped(_ sender: Any) {
+        let dbRef = Firestore.firestore().collection("event").document(self.selectedEvent)
+        let newTitle = self.titleTextView.text
+        let newDescription = self.descriptionTextView.text
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .short
+        let newDate = dateFormatter.string(from: datePicker.date)
+        
+        dbRef.setData(["title" : newTitle!, "description" : newDescription!, "interests" : self.selectedInterest, "date" : newDate, "location": selectedLocation], merge: true) { (error) in
+            if error != nil {
+                print("Something went wrong")
+            } else {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+    }
 }

@@ -580,6 +580,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="IUb-6J-Vn9"/>
                                                 </constraints>
                                                 <state key="normal" title="Rediger"/>
+                                                <connections>
+                                                    <action selector="editBtnTapped:" destination="qLa-ag-DGv" eventType="touchUpInside" id="7xs-sv-dX5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
