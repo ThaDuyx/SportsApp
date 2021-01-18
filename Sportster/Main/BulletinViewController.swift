@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class BulletinViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,6 +18,7 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
     var userName: String = ""
     var selectedEvent: UserEventList = UserEventList(eid: "", title: "")!
     let dbRef = Firestore.firestore()
+    let userID = Auth.auth().currentUser?.uid
     
     override func viewDidLoad() {
 //Navigationbar settings - Her bliver den vist, med en specifik farve
@@ -106,7 +108,12 @@ class BulletinViewController: UIViewController, UITableViewDelegate, UITableView
         })
         
         let delete = UIContextualAction(style: .normal, title: "Slet", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
-            print("Delete")
+            let dbRef = Firestore.firestore().collection("event").document(self.events[indexPath.section].eid)
+            dbRef.delete()
+            let dbRef2 = Firestore.firestore().collection("user").document(self.userID!).collection("events").document(self.events[indexPath.section].eid)
+            dbRef2.delete()
+            self.events.remove(at: indexPath.section)
+            self.bulletinTableView.reloadData()
             success(true)
         })
         
