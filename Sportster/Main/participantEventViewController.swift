@@ -131,12 +131,14 @@ class ParticipantEventViewController: ViewController, UITableViewDelegate, UITab
         let indexPath = self.participantTableView.indexPath(for: cell)
         selectedParticipantID = participantsList[indexPath!.section].pid
         self.dbRef.collection("event").document(selectedEvent.eid).collection("participants").document(selectedParticipantID).updateData(["status" : true])
+        self.dbRef.collection("user").document(selectedParticipantID).collection("participations").document(selectedEvent.eid).updateData(["status" : true])
     }
     
     func pDeclineTapped(cell: EventParticipantsCell) {
         let indexPath = self.participantTableView.indexPath(for: cell)
         selectedParticipantID = participantsList[indexPath!.section].pid
         self.dbRef.collection("event").document(selectedEvent.eid).collection("participants").document(selectedParticipantID).delete()
+        self.dbRef.collection("user").document(selectedParticipantID).collection("participations").document(selectedEvent.eid).delete()
     }
     
     func participantButton(cell: EventParticipantsCell) {
