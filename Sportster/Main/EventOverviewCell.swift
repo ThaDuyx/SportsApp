@@ -10,12 +10,12 @@ import UIKit
 class EventOverviewCell: UITableViewCell {
     
     @IBOutlet weak var eventOverviewImage: UIImageView!
-    @IBOutlet weak var eventNameButton: UIButton!
+    @IBOutlet weak var eventOverviewLabel:UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        eventNameButton.layer.cornerRadius = 15
-        eventNameButton.clipsToBounds = true
+        eventOverviewLabel.layer.cornerRadius = 15
+        eventOverviewLabel.clipsToBounds = true
     }
 }

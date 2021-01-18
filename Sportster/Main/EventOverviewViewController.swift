@@ -104,7 +104,7 @@ class EventOverviewViewController: UIViewController, UITableViewDelegate, UITabl
             cell.eventOverviewImage.image = UIImage(systemName: "checkmark.square.fill")
         }
         
-        cell.eventNameButton.setTitle(participationList[indexPath.section].name, for: .normal)
+        cell.eventOverviewLabel.text = participationList[indexPath.section].name
         cell.layer.cornerRadius = 15
         cell.layer.borderWidth = 2
         cell.layer.borderColor = UIColor.init(rgb:0x2AC0C0).cgColor
