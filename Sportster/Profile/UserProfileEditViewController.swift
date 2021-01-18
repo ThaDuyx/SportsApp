@@ -82,7 +82,7 @@ class UserProfileEditViewController: UIViewController, UITableViewDataSource, UI
                 if keyboardSize.height <= 216 {
                     self.mainView.frame.origin.y -= 200
                 } else if keyboardSize.height > 216 {
-                    self.mainView.frame.origin.y -= 100
+                    self.mainView.frame.origin.y -= 250
                 }
             }
         }
